@@ -8,7 +8,7 @@ repository 'https://github.com/Disabled-Coding/dc-adminmenu'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
-    'locales/en.lua', -- Change to the language you want
+    'locales/da.lua', -- Change to the language you want
 }
 
 client_scripts {
