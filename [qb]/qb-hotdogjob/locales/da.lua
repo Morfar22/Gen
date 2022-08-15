@@ -17,7 +17,7 @@ local Translations = {
         made_luck_hotdog = 'Du lavede %{value} x %{value2} hotdogs',
     },
     info = {
-        kommando = "Slet stand (kun administrator)",
+        command = "Slet stand (kun administrator)",
         blip_name = 'Pølsevogn',
         start_working = '[E] Begynd at arbejde',
         start_work = 'Begynd at arbejde',
