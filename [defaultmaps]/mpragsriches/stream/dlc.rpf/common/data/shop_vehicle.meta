@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<ShopVehicleDataArray>
+  <Vehicles>
+    <Item>
+	  <lockHash>CU_VEH_XENOGLAUX</lockHash>
+	  <modelNameHash>xenoglaux</modelNameHash>
+	  <cost value="6576"/>
+	  <textLabel>XENOGLAUX</textLabel>
+	  <vehicleMods />
+	</Item>
+  </Vehicles>	
+</ShopVehicleDataArray>

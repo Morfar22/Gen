@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<timecycle_modifier_data version="1.000000">
+  <modifier name="SPRR_Enable_ALL_HD" numMods="7" userFlags="0">
+    <lod_mult_hd>1.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>1.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>0.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>0.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>0.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_HD" numMods="7" userFlags="0">
+    <lod_mult_hd>1.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>0.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>0.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>0.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_OrphanHD" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>1.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>0.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>0.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>0.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_LOD" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>1.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>1.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>1.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>1.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>1.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_SLOD1" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>1.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>1.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>1.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>1.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_SLOD2" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>1.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>1.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>1.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_SLOD3" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>0.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>1.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>1.000 0.000</lod_mult_slod4>
+  </modifier>
+  <modifier name="SPRR_Enable_SLOD4" numMods="7" userFlags="0">
+    <lod_mult_hd>0.000 0.000</lod_mult_hd>
+    <lod_mult_orphanhd>0.000 0.000</lod_mult_orphanhd>
+    <lod_mult_lod>0.000 0.000</lod_mult_lod>
+    <lod_mult_slod1>0.000 0.000</lod_mult_slod1>
+    <lod_mult_slod2>0.000 0.000</lod_mult_slod2>
+    <lod_mult_slod3>0.000 0.000</lod_mult_slod3>
+    <lod_mult_slod4>1.000 0.000</lod_mult_slod4>
+  </modifier>
+   <modifier name="mhc_lobby_timecyc" numMods="25" userFlags="0">
+    <light_natural_amb_up_intensity_mult>1.000 0.000</light_natural_amb_up_intensity_mult>
+    <light_artificial_int_down_col_r>1.000 1.000</light_artificial_int_down_col_r>
+    <light_artificial_int_down_col_g>0.882 1.000</light_artificial_int_down_col_g>
+    <light_artificial_int_down_col_b>0.514 1.000</light_artificial_int_down_col_b>
+    <light_artificial_int_down_intensity>0.600 0.000</light_artificial_int_down_intensity>
+    <light_artificial_int_up_col_r>1.000 1.000</light_artificial_int_up_col_r>
+    <light_artificial_int_up_col_g>0.882 1.000</light_artificial_int_up_col_g>
+    <light_artificial_int_up_col_b>0.510 1.000</light_artificial_int_up_col_b>
+    <light_artificial_int_up_intensity>0.500 0.000</light_artificial_int_up_intensity>
+    <ped_light_col_r>0.973 1.000</ped_light_col_r>
+    <ped_light_col_g>1.000 1.000</ped_light_col_g>
+    <ped_light_col_b>0.812 1.000</ped_light_col_b>
+    <ped_light_mult>0.400 1.000</ped_light_mult>
+    <ped_light_direction_x>-0.300 0.000</ped_light_direction_x>
+    <ssao_inten>5.000 0.000</ssao_inten>
+    <postfx_exposure>0.000 0.000</postfx_exposure>
+    <postfx_bright_pass_thresh_width>0.300 0.000</postfx_bright_pass_thresh_width>
+    <postfx_bright_pass_thresh>0.300 0.000</postfx_bright_pass_thresh>
+    <dir_shadow_num_cascades>3.000 0.000</dir_shadow_num_cascades>
+    <dir_shadow_distance_multiplier>0.500 0.000</dir_shadow_distance_multiplier>
+    <fog_start>73.000 73.000</fog_start>
+    <natural_ambient_multiplier>0.100 0.000</natural_ambient_multiplier>
+    <artificial_int_ambient_multiplier>0.500 0.000</artificial_int_ambient_multiplier>
+	<far_clip>500.000 500.000</far_clip>
+  </modifier>
+</timecycle_modifier_data>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CMapParentTxds>
+  <txdRelationships>
+    <Item>
+      <parent>1_amb_market_station_txd</parent>
+      <child>amb_market_station_txd</child>
+    </Item>
+    <Item>
+      <parent>2_amb_market_station_txd</parent>
+      <child>1_amb_market_station_txd</child>
+    </Item>
+    <Item>
+      <parent>3_amb_market_station_txd</parent>
+      <child>2_amb_market_station_txd</child>
+    </Item>
+    <Item>
+      <parent>1_sc1_15_build2+hi</parent>
+      <child>sc1_15_build2+hi</child>
+    </Item>
+    <Item>
+      <parent>2_sc1_15_build2+hi</parent>
+      <child>1_sc1_15_build2+hi</child>
+    </Item>
+    <Item>
+      <parent>1_sc1_rd_road+hi</parent>
+      <child>sc1_rd_road+hi</child>
+    </Item>
+    <Item>
+      <parent>2_sc1_rd_road+hi</parent>
+      <child>1_sc1_rd_road+hi</child>
+    </Item>
+    <Item>
+      <parent>3_sc1_rd_road+hi</parent>
+      <child>2_sc1_rd_road+hi</child>
+    </Item>
+  </txdRelationships>
+</CMapParentTxds>

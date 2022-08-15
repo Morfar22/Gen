@@ -1,0 +1,6 @@
+# Names
+spragsriches_map_update = 398736681 = spragsriches_398736681_cache_y = spragsriches_spragsriches_map_update_cache_y
+spragsriches_map_update_san_luis_obispo = 3541577404 = spragsriches_3541577404_cache_y = spragsriches_spragsriches_map_update_san_luis_obispo_cache_y
+spragsriches_interior_additions = 2366030016 = spragsriches_2366030016_cache_y = spragsriches_spragsriches_interior_additions_cache_y
+spragsriches_map_navmesh_update = 2582924418 = spragsriches_2582924418_cache_y = spragsriches_spragsriches_map_navmesh_update_cache_y
+spragsriches_gta5_lodlights = 1733058241 = spragsriches_1733058241_cache_y = spragsriches_spragsriches_gta5_lodlights_cache_y

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<CVfxInteriorInfoMgr>
+ <vfxInteriorSetups>
+  <Item type="CVfxInteriorSetup" key="mhc_interior_lob_shell">
+   <interiorInfoName>vfxinteriorinfo_mhc_lobby</interiorInfoName>
+   <vfxRoomSetups />
+  </Item>
+ </vfxInteriorSetups>
+ <vfxInteriorInfos>
+  <Item type="CVfxInteriorInfo" key="vfxinteriorinfo_mhc_lobby">
+   <smokePtFxEnabled value="true" />
+   <smokePtFxName>env_stripclub_haze</smokePtFxName>
+   <smokePtFxLevelOverride value="-1" />
+   <dustPtFxEnabled value="false" />
+   <dustPtFxName>env_gunsmoke</dustPtFxName>
+   <dustPtFxEvo value="1" />
+  </Item>
+ </vfxInteriorInfos>
+</CVfxInteriorInfoMgr>

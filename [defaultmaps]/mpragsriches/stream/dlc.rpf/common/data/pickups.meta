@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<CPickupDataManager>
+  <pickupData>
+    <Item type="CPickupData">
+      <Name>PICKUP_WEAPON_CLASSICSMG</Name>
+      <Model>w_sb_classicsmg</Model>
+      <GenerationRange value="80.000000" />
+      <RegenerationTime value="60.000000" />
+      <CollectionRadiusFirstPerson value="2.000000" />
+	  <CollectionRadius value="1.000000" />
+      <Scale value="1.000000" />
+      <LoopingAudioRef>NULL_SOUND</LoopingAudioRef>
+      <GlowRed value="1.000000" />
+      <GlowGreen value="0.225000" />
+      <GlowBlue value="0.000000" />
+      <GlowIntensity value="0.500000" />
+      <DarkGlowIntensity value="0.500000" />
+      <MPGlowIntensity value="0.500000" />
+      <MPDarkGlowIntensity value="3.000000" />
+      <GlowRange value="2.000000" />
+      <AttachmentBone>BONETAG_ROOT</AttachmentBone>
+      <AttachmentOffset x="0.000000" y="0.000000" z="0.000000" />
+      <AttachmentRotation x="0.000000" y="0.000000" z="0.000000" />
+      <PickupFlags>CollectableOnFoot CollectableInCar CollectableInBoat ManualPickUp CanBeDamaged ShareWithPassengers CollectableInCarByPassengers</PickupFlags>
+      <OnFootPickupActions>
+        <Item>ACTION_GROUP_ONFOOT</Item>
+        <Item>ACTION_AUDIO_HANDGUN</Item>
+      </OnFootPickupActions>
+      <InCarPickupActions>
+        <Item>ACTION_GROUP_INCAR</Item>
+        <Item>ACTION_AUDIO_HANDGUN</Item>
+      </InCarPickupActions>
+      <OnShotPickupActions />
+      <Rewards>
+        <Item>REWARD_WEAPON_CLASSICSMG</Item>
+        <Item>REWARD_AMMO_CLASSICSMG</Item>
+        <Item>REWARD_STAT_WEAPON</Item>
+      </Rewards>
+    </Item>
+  </pickupData>
+  <actionData/>
+  <rewardData>
+    <Item type="CPickupRewardWeapon">
+      <Name>REWARD_WEAPON_CLASSICSMG</Name>
+      <WeaponRef>WEAPON_CLASSICSMG</WeaponRef>
+      <Equip value="false" />
+    </Item>
+    <Item type="CPickupRewardAmmo">
+      <Name>REWARD_AMMO_CLASSICSMG</Name>
+      <AmmoRef>AMMO_SMG</AmmoRef>
+      <Amount value="30" />
+    </Item>
+  </rewardData>
+</CPickupDataManager>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<WeaponShopItemArray>
+	<weaponShopItems>
+		<Item>
+			<lockHash>CU_WEP_CLASSICSMG</lockHash>
+			<nameHash>WEAPON_CLASSICSMG</nameHash>
+			<cost value ="1520"/>
+			<ammoCost value="70"/>
+			<textLabel>WT_CLASSICSMG</textLabel>
+			<weaponDesc>WTD_CLASSICSMG</weaponDesc>
+			<weaponTT>WTT_CLASSICSMG</weaponTT>
+			<weaponUppercase>WTU_CLASSICSMG</weaponUppercase>
+			<id value = "32"/>
+			<weaponComponents>
+				<Item>
+					<componentName>COMPONENT_SMG_CLIP_01</componentName>
+					<cost value = "115"/>
+					<textLabel>WCT_CLASSICSMG_CLIP1</textLabel>
+					<componentDesc>WCD_CLASSICSMG_CLIP1</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_SMG_CLIP_02</componentName>
+					<cost value = "135"/>
+					<textLabel>WCT_CLASSICSMG_CLIP2</textLabel>
+					<componentDesc>WCD_CLASSICSMG_CLIP2</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_SMG_CLIP_03</componentName>
+					<cost value = "175"/>
+					<textLabel>WCT_CLASSICSMG_CLIP3</textLabel>
+					<componentDesc>WCD_CLASSICSMG_CLIP3</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_AR_FLSH</componentName>
+					<cost value = "110"/>
+					<textLabel>WCT_FLASH</textLabel>
+					<componentDesc>WCD_FLASH</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_SIGHTS_SMG</componentName>
+					<cost value = "150"/>
+					<textLabel>WCT_HOLO</textLabel>
+					<componentDesc>WCD_HOLO</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_SCOPE_MACRO_02</componentName>
+					<cost value = "200"/>
+					<textLabel>WCT_SCOPE_MAC2</textLabel>
+					<componentDesc>WCD_SCOPE_MAC</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_SCOPE_SMALL_SMG_MK2</componentName>
+					<cost value = "250"/>
+					<textLabel>WCT_SCOPE_SML2</textLabel>
+					<componentDesc>WCD_SCOPE_SML</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_PI_SUPP</componentName>
+					<cost value = "815"/>
+					<textLabel>WCT_SUPP</textLabel>
+					<componentDesc>WCD_PI_SUPP</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_01</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ1</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_02</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ2</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_03</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ3</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_04</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ4</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_05</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ5</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_06</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ6</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+				<Item>
+					<componentName>COMPONENT_AT_MUZZLE_07</componentName>
+					<cost value = "500"/>
+					<textLabel>WCT_MUZZ7</textLabel>
+					<componentDesc>WCD_MUZZ</componentDesc>
+				</Item>
+			</weaponComponents>
+			<availableInSP value="true" />
+		</Item>
+	</weaponShopItems>
+</WeaponShopItemArray>	

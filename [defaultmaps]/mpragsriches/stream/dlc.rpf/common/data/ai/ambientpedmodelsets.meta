@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<CAmbientModelSets>
+  <ModelSets>
+    <Item type="CAmbientModelSet">
+      <Name>LSLIVE_DIRK</Name>
+      <Models>
+        <Item>
+          <Name>A_M_Y_Hipster_02</Name>
+          <Variations type="CAmbientPedModelVariations">
+            <CompRestrictions>
+              <Item>
+                <Component>PV_COMP_HEAD</Component>
+                <DrawableIndex value="0" />
+                <TextureIndex value="1" />
+                <Restriction>MustUse</Restriction>
+              </Item>
+              <Item>
+                <Component>PV_COMP_UPPR</Component>
+                <DrawableIndex value="1" />
+                <TextureIndex value="3" />
+                <Restriction>MustUse</Restriction>
+              </Item>
+              <Item>
+                <Component>PV_COMP_LOWR</Component>
+                <DrawableIndex value="0" />
+                <Restriction>MustUse</Restriction>
+              </Item>
+              <Item>
+                <Component>PV_COMP_HAIR</Component>
+                <DrawableIndex value="1" />
+                <Restriction>MustUse</Restriction>
+              </Item>
+            </CompRestrictions>
+            <PropRestrictions />
+            <LoadOut />
+          </Variations>
+          <Probability value="1.000000" />
+        </Item>
+      </Models>
+    </Item>
+  </ModelSets>
+</CAmbientModelSets>
+<!-- eof -->

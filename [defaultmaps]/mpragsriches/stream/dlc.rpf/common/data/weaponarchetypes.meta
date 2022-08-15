@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================================== -->
+<!-- =============================== Set-up by Carl Johnson (YHWHDios/JAL) =============================== -->
+<!-- ==================================== DLC File Version 1.4.2 Dev ===================================== -->
+<!-- ============= Property of the Ambitioneers Team | DO NOT DISTRIBUTE WITHOUT PERMISSION! ============= -->
+<!-- ===================================================================================================== -->
+<CWeaponModelInfo__InitDataList>
+  <InitDatas>
+    <Item>
+      <modelName>w_sb_classicsmg</modelName>
+      <txdName>w_sb_classicsmg</txdName>
+      <ptfxAssetName>null</ptfxAssetName>
+      <lodDist value="50" />
+    </Item>
+  </InitDatas>
+</CWeaponModelInfo__InitDataList>
