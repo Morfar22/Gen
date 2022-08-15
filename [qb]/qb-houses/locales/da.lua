@@ -22,12 +22,15 @@ local Translations = {
         ["remove_key_from"] = "Nøglerne er blevet frataget %{firstname} %{lastname}",
         ["already_keys"] = "Spilleren har allerede nøglerne til boligen!",
         ["something_wrong"] = "Noget gik galt, prøv igen!",
+        ["nobody_at_door"] = 'Der er ingen ved døren...'
     },
     success = {
         ["unlocked"] = "Boligen er oplåst!",
         ["home_invasion"] = "Døren er nu åben.",
         ["lock_invasion"] = "Du låste huset af igen..",
-        ["recieved_key"] = "Du modtog nøglerne %{value}!"
+        ["recieved_key"] = "Du modtog nøglerne %{value}!",
+        ["house_purchased"] = "Du har med succes købt huset!"
+
     },
     info = {
         ["door_ringing"] = "Nogen er ved døren!",
@@ -63,6 +66,11 @@ local Translations = {
         ["characters"] = "Karaktere",
         ["enter_unlocked_house"] = "Tilgå ulåst bolig",
         ["lock_door_police"] = "Lås døren"
+    },
+    target = {
+        ["open_stash"] = "[E] Åben Stash",
+        ["outfits"] = "[E] Skift tøj",
+        ["change_character"] = "[E] Skift karakter",
     },
     log = {
         ["house_created"] = "Hus skabt:",
