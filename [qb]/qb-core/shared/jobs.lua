@@ -69,6 +69,21 @@ QBShared.Jobs = {
             },
         },
 	},
+	["gotur"] = {
+		label = "Götür",
+		defaultDuty = true,
+		grades = {
+            ['0'] = {
+                name = "Messenger",
+                payment = 0
+            },
+			['1'] = {
+                name = "Manager",
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
 	['realestate'] = {
 		label = 'Real Estate',
 		defaultDuty = true,
