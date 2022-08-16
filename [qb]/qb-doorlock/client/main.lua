@@ -108,15 +108,13 @@ local function loadAnimDict(dict)
 end
 
 local function displayNUIText(text)
-	local color = Config.ChangeColor and (closestDoor.data.locked and Config.LockedColor or Config.UnlockedColor) or Config.DefaultColor
-	SendNUIMessage({
-		type = "setDoorText",
-		enable = true,
-		text = text,
-		color = color
-	})
-	Wait(1)
-end
+	local themeName = Config.ChangeColor and (closestDoor.data.locked and "LockedDoorTheme" or "UnlockedDoorTheme") or "DefaultDoorTheme"
+	exports['momof-textui']:ShowText(text, "left", themeName)
+  end
+  
+  local function hideNUI()
+	exports['momof-textui']:HideText()
+  end
 
 local function HandleDoorDebug()
 	if not Config.DoorDebug then return end
