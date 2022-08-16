@@ -10,21 +10,27 @@ local function changeText(text, position, theme)
     exports['momof-textui']:ShowText(text, position, theme)
 end
 
-local function hideText()
-    exports['momof-textui']:HideText()
+local function keyPressed()
+    CreateThread(function() -- Not sure if a thread is needed but why not eh?
+        SendNUIMessage({
+            action = 'KEY_PRESSED',
+        })
+        Wait(500)
+        hideText()
+    end)
 end
 
-local function drawText(text, position, theme)
-    exports['momof-textui']:ShowText(text, position, theme)
-end
+RegisterNetEvent('qb-core:client:DrawText', function(text, position)
+    drawText(text, position)
+end)
 
-local function changeText(text, position, theme)
-    exports['momof-textui']:ShowText(text, position, theme)
-end
+RegisterNetEvent('qb-core:client:ChangeText', function(text, position)
+    changeText(text, position)
+end)
 
-local function hideText()
-    exports['momof-textui']:HideText()
-end
+RegisterNetEvent('qb-core:client:HideText', function()
+    hideText()
+end)
 
 RegisterNetEvent('qb-core:client:KeyPressed', function()
     keyPressed()
