@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+*,*:focus,*:hover{
+	outline: none;
+}
+
+html {
+	font-size: calc(16 / 19.2 * 1vw);
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+	html {
+		font-size: calc(16 / 10.8 * 1vh);
+	}
+}
+
+body {
+	font-family: 'Tajawal', sans-serif;
+	user-select: none;
+	background: transparent;
+	display: none;
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.card {
+	border-radius: 0.625rem;
+	background-color: transparent;
+	height: 5.9375rem;
+	width: 20rem;
+	border: none;
+}
+
+.card-body {
+	background-color: rgba(27, 93, 243, 1);
+	color: #fff;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	border-radius: 3.125rem;
+	vertical-align: middle;
+	font-weight: 600;
+	border: 0.3125rem solid rgba(27, 93, 243, 1);
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(27, 93, 243, 1);
+	font-size: 1.25rem;
+}
+
+.options {
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%, -50%);
+	width: 75rem;
+}
+
+.btn-closeinterface {
+	position: absolute;
+	left: 50%;
+	top: 92%;
+	transform: translate(-50%, -50%);
+	border: 0.3125rem solid rgba(175, 175, 175, 1);
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(175, 175, 175, 1);
+	background-color: rgba(50, 50, 50, 0.4);
+	padding: 0.625rem 2.1875rem;
+	height: 5rem;
+	width: 17.1875rem;
+	color: #fff;
+	font-size: 1.25rem;
+	margin-right: 1.5625rem;
+}
+
+.btn-closeinterface:hover {
+	background: rgba(175, 175, 175, 1);
+	color: #fff;
+	box-shadow: 0rem 0rem 0.625rem 0rem rgba(175, 175, 175, 1);
+}
+
+#npc-header {
+	font-weight: 500;
+}
+
+.npc-name {
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-weight: 700;
+	font-size: 3.75rem;
+}
+
+.dialogbox {
+	position: absolute;
+	right: 18%;
+	top: 33.5%;
+	transform: translate(-50%, 50%);
+}
+
+.card.arrow-left:after {
+	content: "";
+	position: absolute;
+	left: -0.4375rem;
+	top: 1.7rem;
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(27, 93, 243, 1);
+	width: 2.5rem;
+	height: 2.5rem;
+	background: rgba(27, 93, 243, 1);
+	transform: rotate(45deg);
+}
+
+.btn {
+	font-weight: 600;
+}
+
+.btn:hover {
+	color: #fff;
+}
+
+.btn:focus {
+	box-shadow: none;
+}
+
+.btn-diagonal1::before, .btn-diagonal6::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	transform: skew(-18deg);
+	background-color: rgba(50, 50, 50, 0.4);
+	border: 0.3125rem solid rgba(27, 93, 243, 1);
+	z-index: -1;
+	transition: 0.25s;
+	border-radius: .25rem;
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(27, 93, 243, 1);
+}
+
+.btn-diagonal1, .btn-diagonal5 {
+	position: relative;
+	padding: 0.625rem 2.1875rem;
+	height: 5rem;
+	width: 17.1875rem;
+	color: #fff;
+	margin-left: 0.875rem;
+}
+
+.btn-diagonal1:hover::before, .btn-diagonal2:hover::before, .btn-diagonalnormal:hover, .btn-diagonal5:hover::before, .btn-diagonal6:hover::before {
+	background: rgba(27, 93, 243, 1);
+	color: #fff;
+	box-shadow: 0rem 0rem 0.625rem 0rem rgba(27, 93, 243, 1);
+}
+
+.btn-diagonal2::before, .btn-diagonal5::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	transform: skew(18deg);
+	background-color: rgba(50, 50, 50, 0.4);
+	border: 0.3125rem solid rgba(27, 93, 243, 1);
+	z-index: -1;
+	transition: 0.25s;
+	border-radius: .25rem;
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(27, 93, 243, 1);
+}
+
+.btn-diagonal2, .btn-diagonal6 {
+	position: relative;
+	padding: 0.625rem 2.1875rem;
+	height: 5rem;
+	width: 17.1875rem;
+	color: #fff;
+	margin-right: 0.875rem;
+}
+
+.btn-diagonalnormal {
+	padding: 0.625rem 2.1875rem;
+	height: 5rem;
+	width: 17.1875rem;
+	background-color: rgba(50, 50, 50, 0.4);
+	border: 0.3125rem solid rgba(27, 93, 243, 1);
+	color: #fff;
+	box-shadow: 0rem 0rem 0.3125rem 0rem rgba(27, 93, 243, 1);
+}
+
+.mb15625 {
+	margin-bottom: 1.5625rem;
+}
+
+.mt-15625 {
+	margin-top: -1.5625rem;
+}
