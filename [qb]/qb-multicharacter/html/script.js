@@ -214,14 +214,14 @@ $(document).on('click', '#create', function (e) {
     const regTest = new RegExp(re, 'i');
 
     if (!firstname || !lastname || !nationality || !birthdate){
-        var reqFieldErr = '<p>You are missing required fields!</p>'
+        var reqFieldErr = '<p>Du mangler obligatoriske felter!</p>'
         $('.error-msg').html(reqFieldErr)
         $('.error').fadeIn(400)
         return false;
     }
 
     if(regTest.test(firstname) || regTest.test(lastname)){
-        var profanityErr = '<p>You used a derogatory/vulgar term. Please try again!<p>'
+        var profanityErr = '<p>Du brugte et nedsættende/vulgært udtryk. Prøv igen!<p>'
         $('.error-msg').html(profanityErr)
         $('.error').fadeIn(400)
         return false;
