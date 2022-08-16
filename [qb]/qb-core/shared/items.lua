@@ -237,6 +237,20 @@ QBShared.Items = {
 
 	-- ITEMS
 
+	--crafting
+	['weapon_assaultrifle_blueprint'] = {['name'] = 'weapon_assaultrifle_blueprint', ['label'] = 'Assaultrifle blueprint', ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['weapon_sawnoffshotgun_blueprint'] = {['name'] = 'weapon_assaultrifle_blueprint', ['label'] = 'Sawnnoff shotgun blueprint', ['weight'] = 10, 	['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['weapon_appistol_blueprint'] 	= {['name'] = 'weapon_assaultrifle_blueprint', 	 ['label'] = 'appistol blueprint', 	   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['weapon_pistol_blueprint'] 	= {['name'] = 'weapon_assaultrifle_blueprint', 	 ['label'] = 'pistol blueprint', 	   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['barrel'] 						= {['name'] = 'Barrel', 						 ['label'] = 'Barrel', 	 			   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'barrel.png', 				['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['lower_reciever'] 				= {['name'] = 'lower_reciever', 				 ['label'] = 'Lower reciever', 		   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'lower_reciever.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['handle'] 						= {['name'] = 'Handle', 						 ['label'] = 'Handle', 				   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'handle.png', 				['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['charging_bar'] 				= {['name'] = 'charging_bar', 					 ['label'] = 'Charging bar', 		   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'charging_bar.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['upper_reciever'] 				= {['name'] = 'upper_reciever', 				 ['label'] = 'Upper reciever', 		   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'upper_reciever.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['spring'] 						= {['name'] = 'spring', 						 ['label'] = 'spring', 				   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'spring.png', 				['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+	['gunpowder'] 					= {['name'] = 'gunpowder', 						 ['label'] = 'gunpowder', 			   ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'gunpowder.png', 			['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
+
+
 --rcore 
 	['radiocar_dismounter'] 		= { ['name'] = 'radiocar_dismounter', 			['label'] = 'radiocar_dismounter', 		['weight'] = 100, 		['type'] = 'item', 		['image'] = 'radio_remover.png', 			['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'radiocar_dismounter' },
 	['radiocar'] 					= { ['name'] = 'radiocar', 						['label'] = 'radiocar', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'radio.png', 			['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'radiocar' },
