@@ -19,7 +19,7 @@ end
 
 Config.KeyMapping       = true                 --## This setting is for those using slotted inventory. (Prevents key operation)
 Config.OpenPhone        = 'f1'   --## Phone open key ## https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
-Config.Locale           = 'en'
+Config.Locale           = 'da'
 Config.RegisterCommand  = "TooglePhone"        -- commandName
 Config.ItemName         = {           -- # item name
                             "phone",
