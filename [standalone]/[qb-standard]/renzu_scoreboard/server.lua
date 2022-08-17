@@ -1,3 +1,5 @@
+QBCore = exports['qb-core']:GetCoreObject()
+
 local players = {}
 local playernames = {}
 local GuildID = 962835408016781364 -- : -- change this to your GuildID

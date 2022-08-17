@@ -22,9 +22,6 @@ server_scripts {
 	"server.lua"
 }
 
-shared_scripts {
-	'@qb-core/import.lua',
-}
 
 files {
 	'html/index.html',
