@@ -58,17 +58,17 @@ Config.OkOkNotifyTitle = "HP Printer" --Title that displays on okoknotify
 ]]--
 
 Config.Locale = {
-    ["invalid_url"] = "Invalid URL!",
-    ["file_url_required"] = "File URL required",
-    ["file_name"] = "File Name required",
-    ["not_enough_sheets"] = "Not have enough space for more A4 Sheets",
-    ["no_sheets"] = "You do not have A4 Sheets!",
-    ["refilling"] = "Refilling A4 Sheets",
-    ["printing"] = "Printing Document",
-    ["paper_count"] = "Paper Count",
-    ["refill"] = "~r~K~w~ - Refill",
-    ["use"] = '~g~E~w~ - Use',
-    ["wrong_image"] = "Image not present in the right discord channel",
+    ["invalid_url"] = "Ugyldig URL!",
+    ["file_url_required"] = "Fil-URL påkrævet",
+    ["file_name"] = "Filnavn påkrævet",
+    ["not_enough_sheets"] = "Har ikke plads nok til flere A4-ark",
+    ["no_sheets"] = "Du har ikke A4-ark!",
+    ["refilling"] = "Genfyldning af A4-ark",
+    ["printing"] = "Udskrivning af dokument",
+    ["paper_count"] = "Papirantal",
+    ["refill"] = "~r~K~w~ - Genopfyld",
+    ["use"] = '~g~E~w~ - Brug',
+    ["wrong_image"] = "Billedet findes ikke i den rigtige discord-kanal",
 }
 
 Config.RestrictMode = true --set to to true if you want to restrict people from using any images and use only the images from Allowed Discord Channels, if false users can use any link for images
