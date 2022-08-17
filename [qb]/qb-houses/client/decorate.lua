@@ -2,9 +2,9 @@ ObjectList = {}
 local DecoMode = false
 local MainCamera = nil
 local curPos
-local speeds = {0.01, 0.05, 0.1, 0.2, 0.4, 0.5}
+local speeds = {0.05, 0.1, 0.2, 0.4, 0.5}
 local curSpeed = 1
-local cursorEnabled = false
+local cursorEnabled = true
 local SelectedObj = nil
 local SelObjHash = {}
 local SelObjPos = {}
@@ -19,7 +19,6 @@ local previewObj = nil
 
 local function openDecorateUI()
 	SetNuiFocus(true, true)
-	cursorEnabled = true
 	SendNUIMessage({
 		type = "openObjects",
 		furniture = Config.Furniture,
@@ -28,8 +27,8 @@ local function openDecorateUI()
 end
 
 local function closeDecorateUI()
+	cursorEnabled = not cursorEnabled
 	SetNuiFocus(false, false)
-	cursorEnabled = false
 	SendNUIMessage({
 		type = "closeUI",
 	})
@@ -55,7 +54,7 @@ local function EnableEditMode()
 end
 
 local function SaveDecorations()
-	if ClosestHouse then
+	if closesthouse then
 		if SelectedObj then
 			if SelObjId ~= 0 then
 				ObjectList[SelObjId] = {hashname = SelObjHash, x = SelObjPos.x, y = SelObjPos.y, z = SelObjPos.z, rotx = SelObjRot.x, roty = SelObjRot.y, rotz = SelObjRot.z, object = SelectedObj, objectId = SelObjId}
@@ -63,15 +62,15 @@ local function SaveDecorations()
 				if ObjectList then
 					ObjectList[#ObjectList+1] = {hashname = SelObjHash, x = SelObjPos.x, y = SelObjPos.y, z = SelObjPos.z, rotx = SelObjRot.x, roty = SelObjRot.y, rotz = SelObjRot.z, object = SelectedObj, objectId = #ObjectList+1}
 				else
-					ObjectList[1] = {hashname = SelObjHash, x = SelObjPos.x, y = SelObjPos.y, z = SelObjPos.z, rotx = SelObjRot.x, roty = SelObjRot.y, rotz = SelObjRot.z, object = SelectedObj, objectId = 1}
+					ObjectList[1] = {hashname = SelObjHash, x = SelObjPos.x, y = SelObjPos.y, z = SelObjPos.z, rotx = SelObjRot.x, roty = SelObjRot.y, rotz = SelObjRot.z, object = SelectedObj, objectId = #ObjectList+1}
 				end
 			end
 
-			for _, v in pairs(ObjectList) do
+			for k, v in pairs(ObjectList) do
 				DeleteObject(v.object)
 			end
 		end
-		TriggerServerEvent("qb-houses:server:savedecorations", ClosestHouse, ObjectList)
+		TriggerServerEvent("qb-houses:server:savedecorations", closesthouse, ObjectList)
 	end
 end
 
@@ -102,30 +101,30 @@ local function CheckObjMovementInput()
     local zVect = speeds[curSpeed]
 
     if IsControlPressed( 1, 27) or IsDisabledControlPressed(1, 27) then -- Up Arrow
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, 0, -yVect, 0)
+    	SelObjPos.x = SelObjPos.x + xVect
     end
 
     if IsControlPressed( 1, 173) or IsDisabledControlPressed(1, 173) then -- Down Arrow
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, 0, yVect, 0)
+    	SelObjPos.x = SelObjPos.x - xVect
     end
 
     if IsControlPressed( 1, 174) or IsDisabledControlPressed(1, 174) then -- Left Arrow
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, xVect, 0, 0)
+    	SelObjPos.y = SelObjPos.y + yVect
     end
 
     if IsControlPressed( 1, 175) or IsDisabledControlPressed(1, 175) then -- Right Arrow
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, -xVect, 0, 0)
+    	SelObjPos.y = SelObjPos.y - yVect
     end
 
     if IsControlPressed( 1, 10) or IsDisabledControlPressed(1, 10) then -- Page Up
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, 0, 0, zVect)
+    	SelObjPos.z = SelObjPos.z + zVect
     end
 
     if IsControlPressed( 1, 11) or IsDisabledControlPressed(1, 11) then -- Page Down
-		SelObjPos = GetOffsetFromEntityInWorldCoords(SelectedObj, 0, 0, -zVect)
+    	SelObjPos.z = SelObjPos.z - zVect
     end
 
-	SetEntityCoords(SelectedObj, SelObjPos.x, SelObjPos.y, SelObjPos.z)
+    SetEntityCoords(SelectedObj, SelObjPos.x, SelObjPos.y, SelObjPos.z)
 end
 
 local function CheckObjRotationInput()
@@ -134,27 +133,27 @@ local function CheckObjRotationInput()
     local zVect = speeds[curSpeed] * 5.5
 
 	if IsControlPressed( 1, 27) or IsDisabledControlPressed(1, 27) then -- Up Arrow
-		SelObjRot.x = SelObjRot.x + xVect
+    	SelObjRot.x = SelObjRot.x + xVect
     end
 
     if IsControlPressed( 1, 173) or IsDisabledControlPressed(1, 173) then -- Down Arrow
-		SelObjRot.x = SelObjRot.x - xVect
+    	SelObjRot.x = SelObjRot.x - xVect
     end
 
     if IsControlPressed( 1, 174) or IsDisabledControlPressed(1, 174) then -- Left Arrow
-		SelObjRot.z = SelObjRot.z + zVect
+    	SelObjRot.z = SelObjRot.z + zVect
     end
 
     if IsControlPressed( 1, 175) or IsDisabledControlPressed(1, 175) then -- Right Arrow
-		SelObjRot.z = SelObjRot.z - zVect
+    	SelObjRot.z = SelObjRot.z - zVect
     end
 
     if IsControlPressed( 1, 10) or IsDisabledControlPressed(1, 10) then -- Page Up
-		SelObjRot.y = SelObjRot.y + yVect
+    	SelObjRot.y = SelObjRot.y + yVect
     end
 
     if IsControlPressed( 1, 11) or IsDisabledControlPressed(1, 11) then -- Page Down
-		SelObjRot.y = SelObjRot.y - yVect
+    	SelObjRot.y = SelObjRot.y - yVect
     end
 
 	SetEntityRotation(SelectedObj, SelObjRot.x, SelObjRot.y, SelObjRot.z)
@@ -165,8 +164,8 @@ local function CheckRotationInput()
 	local rightAxisY = GetDisabledControlNormal(0, 221)
 	local rotation = GetCamRot(MainCamera, 2)
 	if rightAxisX ~= 0.0 or rightAxisY ~= 0.0 then
-		local new_z = rotation.z + rightAxisX*-1.0*(2.0)*(4.0+0.1)
-		local new_x = math.max(math.min(20.0, rotation.x + rightAxisY*-1.0*(2.0)*(4.0+0.1)), -20.5)
+		new_z = rotation.z + rightAxisX*-1.0*(2.0)*(4.0+0.1)
+		new_x = math.max(math.min(20.0, rotation.x + rightAxisY*-1.0*(2.0)*(4.0+0.1)), -20.5)
 		SetCamRot(MainCamera, new_x, 0.0, new_z, 2)
 	end
 end
@@ -191,7 +190,7 @@ local function CheckMovementInput()
 		if curSpeed > getTableLength(speeds) then
 			curSpeed = 1
 		end
-		QBCore.Functions.Notify(Lang:t("info.speed").. tostring(speeds[curSpeed]))
+		QBCore.Functions.Notify("Speed is ".. tostring(speeds[curSpeed]))
 	end
 
 	local xVect = speeds[curSpeed] * math.sin( degToRad( rotation.z ) ) * -1.0
@@ -199,13 +198,13 @@ local function CheckMovementInput()
     local zVect = speeds[curSpeed] * math.tan( degToRad( rotation.x ) - degToRad( rotation.y ))
 
     if IsControlPressed( 1, 32) or IsDisabledControlPressed(1, 32) then -- W
-		curPos.x = curPos.x + xVect
-		curPos.y = curPos.y + yVect
-		curPos.z = curPos.z + zVect
+    	curPos.x = curPos.x + xVect
+        curPos.y = curPos.y + yVect
+        curPos.z = curPos.z + zVect
     end
 
     if IsControlPressed( 1, 33) or IsDisabledControlPressed(1, 33) then -- S
-		curPos.x = curPos.x - xVect
+    	curPos.x = curPos.x - xVect
         curPos.y = curPos.y - yVect
         curPos.z = curPos.z - zVect
 	end
@@ -213,60 +212,149 @@ local function CheckMovementInput()
 	SetCamCoord(MainCamera, curPos.x, curPos.y, curPos.z)
 end
 
+local function DrawEntityBoundingBox(entity, color)
+	local model = GetEntityModel(entity)
+    local min, max = GetModelDimensions(model)
+    local rightVector, forwardVector, upVector, position = GetEntityMatrix(entity)
+
+    -- Calculate size
+    local dim = 
+	{ 
+		x = 0.5*(max.x - min.x), 
+		y = 0.5*(max.y - min.y), 
+		z = 0.5*(max.z - min.z)
+	}
+
+    local FUR = 
+    {
+		x = position.x + dim.y*rightVector.x + dim.x*forwardVector.x + dim.z*upVector.x, 
+		y = position.y + dim.y*rightVector.y + dim.x*forwardVector.y + dim.z*upVector.y, 
+		z = 0
+    }
+
+    local FUR_bool, FUR_z = GetGroundZFor_3dCoord(FUR.x, FUR.y, 1000.0, 0)
+    FUR.z = FUR_z
+    FUR.z = position.z + 2 * dim.z
+
+    local BLL = 
+    {
+        x = position.x - dim.y*rightVector.x - dim.x*forwardVector.x - dim.z*upVector.x,
+        y = position.y - dim.y*rightVector.y - dim.x*forwardVector.y - dim.z*upVector.y,
+        z = 0
+    }
+    local BLL_bool, BLL_z = GetGroundZFor_3dCoord(FUR.x, FUR.y, 1000.0, 0)
+    BLL.z = position.z
+
+    -- DEBUG
+    local edge1 = BLL
+    local edge5 = FUR
+
+    local edge2 = 
+    {
+        x = edge1.x + 2 * dim.y*rightVector.x,
+        y = edge1.y + 2 * dim.y*rightVector.y,
+        z = edge1.z + 2 * dim.y*rightVector.z
+    }
+
+    local edge3 = 
+    {
+        x = edge2.x + 2 * dim.z*upVector.x,
+        y = edge2.y + 2 * dim.z*upVector.y,
+        z = edge2.z + 2 * dim.z*upVector.z
+    }
+
+    local edge4 = 
+    {
+        x = edge1.x + 2 * dim.z*upVector.x,
+        y = edge1.y + 2 * dim.z*upVector.y,
+        z = edge1.z + 2 * dim.z*upVector.z
+    }
+
+    local edge6 = 
+    {
+        x = edge5.x - 2 * dim.y*rightVector.x,
+        y = edge5.y - 2 * dim.y*rightVector.y,
+        z = edge5.z - 2 * dim.y*rightVector.z
+    }
+
+    local edge7 = 
+    {
+        x = edge6.x - 2 * dim.z*upVector.x,
+        y = edge6.y - 2 * dim.z*upVector.y,
+        z = edge6.z - 2 * dim.z*upVector.z
+    }
+
+    local edge8 = 
+    {
+        x = edge5.x - 2 * dim.z*upVector.x,
+        y = edge5.y - 2 * dim.z*upVector.y,
+        z = edge5.z - 2 * dim.z*upVector.z
+    }
+
+    DrawLine(edge1.x, edge1.y, edge1.z, edge2.x, edge2.y, edge2.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge1.x, edge1.y, edge1.z, edge4.x, edge4.y, edge4.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge2.x, edge2.y, edge2.z, edge3.x, edge3.y, edge3.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge3.x, edge3.y, edge3.z, edge4.x, edge4.y, edge4.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge5.x, edge5.y, edge5.z, edge6.x, edge6.y, edge6.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge5.x, edge5.y, edge5.z, edge8.x, edge8.y, edge8.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge6.x, edge6.y, edge6.z, edge7.x, edge7.y, edge7.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge7.x, edge7.y, edge7.z, edge8.x, edge8.y, edge8.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge1.x, edge1.y, edge1.z, edge7.x, edge7.y, edge7.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge2.x, edge2.y, edge2.z, edge8.x, edge8.y, edge8.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge3.x, edge3.y, edge3.z, edge5.x, edge5.y, edge5.z, color.r, color.g, color.b, color.a)
+    DrawLine(edge4.x, edge4.y, edge4.z, edge6.x, edge6.y, edge6.z, color.r, color.g, color.b, color.a)
+end
+
 -- Events
 
 RegisterNetEvent('qb-houses:client:decorate', function()
-	Wait(500)
-	if IsInside then
-		if HasHouseKey then
+	Citizen.Wait(500)
+	if inside then
+		if hasKey then
 			if not DecoMode then
 				EnableEditMode()
 				openDecorateUI()
 			end
 		else
-			QBCore.Functions.Notify(Lang:t("error.no_keys"), "error")
+			QBCore.Functions.Notify("You must have the keys to the house!", "error")
 		end
 	else
-		QBCore.Functions.Notify(Lang:t("error.not_in_house"), "error")
+		QBCore.Functions.Notify("You are not in a house!", "error")
 	end
 end)
 
 -- NUI Callbacks
 
-RegisterNUICallback("closedecorations", function(_, cb)
-	if previewObj then
+RegisterNUICallback("closedecorations", function(data, cb)
+	if previewObj then 
 		DeleteObject(previewObj)
 	end
 	DisableEditMode()
     SetNuiFocus(false, false)
-	cursorEnabled = false
-	cb("ok")
 end)
 
-RegisterNUICallback("deleteSelectedObject", function(_, cb)
+RegisterNUICallback("deleteSelectedObject", function(data, cb)
 	DeleteObject(SelectedObj)
 	SelectedObj = nil
 	table.remove(ObjectList, SelObjId)
-	Wait(100)
+	Citizen.Wait(100)
 	SaveDecorations()
 	SelObjId = 0
 	peanut = false
-	cb("ok")
 end)
 
-RegisterNUICallback("cancelSelectedObject", function(_, cb)
+RegisterNUICallback("cancelSelectedObject", function(data, cb)
 	DeleteObject(SelectedObj)
 	SelectedObj = nil
 	SelObjId = 0
 	peanut = false
-	cb("ok")
 end)
 
 RegisterNUICallback("buySelectedObject", function(data, cb)
     QBCore.Functions.TriggerCallback('qb-houses:server:buyFurniture', function(isSuccess)
         if isSuccess then
             SetNuiFocus(false, false)
-            cursorEnabled = false
+            cursorEnabled = not cursorEnabled
             SaveDecorations()
             SelectedObj = nil
             SelObjId = 0
@@ -277,15 +365,14 @@ RegisterNUICallback("buySelectedObject", function(data, cb)
             SelObjId = 0
             peanut = false
         end
-		cb('ok')
     end, data.price)
 end)
 
-RegisterNUICallback('setupMyObjects', function(_, cb)
+RegisterNUICallback('setupMyObjects', function(data, cb)
 	local Objects = {}
 	for k, v in pairs(ObjectList) do
 		if ObjectList[k] then
-			Objects[#Objects+1] = {
+			table.insert(Objects, {
 				rotx = v.rotx,
 				object = v.object,
 				y = v.y,
@@ -295,7 +382,7 @@ RegisterNUICallback('setupMyObjects', function(_, cb)
 				objectId = v.objectId,
 				roty = v.roty,
 				z = v.z,
-			}
+			})
 		end
 	end
 	Wait(100)
@@ -303,21 +390,23 @@ RegisterNUICallback('setupMyObjects', function(_, cb)
 	cb(Objects)
 end)
 
-RegisterNUICallback('removeObject', function(_, cb)
-	if previewObj then
+RegisterNUICallback('removeObject', function()
+	if previewObj then 
 		DeleteObject(previewObj)
 	end
-	cb("ok")
 end)
 
-RegisterNUICallback('toggleCursor', function(_, cb)
+RegisterNUICallback('toggleCursor', function()
+	if cursorEnabled then
+		SetNuiFocus(false, false)
+	end
+
 	cursorEnabled = not cursorEnabled
-	SetNuiFocus(cursorEnabled, cursorEnabled)
-	cb("ok")
 end)
 
-RegisterNUICallback('selectOwnedObject', function(data, cb)
+RegisterNUICallback('selectOwnedObject', function(data)
 	local objectData = data.objectData
+
 	local ownedObject = GetClosestObjectOfType(objectData.x, objectData.y, objectData.z, 1.5, GetHashKey(objectData.hashname), false, 6, 7)
 	local pos = GetEntityCoords(ownedObject, true)
     local rot = GetEntityRotation(ownedObject)
@@ -328,13 +417,13 @@ RegisterNUICallback('selectOwnedObject', function(data, cb)
 	SelectedObj = ownedObject
 	FreezeEntityPosition(SelectedObj, true)
 	peanut = true
-	cb("ok")
 end)
 
-RegisterNUICallback('editOwnedObject', function(data, cb)
+RegisterNUICallback('editOwnedObject', function(data)
 	SetNuiFocus(false, false)
-	cursorEnabled = false
+	cursorEnabled = not cursorEnabled
 	local objectData = data.objectData
+
 	local ownedObject = GetClosestObjectOfType(objectData.x, objectData.y, objectData.z, 1.5, GetHashKey(objectData.hashname), false, 6, 7)
 	local pos = GetEntityCoords(ownedObject, true)
 	local rot = GetEntityRotation(ownedObject)
@@ -346,35 +435,33 @@ RegisterNUICallback('editOwnedObject', function(data, cb)
 	isEdit = true
 	FreezeEntityPosition(SelectedObj, true)
 	peanut = true
-	cb("ok")
 end)
 
-RegisterNUICallback('deselectOwnedObject', function(_, cb)
+RegisterNUICallback('deselectOwnedObject', function()
 	SelectedObj = nil
 	peanut = false
-	cb("ok")
 end)
 
-RegisterNUICallback('ResetSelectedProp', function(_, cb)
+RegisterNUICallback('ResetSelectedProp', function()
 	SelectedObj = nil
 	peanut = false
-	cb("ok")
 end)
 
 RegisterNUICallback("spawnobject", function(data, cb)
 	SetNuiFocus(false, false)
-	cursorEnabled = false
-	if previewObj then
+	cursorEnabled = not cursorEnabled
+	if previewObj then 
 		DeleteObject(previewObj)
 	end
 	local modelHash = GetHashKey(tostring(data.object))
 	RequestModel(modelHash)
 	while not HasModelLoaded(modelHash) do
-	    Wait(1000)
+	    Citizen.Wait(1000)
 	end
 	local rotation = GetCamRot(MainCamera, 2)
 	local xVect = 2.5 * math.sin( degToRad( rotation.z ) ) * -1.0
 	local yVect = 2.5 * math.cos( degToRad( rotation.z ) )
+
     SelectedObj = CreateObject(modelHash, curPos.x + xVect, curPos.y + yVect, curPos.z, false, false, false)
     local pos = GetEntityCoords(SelectedObj, true)
     local rot = GetEntityRotation(SelectedObj)
@@ -384,11 +471,10 @@ RegisterNUICallback("spawnobject", function(data, cb)
 	PlaceObjectOnGroundProperly(SelectedObj)
 	SetEntityCompletelyDisableCollision(SelectedObj, true) -- Prevents crazy physics when collidin with other entitys
     peanut = true
-	cb("ok")
 end)
 
 RegisterNUICallback("chooseobject", function(data, cb)
-	if previewObj then
+	if previewObj then 
 		DeleteObject(previewObj)
 	end
     local modelHash = GetHashKey(tostring(data.object))
@@ -401,7 +487,7 @@ RegisterNUICallback("chooseobject", function(data, cb)
 			break
 		end
 		count = count + 1
-	    Wait(1000)
+	    Citizen.Wait(1000)
 	end
 
 	-- Make buttons selectable again
@@ -414,14 +500,13 @@ RegisterNUICallback("chooseobject", function(data, cb)
     local yVect = 2.5 * math.cos( degToRad( rotation.z ) )
     previewObj = CreateObject(modelHash, curPos.x + xVect, curPos.y + yVect, curPos.z, false, false, false)
     PlaceObjectOnGroundProperly(previewObj)
-	cb("ok")
 end)
 
 -- Threads
 
-CreateThread(function()
+Citizen.CreateThread(function()
 	while true do
-		Wait(7)
+		Citizen.Wait(7)
 		if DecoMode then
 			DisableAllControlActions(0)
 			EnableControlAction(0, 32, true) -- W
@@ -447,10 +532,10 @@ CreateThread(function()
             CheckMovementInput()
 
 			if SelectedObj and peanut then
-		SetEntityDrawOutline(SelectedObj)
-		SetEntityDrawOutlineColor(116, 189, 252, 100)
+				local color = {r = 116, g = 189, b = 252, a = 100}
+				DrawEntityBoundingBox(SelectedObj, color)
                 DrawMarker(21, SelObjPos.x, SelObjPos.y, SelObjPos.z + 1.28, 0.0, 0.0, 0.0, 180.0, 0.0, 0.0, 0.6, 0.6, 0.6, 28, 149, 255, 100, true, true, 2, false, false, false, false)
-                if rotateActive then
+                if rotateActive then 
                     CheckObjRotationInput()
                 else
                     CheckObjMovementInput()
@@ -461,18 +546,18 @@ CreateThread(function()
 				if IsControlJustReleased(0, 19) then -- Left Alt
 					PlaceObjectOnGroundProperly(SelectedObj)
 					local groundPos = GetEntityCoords(SelectedObj)
-					SelObjPos = groundPos
+					SelObjPos.z = groundPos.z
                 end
 				if IsControlJustReleased(0, 191) then -- Enter
 					SetNuiFocus(true, true)
-					cursorEnabled = true
+					cursorEnabled = not cursorEnabled
 					if not isEdit then
 						SendNUIMessage({
 							type = "buyOption",
 						})
 					else
 						SetNuiFocus(false, false)
-						cursorEnabled = false
+						cursorEnabled = not cursorEnabled
 						SaveDecorations()
 						SelectedObj = nil
 						SelObjId = 0
@@ -484,25 +569,24 @@ CreateThread(function()
 				if IsControlJustPressed(0, 166) then -- F5
 					if not cursorEnabled then
 						SetNuiFocus(true, true)
-						cursorEnabled = true
 					end
 				end
-                        end
+            end
 		end
 	end
 end)
 
 -- Out of area
-CreateThread(function()
+Citizen.CreateThread(function()
 	while true do
-		Wait(7)
+		Citizen.Wait(7)
 		if DecoMode then
 			local camPos = GetCamCoord(MainCamera)
-			local dist = #(vector3(camPos.x, camPos.y, camPos.z) - vector3(Config.Houses[ClosestHouse].coords.enter.x, Config.Houses[ClosestHouse].coords.enter.y, Config.Houses[ClosestHouse].coords.enter.z))
+			local dist = #(vector3(camPos.x, camPos.y, camPos.z) - vector3(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z))
 			if dist > 50.0 then
 				DisableEditMode()
 				closeDecorateUI()
-				QBCore.Functions.Notify(Lang:t("error.out_range"), 'error')
+				QBCore.Functions.Notify('You have gone out of range', 'error')
 			end
 		end
 	end

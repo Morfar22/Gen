@@ -11,7 +11,6 @@ local Translations = {
         at_the_door = 'Nogen ringer på døren!',
     },
     text = {
-        options = '[E] Lejligheds indstillinger',
         enter = 'Gå ind i lejlighed',
         ring_doorbell = 'Ring Dørklokken',
         logout = 'Log Ud',
