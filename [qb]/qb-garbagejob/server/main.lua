@@ -55,8 +55,8 @@ QBCore.Functions.CreateCallback("garbagejob:server:NextStop", function(source, c
     local newBagAmount = 0
 
     if(math.random(100) >= Config.CryptoStickChance) and Config.GiveCryptoStick then
-        Player.Functions.AddItem("cryptostick", 1, false)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], 'add')
+        Player.Functions.AddItem("goldchain", 1, false)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["goldchain"], 'add')
         TriggerClientEvent('QBCore:Notify', source, Lang:t("info.found_crypto"))
 
     end

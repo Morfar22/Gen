@@ -84,7 +84,7 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
                         itemAmount = math.random(1, 3)
                     elseif randomItem == "weed_skunk" then
                         itemAmount = math.random(1, 6)
-                    elseif randomItem == "cryptostick" then
+                    elseif randomItem == "goldchain" then
                         itemAmount = math.random(1, 2)
                     end
 
