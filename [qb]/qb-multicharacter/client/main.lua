@@ -120,13 +120,13 @@ RegisterNUICallback('cDataPed', function(nData, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(model, data)
-            model = model ~= nil and tonumber(model) or false
-            if model ~= nil then
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(skinData)
+            if skinData then
+                local model = skinData.model
                 CreateThread(function()
-                    RequestModel(model)
-                    while not HasModelLoaded(model) do
-                        Wait(0)
+                    RequestModel(GetHashKey(model))
+                    while not HasModelLoaded(GetHashKey(model)) do
+                        Wait(10)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -134,8 +134,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-                    data = json.decode(data)
-                    TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
+                    exports['fivem-appearance']:setPedAppearance(charPed, skinData)
                 end)
             else
                 CreateThread(function()
@@ -143,10 +142,10 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         "mp_m_freemode_01",
                         "mp_f_freemode_01",
                     }
-                    model = joaat(randommodels[math.random(1, #randommodels)])
+                    local model = GetHashKey(randommodels[math.random(1, #randommodels)])
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Wait(0)
+                        Wait(10)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -164,7 +163,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
             }
-            local model = joaat(randommodels[math.random(1, #randommodels)])
+            local model = GetHashKey(randommodels[math.random(1, #randommodels)])
             RequestModel(model)
             while not HasModelLoaded(model) do
                 Wait(0)
