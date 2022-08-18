@@ -28,8 +28,8 @@ Config.BlacklistItem = {
 -- LANG
 
 Config.APPName = "Ebay"
-Config.Products = "Products"
-Config.Menu1Descript = "Products in the store"
+Config.Products = "Prudukter"
+Config.Menu1Descript = "Prudukter i butikken"
 Config.Menu2Label = "Put product in warehouse"
 Config.Menu2Descript = "Adding products to the store"
 Config.Menu3Label = "Stored"
