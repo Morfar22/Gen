@@ -29,7 +29,7 @@ RegisterNUICallback('save', function(data, cb)
             local ped = PlayerPedId()
             local veh = GetVehiclePedIsUsing(ped)
             setVehData(veh, data)
-            QBCore.Functions.Notify('TunerChip v1.05: Vehicle Tuned!', 'error')
+            QBCore.Functions.Notify('TunerChip v1.05: Bilen er nu chipped!', 'error')
 
             TriggerServerEvent('qb-tunerchip:server:TuneStatus', QBCore.Functions.GetPlate(veh), true)
         end
@@ -45,13 +45,13 @@ RegisterNetEvent('qb-tunerchip:client:TuneStatus', function()
     if vehModel ~= 0 then
         QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
             if status then
-                QBCore.Functions.Notify('This Vehicle Has Been Tuned', 'success')
+                QBCore.Functions.Notify('Denne bil er chippet', 'success')
             else
-                QBCore.Functions.Notify('This Vehicle Has Not Been Tuned', 'error')
+                QBCore.Functions.Notify('Denne bil er ikke chippet', 'error')
             end
         end, plate)
     else
-        QBCore.Functions.Notify('No Vehicle Nearby', 'error')
+        QBCore.Functions.Notify('Ingen biler i nærheden', 'error')
     end
 end)
 
@@ -69,7 +69,7 @@ RegisterNUICallback('reset', function(_, cb)
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsUsing(ped)
     resetVeh(veh)
-    QBCore.Functions.Notify('TunerChip v1.05: Vehicle has been reset!', 'error')
+    QBCore.Functions.Notify('TunerChip v1.05: Bilen er gendannet!', 'error')
     cb("ok")
 end)
 
@@ -78,7 +78,7 @@ RegisterNetEvent('qb-tunerchip:client:openChip', function()
     local inVehicle = IsPedInAnyVehicle(ped)
 
     if inVehicle then
-        QBCore.Functions.Progressbar("connect_laptop", "Tunerchip v1.05: Vehicle Has Been Reset!", 2000, false, true, {
+        QBCore.Functions.Progressbar("connect_laptop", "Tunerchip v1.05: Bilen er gendannet!", 2000, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,

@@ -13,7 +13,7 @@ RegisterServerEvent('AttackTransport:akceptujto', function()
 	local accountMoney = xPlayer.PlayerData.money["bank"]
 	if ActiveMission == 0 then
 		if accountMoney < ActivationCost then
-		TriggerClientEvent('QBCore:Notify', _source, "You need $"..ActivationCost.." in the bank to accept the mission")
+		TriggerClientEvent('QBCore:Notify', _source, "Du skal have $"..ActivationCost.." i banken for ast starte missionen")
 		else
 			for _, v in pairs(QBCore.Functions.GetPlayers()) do
 				local Player = QBCore.Functions.GetPlayer(v)
@@ -29,11 +29,11 @@ RegisterServerEvent('AttackTransport:akceptujto', function()
 
 				OdpalTimer()
 			else
-				TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' SASP to activate the mission.')
+				TriggerClientEvent('QBCore:Notify', _source, 'Der skal min. være '..ActivePolice.. ' betjente på for at starte')
 			end
 		end
 	else
-		TriggerClientEvent('QBCore:Notify', _source, 'Someone is already carrying out this mission')
+		TriggerClientEvent('QBCore:Notify', _source, 'Du var ikke hurtig nok')
 	end
 end)
 
@@ -63,7 +63,7 @@ RegisterServerEvent('AttackTransport:graczZrobilnapad', function()
 	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
 
 	local chance = math.random(1, 100)
-	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of cash from the van')
+	TriggerClientEvent('QBCore:Notify', _source, 'Du tog '..bags..' poser penge fra varevognen')
 
 	if chance >= 95 then
 		xPlayer.Functions.AddItem('security_card_01', 1)
