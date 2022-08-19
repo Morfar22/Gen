@@ -30,7 +30,7 @@ RegisterNetEvent('qb-carwash:client:washCar', function()
         WashDecalsFromVehicle(PedVehicle, 1.0)
         washingVehicle = false
     end, function() -- Cancel
-        QBCore.Functions.Notify("Washing canceled ..", "error")
+        QBCore.Functions.Notify("Bilvask annulleret..", "error")
         washingVehicle = false
     end)
 end)
@@ -56,11 +56,11 @@ CreateThread(function()
                                     if dirtLevel > Config.DirtLevel then
                                         TriggerServerEvent('qb-carwash:server:washCar')
                                     else
-                                        QBCore.Functions.Notify("The vehicle isn't dirty", 'error')
+                                        QBCore.Functions.Notify("Bilen er ren", 'error')
                                     end
                                 end
                             else
-                                DrawText3Ds(Config.CarWash[k]["coords"]["x"], Config.CarWash[k]["coords"]["y"], Config.CarWash[k]["coords"]["z"], 'The car wash is not available ..')
+                                DrawText3Ds(Config.CarWash[k]["coords"]["x"], Config.CarWash[k]["coords"]["y"], Config.CarWash[k]["coords"]["z"], 'VBilvasken er ikke tilgænglig ..')
                             end
                         end
                     end

@@ -64,7 +64,7 @@ RegisterNetEvent('seatbelt:client:UseHarness', function(ItemData) -- On Item Use
             end)
         end
     else
-        QBCore.Functions.Notify('You\'re not in a car.', 'error')
+        QBCore.Functions.Notify('Du er ikke i en bil', 'error')
     end
 end)
 
