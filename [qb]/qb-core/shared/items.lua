@@ -237,6 +237,11 @@ QBShared.Items = {
 
 	-- ITEMS
 
+	["bluepeyoteplant"] 			 = {["name"] = "bluepeyoteplant", 			    ["label"] = "Odd Plant", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "bluepeyote.png", 			["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,	   ['combinable'] = nil,   	["description"] = "A Strange Looking Blue Flowered Plant"},
+	["pinkpeyoteplant"] 			 = {["name"] = "pinkpeyoteplant", 			    ["label"] = "Odd Plant", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "pinkpeyote.png", 			["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,	   ['combinable'] = nil,   	["description"] = "A Strange Looking Pink Flowered Plant"},
+	["yellowpeyoteplant"] 			 = {["name"] = "yellowpeyoteplant", 			["label"] = "Odd Plant", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "yellowpeyote.png", 		["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,	   ['combinable'] = nil,   	["description"] = "A Strange Looking Yellow Flowered Plant"},
+	["whitepeyoteplant"] 			 = {["name"] = "whitepeyoteplant", 			    ["label"] = "Odd Plant", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "whitepeyote.png", 			["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,	   ['combinable'] = nil,   	["description"] = "A Strange Looking White Flowered Plant"},
+
 	--crafting
 	['weapon_assaultrifle_blueprint'] = {['name'] = 'weapon_assaultrifle_blueprint', ['label'] = 'Assaultrifle blueprint', ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
 	['weapon_sawnoffshotgun_blueprint'] = {['name'] = 'weapon_assaultrifle_blueprint', ['label'] = 'Sawnnoff shotgun blueprint', ['weight'] = 10, 	['type'] = 'item', 		['image'] = 'ak_blueprint.png', 		['unique'] = false , 		['useable'] = true, ['shouldClose'] = true, 		['combinable'] = nil, ['description'] = 'Los Santos Newspaper'},
