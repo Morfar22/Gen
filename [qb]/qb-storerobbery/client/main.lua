@@ -91,7 +91,7 @@ CreateThread(function()
                                         copsCalled = true
                                     end
                                 else
-                                    QBCore.Functions.Notify("Not Enough Police (".. Config.MinimumStoreRobberyPolice .." Required)", "error")
+                                    QBCore.Functions.Notify("Ikke nok politi der skal være min. (".. Config.MinimumStoreRobberyPolice .." betjente)", "error")
                                 end
                             end
                         else
@@ -172,7 +172,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                 end
 
             else
-                QBCore.Functions.Notify("Not Enough Police (2 Required)", "error")
+                QBCore.Functions.Notify("Ikke nok politi (Min. 2)", "error")
             end
         end
     end
@@ -277,7 +277,7 @@ RegisterNUICallback('success', function(_, cb)
         end, function() -- Cancel
             openingDoor = false
             ClearPedTasks(PlayerPedId())
-            QBCore.Functions.Notify("Process canceled..", "error")
+            QBCore.Functions.Notify("Processen er annulleret..", "error")
             currentRegister = 0
         end)
         CreateThread(function()
@@ -381,7 +381,7 @@ RegisterNUICallback('fail', function(_ ,cb)
     if (IsWearingHandshoes() and math.random(1, 100) <= 25) then
         local pos = GetEntityCoords(PlayerPedId())
         TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-        QBCore.Functions.Notify("You Broke The Lock Pick")
+        QBCore.Functions.Notify("Du ødelagde Låsepistolen")
     end
     lockpick(false)
     cb('ok')
