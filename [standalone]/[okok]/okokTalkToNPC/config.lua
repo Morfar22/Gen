@@ -18,7 +18,7 @@ Config.TalkToNPC = {
 		header = 'Employee of the', 								-- Text over the name
 		name = 'gay dude', 										-- Text under the header
 		uiText = "gay dude",							-- Name shown on the notification when near the NPC
-		dialog = 'Hey, how can I help you?',						-- Text showm on the message bubble 
+		dialog = 'Hvad kan jeg gøre for dig?',						-- Text showm on the message bubble 
 		coordinates = vector3(-336.82, -1214.17, 25.00), 				-- coordinates of NPC
 		heading = 35.0,											-- Heading of NPC (needs decimals, 0.0 for example)
 		camOffset = vector3(0.0, 0.0, 0.0), 						-- Camera position relative to NPC 	| (only works if Config.AutoCamPosition = false)
