@@ -163,27 +163,27 @@ Config.CommandSuggestion['SELLDRUGS'] = {
 
 -- Phrases NPC randomly says when they accept your drug offer
 Config.SuccessMessages = {
-    'This better be good.',
-    'Show me what you got.',
-    'Thanks, you have not seen me.',
-    'You are lucky I need this asap.',
-    'What a trip I had last time, give me more.'
+    'Det må hellere være godt.',
+    'Vis mig hvad du har.',
+    'Tak, du har ikke set mig.',
+    'Du er heldig, jeg har brug for det her hurtigst muligt',
+    "Sikke en tur jeg havde sidste gang, giv mig mere."
 }
 -- Phrases NPC randomly says when they refuse your drug offer
 Config.FailMessages = {
-    'Haha, nice try.',
-    'Do I look like a junkie?',
-    'Getting high on your stuff, you must be joking.',
-    'I have seen many but this one must be the worst of the worst.',
-    'My brother-in-law is a DOA agent and I will not hesitate to call him.'
+    'Haha, godt forsøg.',
+    'Ligner jeg en junkie?',
+    'Når du bliver høj på dine ting, må du lave sjov.',
+    'Jeg har set mange, men denne må være den værste af de værste.',
+    'Min svoger er en DOA-agent, og jeg vil ikke tøve med at ringe til ham.'
 }
 -- Phrases NPC randomly says when you already interacted with them
 Config.AlreadyInteracted = {
     'Gtfo dude.',
-    'Leave me alone already.',
-    'Are you mad? We just talked.',
-    'Did the drugs erase your memory?',
-    'You should stop getting high on your own supply.',
+    'Lad mig allerede være i fred.',
+    'Er du sur? Vi har lige snakket.',
+    'Har stofferne slettet din hukommelse?',
+    'Du bør stoppe med at blive høj på din egen forsyning.',
 }
 
 -- Preference categories for drugs and item names with prices in each category
