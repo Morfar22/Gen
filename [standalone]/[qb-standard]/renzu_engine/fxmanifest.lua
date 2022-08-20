@@ -31,7 +31,7 @@ files {
   'audioconfig/*.dat54.rel',
   'audioconfig/*.dat54',
   'audioconfig/*.dat',
-  '*.json'
+  '*.json',
   'sfx/**/*.awc'
 }
 
