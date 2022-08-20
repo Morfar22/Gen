@@ -182,7 +182,7 @@ Config.distanceBeforeUpdatingPos = 40
 -- Message list
 Config.Messages = {
     ["streamer_on"] = "Streamer-tilstand er slået til. Fra nu af vil du ikke høre nogen musik/lyd.",
-    ["streamer_off"] = "Streamer-tilstand er slået fra. Fra nu af vil du være i stand til at lytte til musik, som spillere kan spille."",
+    ["streamer_off"] = "Streamer-tilstand er slået fra. Fra nu af vil du være i stand til at lytte til musik, som spillere kan spille.",
 }
 
 -- if you want xsound separated from radiocar then turn this on.
