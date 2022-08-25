@@ -1,12 +1,6 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 
-Config.SellCasinoChips = {
-    coords = vector4(950.37, 34.72, 71.87, 33.82),
-    radius = 1.5,
-    ped = 's_m_y_casino_01'
-}
-
 Config.Products = {
     ["normal"] = {
         [1] = {
@@ -104,6 +98,138 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 12,
+        },
+    },
+    -- add it at end of Config.Products table
+    ["petshop"] = {
+        [1] = {
+            name = 'keepcompanionwesty',
+            price = 8000,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 1
+        },
+        [2] = {
+            name = 'keepcompanionshepherd',
+            price = 8500,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 2
+        },
+        [3] = {
+            name = 'keepcompanionretriever',
+            price = 8300,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 3
+        },
+        [4] = {
+            name = 'keepcompanionrottweiler',
+            price = 8900,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 4
+        },
+        [5] = {
+            name = 'keepcompanionpug',
+            price = 12000,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 5
+        },
+        [6] = {
+            name = 'keepcompanionpoodle',
+            price = 9900,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 6
+        },
+
+        [7] = {
+            name = 'keepcompanioncat',
+            price = 4000,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 8
+        },
+        [8] = {
+            name = 'keepcompanionhusky',
+            price = 13000,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 10
+        },
+        [9] = {
+            name = 'petfood',
+            price = 200,
+            amount = 1000,
+            info = {},
+            type = 'item',
+            slot = 11
+        },
+        [10] = {
+            name = 'collarpet',
+            price = 600,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 12
+        },
+        [11] = {
+            name = 'firstaidforpet',
+            price = 5000,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 13
+        },
+        [12] = {
+            name = 'petnametag',
+            price = 1000,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 14
+        },
+        [13] = {
+            name = 'petwaterbottleportable',
+            price = 320,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 15
+        },
+        [14] = {
+            name = 'petgroomingkit',
+            price = 220,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 16
+        },
+        [15] = {
+            name = 'keepcompanionrabbit',
+            price = 1200,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 17
+        },
+        [16] = {
+            name = 'keepcompanionhen',
+            price = 900,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 18
         },
     },
     ["liquor"] = {
@@ -258,7 +384,7 @@ Config.Products = {
     },
     ["weedshop"] = {
         [1] = {
-            name = "joint",
+            name = "weed_white-widow_seed",
             price = 10,
             amount = 1000,
             info = {},
@@ -266,7 +392,7 @@ Config.Products = {
             slot = 1,
         },
         [2] = {
-            name = "weapon_poolcue",
+            name = "weed_skunk_seed",
             price = 100,
             amount = 1000,
             info = {},
@@ -274,23 +400,71 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = "weed_nutrition",
+            name = "weed_purple-haze_seed",
             price = 20,
             amount = 1000,
             info = {},
             type = "item",
             slot = 3,
         },
-        [4] = {
-            name = "empty_weed_bag",
+        [5] = {
+            name = "weed_og-kush_seed",
             price = 2,
             amount = 1000,
             info = {},
             type = "item",
             slot = 4,
         },
-        [5] = {
+        [6] = {
+            name = "weed_amnesia_seed",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 4,
+        },
+        [7] = {
+            name = "weed_ak47_seed",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 4,
+        },
+        [8] = {
+            name = "weed_insecticide",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 5,
+        },
+        [9] = {
+            name = "acid_bottle",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 5,
+        },
+        [10] = {
+            name = "alkaline_bottle",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 5,
+        },
+        [11] = {
             name = "rolling_paper",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 5,
+        },
+        [12] = {
+            name = "empty_weed_bag",
             price = 2,
             amount = 1000,
             info = {},
@@ -411,16 +585,6 @@ Config.Products = {
             type = "item",
             slot = 7,
             requiresLicense = true
-        },
-    },
-    ["casino"] = {
-        [1] = {
-            name = 'casinochips',
-            price = 1,
-            amount = 999999,
-            info = {},
-            type = 'item',
-            slot = 1,
         }
     },
 }
@@ -439,6 +603,21 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipcolor"] = 0
+    },
+
+    -- add it at end of Config.Locations table
+    ["petshop"] = {
+        ["label"] = "Pet Shop",
+        ["coords"] = vector4(561.18, 2741.51, 42.87, 199.08), --or vector4(-659.87, -936.46, 21.83, 130.04), --  for mlo https://www.gta5-mods.com/maps/
+        ["ped"] = 'S_M_M_StrVend_01',
+        ["scenario"] = "WORLD_HUMAN_COP_IDLES",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-paw",
+        ["targetLabel"] = "Open Pet Shop",
+        ["products"] = Config.Products["petshop"],
+        ["showblip"] = true,
+        ["blipsprite"] = 267,
+        ["blipcolor"] = 5
     },
 
     ["247supermarket2"] = {

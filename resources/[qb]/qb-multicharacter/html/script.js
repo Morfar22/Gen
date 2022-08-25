@@ -92,7 +92,7 @@ $(document).ready(function (){
                         });
                     }, 2000);
                 }, 2000);
-                background.volume = 0.3;
+                background.volume = 0.01;
                 background.currentTime = 0
                 background.play();
             } else {
@@ -127,7 +127,7 @@ $('.disconnect-btn').click(function(e){
 });
 
 $(".btn-iniciar").on("click", function() {
-    background.volume = 0.3;
+    background.volume = 0.01;
         $(".title-screen").fadeOut(300, function() {
             qbMultiCharacters.fadeInDown('.character-info', '20%', 400);
             qbMultiCharacters.fadeInDown('.characters-list', '20%', 400);

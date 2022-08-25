@@ -102,10 +102,10 @@ Config = {
         POOL_GAME = 'Pool',
         POOL_SUBMENU = 'Spiltilstand',
         TYPE_8_BALL = '8-ball',
-        TYPE_STRAIGHT = 'Lige pool',
+        TYPE_STRAIGHT = 'normal pool',
 
-        HINT_SETUP = 'Installer spil',
-        HINT_TAKE_CUE = 'Tag et bud',
+        HINT_SETUP = 'Start spil',
+        HINT_TAKE_CUE = 'Tag en kø',
         HINT_RETURN_CUE = 'Returner køen.',
         HINT_HINT_TAKE_CUE = 'Du skal bruge en kø for at spille pool.',
         HINT_PLAY = 'Spil',

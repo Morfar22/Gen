@@ -121,45 +121,34 @@ Config.GlobalPlayerOptions = {
 }
 
 Config.Peds = {
-	["OxyPed"] = {
-		model = 'a_m_m_og_boss_01', 
-		coords = vector4(-1563.44, -441.36, 36.96, 97.07),
-		minusOne = true, 
-		freeze = true, 
-		invincible = true, 
-		blockevents = true,
-		scenario = 'WORLD_HUMAN_DRUG_DEALER',
-		target = { 
-			options = {
-				{
-					type="client",
-					event = "oxyrun:client:sendToOxy",
-					icon = "fas fa-user-secret",
-					label = "Start Oxy"
+    ["GruppeSechsPed"] = {
+        model = 's_m_m_armoured_02', 
+        coords = vector4(-4.04, -659.41, 33.48, 186.04),
+        minusOne = true, 
+        freeze = true, 
+        invincible = true, 
+        blockevents = true,
+        target = { 
+        options = {
+        {
+            type = "client",
+            event = "gruppesechs:getTruck",
+            icon = "fas fa-sign-in-alt",
+            label = "Get Gruppe Sechs Truck",
+            job = "gruppesechs",
+        },
+        {
+            type = "server",
+            event = "gruppesechs:server:PayShift",
+            icon = "fas fa-sign-in-alt",
+            label = "Collect Pay Check",
+            job = "gruppesechs",
 				}
 			},
 		 distance = 3,
 	 	}
 	},
-	["OxyBoxPed"] = {
-		model = 'a_m_m_salton_03', 
-		coords = vector4(-2981.43, 1586.23, 23.69, 13.68),
-		minusOne = true, 
-		freeze = true, 
-		invincible = true, 
-		blockevents = true,
-		target = {
-			options = {
-				{
-					type="client",
-					event = "oxyrun:client:getBox",
-					icon = "fas fa-user-secret",
-					label = "Grab Package"
-				}
-			},
-		 distance = 3,
-	 	}
-	},
+	
 }
 
 -------------------------------------------------------------------------------

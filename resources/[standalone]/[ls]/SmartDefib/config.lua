@@ -5,8 +5,8 @@ main = {
 	blipsEnabled = false, -- Only shows blips nearby on minimap
 	shortRangeBlips = false,
 	disablePublicDefibs = false,
-	maximumEMSToStopDefibUse = 1, -- When set to 0, players can always use defib, when set to 1, players can only use defib if there is less than 1 EMS online. Only available for frameworks.
-	onDutyCheck = true,-- This is to check if EMS are on duty for the maximumEMSToStopDefibUse function. Please head to the sv_utils.lua and fill in the isPlayerOnDuty function
+	maximumEMSToStopDefibUse = 0, -- When set to 0, players can always use defib, when set to 1, players can only use defib if there is less than 1 EMS online. Only available for frameworks.
+	onDutyCheck = false,-- This is to check if EMS are on duty for the maximumEMSToStopDefibUse function. Please head to the sv_utils.lua and fill in the isPlayerOnDuty function
 	defibDensity = 4, -- Increase this number to reduce the amount of defibs around the map. We recommend a number between 3-5
 	chanceOfResurrection = 60, -- Out of 100%, this is the chance of a shock being advised and successful, or not advised
 	timerToResetDefib = 300, -- Put this in seconds. This resets the no shock advised so that you can use the defib on a player who was no shock advised
@@ -26,26 +26,26 @@ main = {
 
 	resetDefibEnabled = true,
 	resetDefib = 600, -- This number is in seconds.
-	okokTextUI = false,
+	okokTextUI = true,
 	okokTextUIResourceName = "okokTextUI", -- Doesn't matter if okokTextUI is set to false
 	okokTextColor = "darkblue", -- https://docs.okokscripts.io/scripts/okoktextui <-- Find all colors there, using an invalid one will probably break the script.
 }
 
 -- In this section you can translate the resource to another language
 translations = {
-	press = "Tryk",
-	openDefib = "for at bruge denne ~b~defibrillator",
-	enterThePin = "Indtast pinkoden: (",
+	press = "Klik på",
+	openDefib = "for at bruge ~b~hjertestarteren",
+	enterThePin = "Skriv pinkoden: (",
 	closeBracketPin = ")",
-	closeDefib = "for at returnere denne ~b~defibrillator",
-	putDownDefib = "at lægge denne ~b~defibrillator fra sig",
-	incorrectPin = "Du indtastede pinkoden forkert",
-	ShockPlayer = "at chokere spilleren",
-	ShockReasoning = "Du er blevet ~r~chokeret~w~ over at være for tæt på",
-	noDefibInInv = "Du havde ikke en defib i dit lager",
-	incorrectGroup = "Du er ikke i det rigtige arbejdsområde til at bruge defib",
-	alreadyDefibInHand = "Du har allerede en defib i hånden",
-	howToUseDefib = "at bruge det på en afspiller"
+	closeDefib = "returner ~b~hjertestarteren",
+	putDownDefib = "to put down this ~b~hjertestarteren",
+	incorrectPin = "Forkert pinkode!",
+	ShockPlayer = "to shock the player",
+	ShockReasoning = "You have been ~r~shocked~w~ for being too close",
+	noDefibInInv = "You didn't have a defib in your inventory",
+	incorrectGroup = "You are not in the correct field of work to use the defib",
+	alreadyDefibInHand = "You have a defib in your hand already",
+	howToUseDefib = "to use it on a player"
 }
 
 framework = {
@@ -68,10 +68,10 @@ framework = {
 		},
 	},
 	QBCore = {
-		enabled = true,
+		enabled = false,
 		itemName = 'defib',
 		groupCheck = {
-			enabled = true,
+			enabled = false,
 			groupsToCheck = {"ambulance", "police"}
 		},
 	},

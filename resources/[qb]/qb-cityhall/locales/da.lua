@@ -3,7 +3,7 @@ local Translations = {
         not_in_range = 'Du er for langt væk fra jobcentret'
     },
     success = {
-        recived_license = 'Du modtog dit %{value} for DKK50'
+        recived_license = 'Du modtog dit %{value} for $50'
     },
     info = {
         bilp_text = 'Borger service',

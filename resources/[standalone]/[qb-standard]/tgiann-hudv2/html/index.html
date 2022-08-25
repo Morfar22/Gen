@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <!-- Menu -->
+    <div class="hud-menu-container">
+        <div class="hud-menu">
+            <div class="hud-menu-header">
+                <div class="hud-menu-header-text">Hud Settings</div>
+                <div class="hud-menu-header-close"><i class="fas fa-window-close"></i></div>
+            </div>
+
+            <div class="hud-checkbox-menu-container">
+                <!-- Siyah Bar -->
+                <div class="hud-menu-content">
+                    <div class="hud-menu-content-setting">
+                        <div class="hud-menu-content-setting-text">Black Bar</div>
+                        <label class="switch">
+                            <input type="checkbox" id="blackbar">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- stamina/oxy menüler -->
+                <div class="hud-menu-content">
+                    <div class="hud-menu-content-setting">
+                        <div class="hud-menu-content-setting-text">Oxy/stamina</div>
+                        <label class="switch">
+                            <input type="checkbox" id="stamina-checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- water menüler -->
+                <div class="hud-menu-content">
+                    <div class="hud-menu-content-setting">
+                        <div class="hud-menu-content-setting-text">Thirst</div>
+                        <label class="switch">
+                            <input type="checkbox" id="water" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- hunger menüler -->
+                <div class="hud-menu-content">
+                    <div class="hud-menu-content-setting">
+                        <div class="hud-menu-content-setting-text">Hunger</div>
+                        <label class="switch">
+                            <input type="checkbox" id="hungercheckbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Gelişmiş Pusula -->
+                <div class="hud-menu-content">
+                    <div class="hud-menu-content-setting">
+                        <div class="hud-menu-content-setting-text">Compass V2</div>
+                        <label class="switch">
+                            <input type="checkbox" id="compass">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="blackbar-container">
+        <div class="blackbar-bar"></div>
+        <div class="blackbar-bar"></div>
+    </div>
+
+    <div class="container">
+        <!-- compass v2 -->
+        <div class="tepe-hud">
+            <div class="tirnak"></div>
+            <div class="street-sol"></div>
+            <div class="direction-tip2"><div class="image-2"></div></div>
+            <div class="street-sag"></div>
+        </div>
+
+        <!-- minimap -->
+        <div class="mapoutline"></div>
+
+        <!-- Car Hud -->
+        <div class="car-hud">
+            <!-- speed motter -->
+            <div class="gosterge">
+                <div class="speed-bar">
+                    <svg  width="110" height="110">
+                        <circle class="speed-ic"/>
+                        <circle class="speed-dis"/>
+                    </svg>
+                </div>
+
+                <div class="fuel-bar">
+                    <svg  width="110" height="110">
+                        <circle class="fuel-ic"/>
+                        <circle class="fuel-dis"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="engine-error"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="km-s"></div>
+            <div class="km-s-text"></div>
+            <div class="fuel-icon"><i class="fas fa-gas-pump"></i></div>
+            <div class="car-icons">
+                <div id="car-light"><i class="fas fa-lightbulb"></i></div>
+                <div id="car-belt"><i class="fas fa-user-slash"></i></div>
+                <div id="car-engine"><i class="fas fa-car"></i></div>
+                <div id="car-cruise"><i class="fas fa-tachometer-alt"></i></div>
+            </div>
+        </div>
+        <!-- Street Text -->
+        <div class="street-text">
+            <div class="street-text-main">
+                <div class="street-text-compass"></div>
+                <div class="street-text-text"></div>
+            </div>
+        </div>
+
+        <div class="status-hud">
+            <div class="status-bar" id="health-bar"> <i class="fas fa-heart"></i> <div class="status-bar-bg" id="heal"></div></div>
+            <div class="status-bar" id="armor-bar"> <i class="fas fa-shield-alt"></i> <div class="status-bar-bg" id="zirh"></div></div>
+            <div class="status-bar" id="hunger-bar"> <i class="fas fa-hamburger"></i> <div class="status-bar-bg" id="hunger"></div></div>
+            <div class="status-bar" id="water-bar"> <i class="fas fa-tint"></i> <div class="status-bar-bg" id="thirst"></div></div>
+            <div class="status-bar" id="stamina-bar"> <i class="fas fa-running"></i> <div class="status-bar-bg" id="stamina"></div></div>
+            <div class="status-bar" id="oxy-bar"> <i class="fas fa-lungs"></i> <div class="status-bar-bg" id="oxy"></div></div>
+            <div class="status-bar" id="stress-bar"> <i class="fas fa-brain"></i> <div class="status-bar-bg" id="stress"></div></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
+    

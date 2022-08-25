@@ -1,5 +1,5 @@
 function  GiveKeyCar (callback_vehicle, vehicle)
-    exports['LegacyFuel']:SetFuel(callback_vehicle, vehicle.fuel)
+    exports['ps-fuel']:SetFuel(callback_vehicle, vehicle.fuel)
     TriggerEvent("vehiclekeys:client:SetOwner", Config.Core.Functions.GetPlate(callback_vehicle))  -- You may need to write your car key function
 end
 

@@ -156,7 +156,7 @@ CreateThread(function()
 									"Class: "..getClass(veh)..
 									"<br>"..Loc[Config.Lan]["check"].plate..trim(GetVehicleNumberPlateText(veh)).."]"..
 									"<br>Dist: "..tostring(dist)..
-									"<br>Fuel: "..nosBar(math.floor(exports['LegacyFuel']:GetFuel(veh))).." "..math.floor(exports['LegacyFuel']:GetFuel(veh)).."%"
+									"<br>Fuel: "..nosBar(math.floor(exports['ps-fuel']:GetFuel(veh))).." "..math.floor(exports['ps-fuel']:GetFuel(veh)).."%"
 									if VehicleNitrous[trim(GetVehicleNumberPlateText(veh))] then
 										dist = dist.."<br>NOS: "..nosBar((VehicleNitrous[trim(GetVehicleNumberPlateText(veh))].level)).." "..tostring((VehicleNitrous[trim(GetVehicleNumberPlateText(veh))].level)).."%"
 									end

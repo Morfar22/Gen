@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 local Player = nil
 local CruisedSpeed = 0
 local vehicleClasses = {
@@ -41,22 +42,19 @@ local function TriggerCruiseControl()
             local CruisedSpeedMph = TransformToMph(CruisedSpeed) -- Comment me for mp/h
             -- CruisedSpeedKm = TransformToKm(CruisedSpeed) -- Uncomment me for km/h
             TriggerEvent('seatbelt:client:ToggleCruise')
-            QBCore.Functions.Notify("Fartpilot aktiveret: " .. CruisedSpeedMph .." MP/H") -- Comment me for mp/h
+            QBCore.Functions.Notify("Cruise Activated: " .. CruisedSpeedMph .." MP/H") -- Comment me for mp/h
             -- QBCore.Functions.Notify("Cruise Activated: " .. CruisedSpeedKm ..  " km/h") -- Uncomment me for km/h
             CreateThread(function()
                 while CruisedSpeed > 0 and IsInVehicle() == Player do
                     Wait(0)
-                    if not IsTurningOrHandBraking() and GetVehicleSpeed() <
-                        (CruisedSpeed - 1.5) then
+                    if not IsTurningOrHandBraking() and GetVehicleSpeed() < CruisedSpeed - 1.5 then
                         CruisedSpeed = 0
                         TriggerEvent('seatbelt:client:ToggleCruise')
-                        QBCore.Functions.Notify("Fartpilot deaktiveret", "error")
+                        QBCore.Functions.Notify("Cruise Deactivated", "error")
                         Wait(2000)
                         break
                     end
-                    if not IsTurningOrHandBraking() and
-                        IsVehicleOnAllWheels(GetVehicle()) and
-                        GetVehicleSpeed() < CruisedSpeed then
+                    if not IsTurningOrHandBraking() and IsVehicleOnAllWheels(GetVehicle()) and GetVehicleSpeed() < CruisedSpeed then
                         SetVehicleForwardSpeed(GetVehicle(), CruisedSpeed)
                     end
                     if IsControlJustPressed(1, 246) then
@@ -67,7 +65,7 @@ local function TriggerCruiseControl()
                     if IsControlJustPressed(2, 72) then
                         CruisedSpeed = 0
                         TriggerEvent('seatbelt:client:ToggleCruise')
-                        QBCore.Functions.Notify("Fartpilot deaktiveret", "error")
+                        QBCore.Functions.Notify("Cruise Deactivated", "error")
                         Wait(2000)
                         break
                     end
@@ -78,16 +76,16 @@ local function TriggerCruiseControl()
 end
 
 RegisterCommand('togglecruise', function()
-    local veh = GetVehiclePedIsIn(PlayerPedId())
+    local veh = GetVehiclePedIsIn(PlayerPedId(), false)
     local vehClass = GetVehicleClass(veh)
     if IsDriver() then
         if vehicleClasses[vehClass] then
             Player = PlayerPedId()
             TriggerCruiseControl()
         else
-            QBCore.Functions.Notify("Fartpilot er tilgægnligt i dette køretøj", "error")
+            QBCore.Functions.Notify("Cruise control unavailable", "error")
         end
     end
 end, false)
 
-RegisterKeyMapping('togglecruise', 'Slå Fartpilot til/fra', 'keyboard', 'Y')
+RegisterKeyMapping('togglecruise', 'Toggle Cruise Control', 'keyboard', 'Y')

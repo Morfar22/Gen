@@ -108,13 +108,15 @@ local function loadAnimDict(dict)
 end
 
 local function displayNUIText(text)
-	local themeName = Config.ChangeColor and (closestDoor.data.locked and "LockedDoorTheme" or "UnlockedDoorTheme") or "DefaultDoorTheme"
-	exports['momof-textui']:ShowText(text, "left", themeName)
-  end
-  
-  local function hideNUI()
-	exports['momof-textui']:HideText()
-  end
+	local color = Config.ChangeColor and (closestDoor.data.locked and Config.LockedColor or Config.UnlockedColor) or Config.DefaultColor
+	SendNUIMessage({
+		type = "setDoorText",
+		enable = true,
+		text = text,
+		color = color
+	})
+	Wait(1)
+end
 
 local function HandleDoorDebug()
 	if not Config.DoorDebug then return end
@@ -314,10 +316,10 @@ local function lockpickFinish(success)
 		QBCore.Functions.Notify(Lang:t("error.lockpick_fail"), 'error', 2500)
 		if math.random(1,100) <= 17 then
 			if usingAdvanced then
-				TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1, false)
+				TriggerServerEvent("qb-doorlock:server:removeLockpick", "advancedlockpick")
 				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
 			else
-				TriggerServerEvent("QBCore:Server:RemoveItem", "lockpick", 1, false)
+				TriggerServerEvent("qb-doorlock:server:removeLockpick", "lockpick")
 				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
 			end
 		end
@@ -596,7 +598,7 @@ RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
 	if doorData.pickable ~= 'true' then doorData.pickable = nil end
 	if doorData.cantunlock ~= 'true' then doorData.cantunlock = nil end
 	if doorData.hidelabel ~= 'true' then doorData.hidelabel = nil end
-	
+
 	doorData.locked = doorData.locked == 'true'
 	doorData.distance = tonumber(doorData.distance)
 	if doorData.doortype == 'door' or doorData.doortype == 'sliding' or doorData.doortype == 'garage' then
@@ -761,7 +763,7 @@ RegisterCommand('toggledoorlock', function()
 	if closestDoor.data.audioRemote then src = NetworkGetNetworkIdFromEntity(playerPed) end
 
 	TriggerServerEvent('qb-doorlock:server:updateState', closestDoor.id, locked, src, false, false, true, true) -- Broadcast new state of the door to everyone
-end)
+end, false)
 TriggerEvent("chat:removeSuggestion", "/toggledoorlock")
 RegisterKeyMapping('toggledoorlock', Lang:t("general.keymapping_description"), 'keyboard', 'E')
 
@@ -803,7 +805,7 @@ RegisterCommand('remotetriggerdoor', function()
 	end
 
 	TriggerServerEvent('qb-doorlock:server:updateState', nearestDoor.id, not nearestDoor.data.locked, NetworkGetNetworkIdFromEntity(playerPed), false, false, true, true) -- Broadcast new state of the door to everyone
-end)
+end, false)
 TriggerEvent("chat:removeSuggestion", "/remotetriggerdoor")
 RegisterKeyMapping('remotetriggerdoor', Lang:t("general.keymapping_remotetriggerdoor"), 'keyboard', 'H')
 

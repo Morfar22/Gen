@@ -91,6 +91,100 @@ Config.Shops = {
             }
         },
     },
+    ['mc'] = {
+        ['Type'] = 'managed', -- no player interaction is required to purchase a car
+        ['Zone'] = {
+            ['Shape'] = {--polygon that surrounds the shop
+            vector2(305.0651550293, -1168.23046875),
+            vector2(304.99111938477, -1148.8999023438),
+            vector2(269.125, -1148.8675537109),
+            vector2(268.73895263672, -1170.0891113281)
+            },
+            ['minZ'] = 29.291687011719, -- min height of the shop zone
+            ['maxZ'] = 29.435436248779, -- max height of the shop zone
+            ['size'] = 2.75 -- size of the vehicles zones
+        },
+        ['Job'] = 'cardealer', -- Name of job or none
+        ['ShopLabel'] = 'Motorcykel forhandler', -- Blip name
+        ['showBlip'] = true, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {-- Categories available to browse
+            ['MCshop'] = 'MCshop'
+        },
+        ['TestDriveTimeLimit'] = 1.5, -- Time in minutes until the vehicle gets deleted
+        ['Location'] = vector3(300.0, -1154.39, 29.27), -- Blip Location
+        ['ReturnLocation'] = vector3(314.03, -1163.39, 29.29), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ['VehicleSpawn'] = vector4(315.0, -1158.41, 29.29, 355.62), -- Spawn location when vehicle is bought
+        ['TestDriveSpawn'] = vector4(315.0, -1158.41, 29.29, 355.62), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(280.35, -1155.39, 29.16, 303.58), -- where the vehicle will spawn on display
+                defaultVehicle = 'Akuma', -- Default display vehicle
+                chosenVehicle = 'Akuma', -- Same as default but is dynamically changed when swapping vehicles
+            },
+            [2] = {
+                coords = vector4(280.67, -1153.2, 28.93, 296.61),
+                defaultVehicle = 'Avarus',
+                chosenVehicle = 'Avarus'
+            },
+            [3] = {
+                coords = vector4(280.82, -1150.69, 28.94, 234.48),
+                defaultVehicle = 'Bagger',
+                chosenVehicle = 'Bagger'
+            },
+            [4] = {
+                coords = vector4(282.91, -1150.06, 28.95, 233.54),
+                defaultVehicle = 'bati',
+                chosenVehicle = 'bati'
+            },
+            [5] = {
+                coords = vector4(287.51, -1155.05, 28.82, 267.42),
+                defaultVehicle = 'bf400',
+                chosenVehicle = 'bf400'
+            },
+            [6] = {
+                coords = vector4(289.85, -1150.11, 29.18, 206.65),
+                defaultVehicle = 'carbonrs',
+                chosenVehicle = 'carbonrs'
+            },
+            [7] = {
+                coords = vector4(292.31, -1150.33, 28.95, 213.46),
+                defaultVehicle = 'chimera',
+                chosenVehicle = 'chimera'
+            },
+            [8] = {
+                coords = vector4(294.53, -1150.13, 28.95, 211.89),
+                defaultVehicle = 'daemon2',
+                chosenVehicle = 'daemon2'
+            },
+            [9] = {
+                coords = vector4(296.97, -1150.29, 28.95, 209.02),
+                defaultVehicle = 'defiler',
+                chosenVehicle = 'defiler'
+            },
+            [10] = {
+                coords = vector4(299.21, -1150.52, 28.95, 219.22),
+                defaultVehicle = 'diablous2',
+                chosenVehicle = 'diablous2'
+            },
+            [11] = {
+                coords = vector4(303.36, -1158.86, 28.95, 42.42),
+                defaultVehicle = 'esskey',
+                chosenVehicle = 'esskey'
+            },
+            [12] = {
+                coords = vector4(303.65, -1156.66, 28.95, 37.91),
+                defaultVehicle = 'fcr2',
+                chosenVehicle = 'fcr2'
+            },
+            [8] = {
+                coords = vector4(303.54, -1154.55, 28.95, 47.42),
+                defaultVehicle = 'pcj',
+                chosenVehicle = 'pcj'
+            }
+        },
+    },
     ['luxury'] = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {

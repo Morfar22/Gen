@@ -3,7 +3,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target in
 Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
-Config.Helicopter = "amrheli" -- Helicopter model that players with the ambulance job can use
+Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.PainkillerInterval = 60 -- Set the length of time painkillers last (per one)
@@ -57,21 +57,21 @@ Config.Locations = { -- Edit the various interaction points for players or creat
     ["roof"] = {
         [1] = vector4(338.5, -583.85, 74.16, 245.5),
     },
-    --["main"] = {
-    --    [1] = vector3(298.74, -599.33, 43.29),
-    --},
+    ["main"] = {
+        [1] = vector3(298.74, -599.33, 43.29),
+    },
     ["stash"] = {
         [1] = vector3(309.78, -596.6, 43.29),
     },
     ["beds"] = {
-        [1] = {coords = vector4(311.13, -582.89, 43.53, 335.65), taken = false, model = 1631638868},
-        [2] = {coords = vector4(313.96, -579.05, 43.53, 164.5), taken = false, model = 1631638868},
-        [3] = {coords = vector4(314.58, -584.09, 43.53, 335.65), taken = false, model = 1631638868},
-        [4] = {coords = vector4(317.74, -585.29, 43.53, 335.65), taken = false, model = 1631638868},
-        [5] = {coords = vector4(319.47, -581.04, 43.53, 164.5), taken = false, model = 1631638868}, 
-        [6] = {coords = vector4(366.43, -581.54, 43.28, 66.5), taken = false, model = 1631638868}, 
-        [7] = {coords = vector4(364.93, -585.86, 43.28, 67.5), taken = false, model = 1631638868}, 
-        [8] = {coords = vector4(363.82, -589.09, 43.28, 68.5), taken = false, model = 1631638868},
+        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
+        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
+        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
+        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
+        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672},
+        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
+        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327},
+        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
 	--- paleto
 	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
         [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
@@ -91,59 +91,25 @@ Config.Locations = { -- Edit the various interaction points for players or creat
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
 	-- Grade 0
 	[0] = {
-		["20ramambo"] = "Ambulance",
-		["amr13fpiu"] = "amr13fpiu",
-		["amr16fpiu"] = "amr16fpiu",
-		["amr18tahoe"] = "amr18tahoe",
-		["amrf150"] = "amrf150",
-		["amrf150cr"] = "amrf150cr",
-		["amrf250"] = "amrf250",
-		["amrf250cr"] = "amrf250cr",
+		["ambulance"] = "Ambulance",
 	},
 	-- Grade 1
 	[1] = {
-		["20ramambo"] = "Ambulance",
-		["amr13fpiu"] = "amr13fpiu",
-		["amr16fpiu"] = "amr16fpiu",
-		["amr18tahoe"] = "amr18tahoe",
-		["amrf150"] = "amrf150",
-		["amrf150cr"] = "amrf150cr",
-		["amrf250"] = "amrf250",
-		["amrf250cr"] = "amrf250cr",
+		["ambulance"] = "Ambulance",
+
 	},
 	-- Grade 2
 	[2] = {
-		["20ramambo"] = "Ambulance",
-		["amr13fpiu"] = "amr13fpiu",
-		["amr16fpiu"] = "amr16fpiu",
-		["amr18tahoe"] = "amr18tahoe",
-		["amrf150"] = "amrf150",
-		["amrf150cr"] = "amrf150cr",
-		["amrf250"] = "amrf250",
-		["amrf250cr"] = "amrf250cr",
-    	},
+		["ambulance"] = "Ambulance",
+	},
 	-- Grade 3
 	[3] = {
-		["20ramambo"] = "Ambulance",
-		["amr13fpiu"] = "amr13fpiu",
-		["amr16fpiu"] = "amr16fpiu",
-		["amr18tahoe"] = "amr18tahoe",
-		["amrf150"] = "amrf150",
-		["amrf150cr"] = "amrf150cr",
-		["amrf250"] = "amrf250",
-		["amrf250cr"] = "amrf250cr",
-    	},
+		["ambulance"] = "Ambulance",
+	},
 	-- Grade 4
 	[4] = {
-		["20ramambo"] = "Ambulance",
-		["amr13fpiu"] = "amr13fpiu",
-		["amr16fpiu"] = "amr16fpiu",
-		["amr18tahoe"] = "amr18tahoe",
-		["amrf150"] = "amrf150",
-		["amrf150cr"] = "amrf150cr",
-		["amrf250"] = "amrf250",
-		["amrf250cr"] = "amrf250cr",
-    	}
+		["ambulance"] = "Ambulance",
+	}
 }
 
 Config.Items = { -- Items found in the ambulance shop for players with the ambulance job to purchase
@@ -450,6 +416,23 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_MUSKET`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_RAILGUN`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_HEAVYRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AR15`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK47`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M70`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_SCARH`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_UZI`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MAC10`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_GLOCK17`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M9`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M1911`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_FNX45`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_REMINGTON`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_MOSSBERG`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_SHIV`] = Config.WeaponClasses['HEAVY_IMPACT'],
+    [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
 
     --[[ Shotguns ]]--
     [`WEAPON_ASSAULTSHOTGUN`] = Config.WeaponClasses['SHOTGUN'],

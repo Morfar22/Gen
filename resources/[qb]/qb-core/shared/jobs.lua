@@ -40,6 +40,45 @@ QBShared.Jobs = {
             },
         },
     },
+    ['gruppesechs'] = {
+        label = 'Gruppe 6',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            ['0'] = {
+                name = 'Collector',
+                payment = 50
+            },
+        },
+    },        
+    ['oilwell'] = {
+        label = 'Oil Company',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            ['0'] = {
+                name = 'Oilwell Operator',
+                payment = 100
+            },
+            ['1'] = {
+                name = 'Oilwell Operator tier 2',
+                payment = 150
+            },
+            ['2'] = {
+                name = 'Event Driver tier 2',
+                payment = 200
+            },
+            ['3'] = {
+                name = 'Sales',
+                payment = 300
+            },
+            ['4'] = {
+                name = 'CEO',
+                isboss = true,
+                payment = 400
+            },
+        },
+},
     ['galaxy'] = {
         label = 'Galaxy nightclub',
 		defaultDuty = true,

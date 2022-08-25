@@ -13,7 +13,7 @@ else
     Config.CoreNotify = "QBCore:Notify"
 end
 
-Cfg.NPCEnable = true
+Cfg.NPCEnable = false
 Cfg.NPCIdyenileehliyet	=  "g_f_y_vagos_01"
 Cfg.NPCKonummrpd	=   {  x = 1353.38, y = 1156.89, z = 113.76, h = 221.36 }
 Cfg.DrawDistance = 5

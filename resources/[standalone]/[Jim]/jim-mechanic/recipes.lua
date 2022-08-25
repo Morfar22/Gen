@@ -20,11 +20,20 @@ Crafting = {
 	Perform = {
 		{ ['turbo'] = { ['steel'] = 90, } },
 		--tuner
+		{ ['radiocar_dismounter'] = { ['plastic'] = 10, } },
+		{ ['radiocar'] = { ['plastic'] = 10, } },
+		{ ['turboracing'] = { ['plastic'] = 10, } },
+		{ ['turbosports'] = { ['plastic'] = 10, } },
+		{ ['turbostreet'] = { ['plastic'] = 10, } },
+		{ ['street_tirekit'] = { ['plastic'] = 10, } },
+		{ ['sports_tirekit'] = { ['plastic'] = 10, } },
+		{ ['racing_tirekit'] = { ['plastic'] = 10, } },
+		{ ['drag_tirekit'] = { ['plastic'] = 10, } },
 		{ ['tunerchip1'] = { ['plastic'] = 10, } },
 		{ ['tunerchip2'] = { ['plastic'] = 11, } },
 		{ ['tunerchip3'] = { ['plastic'] = 12, } },
+		{ ['tunerchipr'] = { ['plastic'] = 2, } },
 		--tuner
-		{ ['keeptablet'] = { ['plastic'] = 10, } },
 		{ ['car_armor'] = { ['plastic'] = 13, } },
 		{ ['engine1'] = { ['steel'] = 110, } },
 		{ ['engine2'] = { ['steel'] = 120, } },
@@ -44,6 +53,7 @@ Crafting = {
 		{ ['drifttires'] = { ['rubber'] = 450, } },
 		{ ['nos'] = { ['noscan'] = 1, } },
 		{ ['noscan'] = { ['steel'] = 110, } },
+		{ ['noscolour'] = { ['plastic'] = 12, } },
 	},
 	Cosmetic = {
 		{ ['hood'] = { ['plastic'] = 14, } },

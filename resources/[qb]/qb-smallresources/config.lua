@@ -8,26 +8,46 @@ Config.EnableProne = true
 Config.JointEffectTime = 60
 Config.RemoveWeaponDrops = true
 Config.RemoveWeaponDropsTimer = 25
-Config.DefaultPrice = 20 -- carwash
-Config.DirtLevel = 0.1 --carwash dirt level
+Config.DefaultPrice = 20 -- Default price for the carwash
+Config.DirtLevel = 0.1 -- Threshold for the dirt level to be counted as dirty
+Config.DisableAmbience = false -- Disabled distance sirens, distance car alarms, etc
 
-ConsumeablesEat = {
+ConsumablesEat = {
     ["sandwich"] = math.random(35, 54),
     ["tosti"] = math.random(40, 50),
     ["twerks_candy"] = math.random(35, 54),
     ["snikkel_candy"] = math.random(40, 50),
+    -- Casino Bar Snacks
+    ["casino_burger"] = math.random(25, 40),
+    ["casino_psqs"] = math.random(25, 40),
+    ["casino_ego_chaser"] = math.random(25, 40),
+    ["casino_sandwitch"] = math.random(25, 40),
+    ["casino_donut"] = math.random(25, 40),
 }
 
-ConsumeablesDrink = {
+ConsumablesDrink = {
     ["water_bottle"] = math.random(35, 54),
     ["kurkakola"] = math.random(35, 54),
     ["coffee"] = math.random(40, 50),
+    -- Casino Bar Drinks
+    ["casino_beer"] = math.random(25, 40),
+    ["casino_coke"] = math.random(25, 40),
+    ["casino_sprite"] = math.random(25, 40),
+    ["casino_luckypotion"] = math.random(25, 40),
+    ["casino_coffee"] = math.random(25, 40),
 }
 
-ConsumeablesAlcohol = {
+ConsumablesAlcohol = {
     ["whiskey"] = math.random(20, 30),
     ["beer"] = math.random(30, 40),
     ["vodka"] = math.random(20, 40),
+}
+
+ConsumablesFireworks = {
+    "firework1",
+    "firework2",
+    "firework3",
+    "firework4"
 }
 
 Config.BlacklistedScenarios = {
@@ -136,23 +156,23 @@ Config.Teleports = {
 
 Config.CarWash = { -- carwash
     [1] = {
-        ["label"] = "Bilvask",
+        ["label"] = "Hands Free Carwash",
         ["coords"] = vector3(25.29, -1391.96, 29.33),
     },
     [2] = {
-        ["label"] = "Bilvask",
+        ["label"] = "Hands Free Carwash",
         ["coords"] = vector3(174.18, -1736.66, 29.35),
     },
     [3] = {
-        ["label"] = "Bilvask",
+        ["label"] = "Hands Free Carwash",
         ["coords"] = vector3(-74.56, 6427.87, 31.44),
     },
-    [5] = {
-        ["label"] = "Bilvask",
+    [4] = {
+        ["label"] = "Hands Free Carwash",
         ["coords"] = vector3(1363.22, 3592.7, 34.92),
     },
-    [6] = {
-        ["label"] = "Bilvask",
+    [5] = {
+        ["label"] = "Hands Free Carwash",
         ["coords"] = vector3(-699.62, -932.7, 19.01),
     }
 }
