@@ -25,7 +25,6 @@ DP.Expressions = {
    ["Sulking"] = {"Expression", "mood_sulk_1"},
    ["Weird"] = {"Expression", "effort_2"},
    ["Weird2"] = {"Expression", "effort_3"},
-   ["HoldSmoke"] = {"Expression", "smoking_hold_1"},
 }
 
 DP.Walks = {
@@ -47,7 +46,7 @@ DP.Walks = {
   ["Default Female"] = {"move_f@multiplayer"},
   ["Default Male"] = {"move_m@multiplayer"},
   ["Drunk"] = {"move_m@drunk@a"},
-  ["Drunk"] = {"move_m@drunk@slightlydrunk"},
+  ["Drunk1"] = {"move_m@drunk@slightlydrunk"},
   ["Drunk2"] = {"move_m@buzzed"},
   ["Drunk3"] = {"move_m@drunk@verydrunk"},
   ["Femme"] = {"move_f@femme@"},
@@ -188,89 +187,85 @@ DP.Shared = {
 }
 
 DP.Dances = {
-   ["jdrill"] = {"anim@amb@nightclub_island@dancers@crowddance_single_props@", "mi_dance_prop_13_v1_male^3", "Drill · Male - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef"] = {"anim@amb@nightclub@dancers@solomun_entourage@", "mi_dance_facedj_17_v1_female^1", "Dance F", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill2"] = {"anim@amb@nightclub_island@dancers@crowddance_groups@groupd@", "mi_dance_crowd_13_v2_male^1", "Drill · Male 2 - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center", "Dance F2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill3"] = {"anim@amb@nightclub_island@dancers@crowddance_facedj@", "mi_dance_facedj_17_v2_male^4", "Drill · Male 3 - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Dance F3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill4"] = {"anim@amb@nightclub_island@dancers@crowddance_facedj@", "mi_dance_facedj_15_v2_male^4", "Drill · Male 4 - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef4"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^1", "Dance F4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill5"] = {"anim@amb@nightclub_island@dancers@crowddance_facedj@", "hi_dance_facedj_hu_15_v2_male^5", "Drill · Male 5 - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef5"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^3", "Dance F5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jDrill6"] = {"anim@amb@nightclub_island@dancers@crowddance_facedj@", "hi_dance_facedj_hu_17_male^5", "Drill · Male 6 - ~y~XD ~c~1.0", AnimationOptions =
+   ["dancef6"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Dance F6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill7"] = {"anim@amb@nightclub@mini@dance@dance_solo@shuffle@", "high_right_up", "Drill · Solo 1 - ~y~XD ~c~1.0", AnimationOptions =
+   ["danceslow2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center", "Dance Slow 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill8"] = {"anim@amb@nightclub@mini@dance@dance_solo@shuffle@", "med_center", "Drill · Solo 2 - ~y~XD ~c~1.0", AnimationOptions =
+   ["danceslow3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center_down", "Dance Slow 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["jdrill9"] = {"anim@amb@nightclub@mini@dance@dance_solo@shuffle@", "high_right_down", "Drill · Solo 3 - ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }}, 
-   ["jdrill10"] = {"anim@amb@nightclub@mini@dance@dance_solo@shuffle@", "high_center", "Drill · Solo 4 - ~y~XD ~c~1.0", AnimationOptions =
-   {
-        EmoteLoop = true,
-   }}, 
-   ["jDrill11"] = {"anim@amb@nightclub@mini@dance@dance_solo@shuffle@", "high_left_down", "Drill · Solo 5 - ~y~XD ~c~1.0", AnimationOptions =
+   ["danceslow4"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center", "Dance Slow 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance2"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_down", "Dance 2 · Male", AnimationOptions =
+   ["dance"] = {"anim@amb@nightclub@dancers@podium_dancers@", "hi_dance_facedj_17_v2_male^5", "Dance", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance3"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "high_center", "Dance 3 · Male", AnimationOptions =
+   ["dance2"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_down", "Dance 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance4"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_up", "Dance 4 · Male", AnimationOptions =
+   ["dance3"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "high_center", "Dance 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceupper"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Upper · Female", AnimationOptions =
+   ["dance4"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_up", "Dance 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["danceupper"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Upper", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["danceupper2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center_up", "Dance Upper 2 · Female", AnimationOptions =
+   ["danceupper2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center_up", "Dance Upper 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["danceshy"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "low_center", "Dance Shy · Male", AnimationOptions =
+   ["danceshy"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "low_center", "Dance Shy", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceshy2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center_down", "Dance Shy 2 · Female", AnimationOptions =
+   ["danceshy2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center_down", "Dance Shy 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceslow"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "low_center", "Dance Slow · Male", AnimationOptions =
+   ["danceslow"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "low_center", "Dance Slow", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["Salsor"] = {"anim@mp_player_intuppersalsa_roll", "idle_a", "Salso Roll", AnimationOptions =
+   ["dancesilly9"] = {"rcmnigel1bnmt_1b", "dance_loop_tyler", "Dance Silly 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["unclej"] = {"anim@mp_player_intcelebrationfemale@uncle_disco", "uncle_disco", "Uncle Josh - ~y~XD ~c~1.0", AnimationOptions =
+   ["dance6"] = {"misschinese2_crystalmazemcs1_cs", "dance_loop_tao", "Dance 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -282,39 +277,39 @@ DP.Dances = {
    {
        EmoteLoop = true,
    }},
-   ["dancesilly"] = {"special_ped@mountain_dancer@monologue_3@monologue_3a", "mnt_dnc_buttwag", "Dance Silly · Male 1", AnimationOptions =
+   ["dancesilly"] = {"special_ped@mountain_dancer@monologue_3@monologue_3a", "mnt_dnc_buttwag", "Dance Silly", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly2"] = {"move_clown@p_m_zero_idles@", "fidget_short_dance", "Dance Silly · Male 2", AnimationOptions =
+   ["dancesilly2"] = {"move_clown@p_m_zero_idles@", "fidget_short_dance", "Dance Silly 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly3"] = {"move_clown@p_m_two_idles@", "fidget_short_dance", "Dance Silly · Male 3", AnimationOptions =
+   ["dancesilly3"] = {"move_clown@p_m_two_idles@", "fidget_short_dance", "Dance Silly 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly4"] = {"anim@amb@nightclub@lazlow@hi_podium@", "danceidle_hi_11_buttwiggle_b_laz", "Dance Silly · Female 4", AnimationOptions =
+   ["dancesilly4"] = {"anim@amb@nightclub@lazlow@hi_podium@", "danceidle_hi_11_buttwiggle_b_laz", "Dance Silly 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly5"] = {"timetable@tracy@ig_5@idle_a", "idle_a", "Dance Silly · Male 5", AnimationOptions =
+   ["dancesilly5"] = {"timetable@tracy@ig_5@idle_a", "idle_a", "Dance Silly 5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly6"] = {"timetable@tracy@ig_8@idle_b", "idle_d", "Dance Silly · Male 6", AnimationOptions =
+   ["dancesilly6"] = {"timetable@tracy@ig_8@idle_b", "idle_d", "Dance Silly 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance9"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "med_center_up", "Dance · Female 9", AnimationOptions =
+   ["dance9"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "med_center_up", "Dance 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly8"] = {"anim@mp_player_intcelebrationfemale@the_woogie", "the_woogie", "Dance Silly · Female 8", AnimationOptions =
+   ["dancesilly8"] = {"anim@mp_player_intcelebrationfemale@the_woogie", "the_woogie", "Dance Silly 8", AnimationOptions =
    {
        EmoteLoop = true
    }},
-   ["dancesilly7"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Silly · Female 7", AnimationOptions =
+   ["dancesilly7"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Silly 7", AnimationOptions =
    {
        EmoteLoop = true
    }},
@@ -373,208 +368,28 @@ DP.Dances = {
        Prop = "ba_prop_battle_hobby_horse",
        PropBone = 28422,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,  
-    }},
-    ["jmonkeyd"] = {"anim@amb@nightclub@mini@dance@dance_solo@techno_monkey@", "high_center", "Monkey Dance  ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true
-    }},
-    ["jmonkeyd2"] = {"anim@amb@nightclub@mini@dance@dance_solo@techno_monkey@", "high_center_down", "Monkey Dance 2  ~y~XD ~c~1.0", AnimationOptions =
-    {
-        EmoteLoop = true
-     }},
-     ["jmonkeyd3"] = {"anim@amb@nightclub@mini@dance@dance_solo@techno_monkey@", "med_center_down", "Monkey Dance 3  ~y~XD ~c~1.0", AnimationOptions =
-     {
-         EmoteLoop = true
-      }},
-    ["jrightdown"] = {"anim@amb@nightclub@mini@dance@dance_solo@beach_boxing@", "med_right_down", "Boxing Dance Solo  ~y~XD ~c~1.0", AnimationOptions =
-    {
-        EmoteLoop = true
-     }},
-     ["jlowdance"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_a@", "low_center", "Low Dance · Female ", AnimationOptions =
-    {
-        EmoteLoop = true
-       }},
-       ["jlowdance2"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_a@", "high_center", "Low Dance · Female", AnimationOptions =
-       {
-        EmoteLoop = true
-        }},
-       ["jhiphop"] = {"anim@amb@nightclub@mini@dance@dance_paired@dance_d@", "ped_a_dance_idle", "Hip Hop Dance ~y~XD ~c~1.0", AnimationOptions =
-        {
-           EmoteLoop = true
-        }},
-       ["jhiphop2"] = {"anim@amb@nightclub@mini@dance@dance_paired@dance_b@", "ped_a_dance_idle", "Hip Hop Dance ~y~XD ~c~1.0", AnimationOptions =
-       {
-           EmoteLoop = true
-         }},
-        ["jhiphop3"] = {"anim@amb@nightclub@mini@dance@dance_paired@dance_a@", "ped_a_dance_idle", "Hip Hop Dance ~y~XD ~c~1.0", AnimationOptions =
-        {
-           EmoteLoop = true
-        }},
- }
+       EmoteLoop = true,
+   }},
+}
 
 DP.Emotes = {
-   ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
+   ["drink"] = {"mp_player_intdrink", "loop_bottle", "Drink", AnimationOptions =
+   {
+        Prop = "prop_ld_flow_bottle",
+        PropBone = 18905,
+        PropPlacement = {0.12, 0.008, 0.03, 240.0, -60.0},
+        EmoteMoving = true,
+        EmoteLoop = true,
+   }},
+   ["dispenser"] = {"mini@sprunk", "plyr_buy_drink_pt1", "Dispenser", AnimationOptions =
+   {
+        EmoteMoving = false,
+        EmoteLoop = false,
+   }},
+   ["beast"] = {"anim@mp_fm_event@intro", "beast_transform", "Beast", AnimationOptions =
    {
        EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jpbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "Purchase Box ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 2500,
-   }},
-   ["jch"] = {"amb@code_human_police_investigate@idle_b", "idle_f", "Cop Search ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 7000,
-   }},
-   ["jgangsign5"] = {"anim@mp_player_intupperdock", "idle_a", "Gang Sign ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jcheckwatch"] = {"amb@code_human_wander_idles_fat@male@idle_a", "idle_a_wristwatch", "Check Watch · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
        EmoteDuration = 5000,
-   }},
-   ["jpicking"] = {"amb@prop_human_movie_bulb@idle_a", "idle_a", "Picking ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jgangaim"] = {"combat@aim_variations@1h@gang", "aim_variation_b", "Gang Aim ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true,
-   }},
-   ["jshowboobs"] = {"mini@strip_club@backroom@", "stripper_b_backroom_idle_b", "Show Boobs ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 6000,
-   }},
-   ["jcleanleg"] = {"mini@strip_club@backroom@", "stripper_c_leadin_backroom_idle_a", "Clean Legs ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 6000,
-   }},
-   ["jshowboobs2"] = {"mini@strip_club@idles@stripper", "stripper_idle_05", "Show Boobs 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 6000,
-   }},
-   ["jlockcar"] = {"anim@mp_player_intmenu@key_fob@", "fob_click", "Lock Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jselfie5"] = {"cellphone@self", "selfie", "Selfie 3 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jselfiewc"] = {"cellphone@self@franklin@", "west_coast", "Selfie West Coast ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jselfie3"] = {"cellphone@self@michael@", "finger_point", "Selfie Finger ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jselfie4"] = {"cellphone@self@franklin@", "chest_bump", "Selfie Chest Bump ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jSelfie1"] = {"cellphone@self@trevor@", "throat_slit", "Selfie ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = false,
-   }},
-   ["jSelfie2"] = {"cellphone@self@trevor@", "proud_finger", "Selfie2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = false,
-   }},
-   ["oob2"] = {"rcmfanatic3leadinoutef_3_mcs_1", "fra_outofbreath_loop", "Out Of Breath 2", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["damn3"] = {"misscommon@response", "damn", "Damn", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jkhaby"] = {"missarmenian3@simeon_tauntsidle_b", "areyounotman", "Khaby · Special ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jdepressed"] = {"oddjobs@bailbond_hobodepressed", "base", "Depressed ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = true,
-   }},
-   ["jcarsign"] = {"amb@code_human_in_car_mp_actions@gang_sign_a@bodhi@rds@base", "idle_a", "Gang Sign · Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jcarsign2"] = {"amb@code_human_in_car_mp_actions@gang_sign_a@low@ds@base", "idle_a", "Gang Signs 2 · Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
-   ["jcarlowrider"] = {"anim@veh@lowrider@low@front_ds@arm@base", "sit", "Lowrider Style · Car  ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true,
-   }},
-   ["jcarlowrider2"] = {"anim@veh@lowrider@std@ds@arm@music@mexicanidle_a", "idle", "Lowrider Mexican Style · Car  ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true,
-   }},
-   ["handsow"] = {"rcmjosh1", "idle", "Hands On Waist", AnimationOptions =
-   {
-       EmoteMoving = true,
-   }},
-   ["washhand"] = {"missheist_agency3aig_23", "urinal_sink_loop", "Wash Hands", AnimationOptions =
-   {
-    EmoteMoving = true,
-   }},
-   ["jleaningwallback"] = {"anim@amb@casino@peds@", "amb_world_human_leaning_male_wall_back_mobile_idle_a", "Leaning Wall Back · Male", AnimationOptions =
-   {
-    Prop = "prop_npc_phone_02",
-    PropBone = 28422,
-    PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-   }},
-   ["stop"] = {"anim@amb@casino@peds@", "mini_strip_club_idles_bouncer_stop_stop", "Stop", AnimationOptions =
-   {
-       EmoteMoving = true,
    }},
    ["chill"] = {"switch@trevor@scares_tramp", "trev_scares_tramp_idle_tramp", "Chill", AnimationOptions =
    {
@@ -857,6 +672,11 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["id"] = {"friends@laf@ig_5", "nephew", "ID", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 2500
+   }},   
    ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug"},
    ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2"},
    ["hug3"] = {"mp_ped_interaction", "hugs_guy_a", "Hug 3"},
@@ -1054,6 +874,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["pickup"] = {"random@domestic", "pickup_low", "Pickup"},
    ["push"] = {"missfinale_c2ig_11", "pushcar_offcliff_f", "Push", AnimationOptions =
    {
        EmoteLoop = true,
@@ -1272,20 +1093,12 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["sunbathe3"] = {"amb@world_human_sunbathe@male@front@base", "base", "Sunbathe 3", AnimationOptions =
-{
-    EmoteLoop = true,
-}},
-["standfire"] = {"amb@world_human_stand_fire@male@base", "base", "standfire", AnimationOptions =
-{
-    EmoteLoop = true,
-}},
-   ["t"] = {"missfam5_yoga", "a2_pose", "Titanic", AnimationOptions =
+   ["t"] = {"missfam5_yoga", "a2_pose", "T", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["t2"] = {"mp_sleep", "bind_pose_180", "Titanic 2", AnimationOptions =
+   ["t2"] = {"mp_sleep", "bind_pose_180", "T 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1486,10 +1299,12 @@ DP.Emotes = {
    ["bow"] = {"anim@arena@celeb@podium@no_prop@", "regal_c_1st", "Bow", AnimationOptions =
    {
        EmoteLoop = true,
+       EmoteMoving = true,
    }},
    ["bow2"] = {"anim@arena@celeb@podium@no_prop@", "regal_a_1st", "Bow 2", AnimationOptions =
    {
        EmoteLoop = true,
+       EmoteMoving = true,
    }},
    ["keyfob"] = {"anim@mp_player_intmenu@key_fob@", "fob_click", "Key Fob", AnimationOptions =
    {
@@ -1498,10 +1313,14 @@ DP.Emotes = {
        EmoteDuration = 1000,
    }},
    ["golfswing"] = {"rcmnigel1d", "swing_a_mark", "Golf Swing"},
-   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Eat", AnimationOptions =
+
+   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Eat", AnimationOptions =
    {
-       EmoteMoving = true,
-       EmoteDuration = 3000,
+        Prop = "prop_cs_burger_01",
+        PropBone = 18905,
+        PropPlacement = {0.12, 0.028, 0.001, 10.0, 175.0},
+        EmoteMoving = true,
+        EmoteLoop = true,
    }},
    ["reaching"] = {"move_m@intimidation@cop@unarmed", "idle", "Reaching", AnimationOptions =
    {
@@ -1532,7 +1351,7 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["lapdance3"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Lapdance 3", AnimationOptions =
+   ["lapdance4"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Lapdance 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1838,463 +1657,6 @@ DP.Emotes = {
    {
        EmoteMoving = true,
        EmoteDuration = 5000
-   }},
-   ["jreactiona"] = {"random@shop_robbery_reactions@", "absolutely", "Reaction Absolutely ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactanger"] = {"random@shop_robbery_reactions@", "anger_a", "Reaction Anger ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactwhy"] = {"random@shop_robbery_reactions@", "is_this_it", "Reaction Why ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactscrew"] = {"random@shop_robbery_reactions@", "screw_you", "Reaction Screw You ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactshock"] = {"random@shop_robbery_reactions@", "shock", "Reaction Shock ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactgoodc"] = {"missclothing", "good_choice_storeclerk", "Reaction Good Choice ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jtrynewc"] = {"clothingtie", "try_tie_neutral_c", "Try New Clothes ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jtrynewc2"] = {"clothingtie", "try_tie_neutral_d", "Try New Clothes 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreacteasy"] = {"gestures@m@car@std@casual@ds", "gesture_easy_now", "Reaction Easy Now ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactıwill"] = {"gestures@m@car@std@casual@ds", "gesture_i_will", "Reaction I will ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactnoway"] = {"gestures@m@car@std@casual@ds", "gesture_no_way", "Reaction No Way ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactbye"] = {"gestures@f@standing@casual", "gesture_bye_hard", "Reaction Bye Hard ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreacthello"] = {"gestures@f@standing@casual", "gesture_hello", "Reaction Hello ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-      ["jlookatplayer"] = {"friends@frl@ig_1", "look_lamar", "Look At Player ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-     ["jreactgreat"] = {"mp_cp_welcome_tutgreet", "greet", "Great ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jfakepunch"] = {"missarmenian2", "fake_punch_walk_by_lamar", "Fake Punch ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-      ["jreactdamn"] = {"missheist_jewel", "damn", "Reaction Damn ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-     ["jimtellingyou"] = {"missheist_jewel", "im_telling_you", "I'm telling you ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jreactno"] = {"missheist_jewel", "despair", "Reaction No ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jdontkillme"] = {"missheist_jewel", "manageress_kneel_loop", "Dont Kill Me ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jbangbang"] = {"anim@mp_player_intcelebrationfemale@bang_bang", "bang_bang", "Bang Bang ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jtryshirtn"] = {"clothingshirt", "try_shirt_negative_a", "Try Shirt Negative ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jtryshirtp"] = {"clothingshirt", "try_shirt_positive_a", "Try Shirt Positive ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-      ["jtryshoes"] = {"clothingshoes", "try_shoes_positive_d", "Try Shoes ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-    ["jtryshoes2"] = {"clothingshoes", "try_shoes_positive_c", "Try Shoes 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-    ["joverhere"] = {"friends@fra@ig_1", "over_here_idle_a", "Over Here ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-    ["jwashingface"] = {"missmic2_washing_face", "michael_washing_face", "Washing Face ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-    ["jlastday"] = {"misstrevor1", "ortega_outro_loop_ort", "Last Day ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteLoop = true,
-   }},
-    ["jtryg"] = {"mp_clothing@female@glasses", "try_glasses_positive_a", "Try Glasses · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-    ["jpickup"] = {"pickup_object", "pickup_low", "Pick Up ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jstretchl"] = {"switch@franklin@bed", "stretch_long", "Stretch Long ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jhos"] = {"amb@world_human_hang_out_street@male_a@idle_a", "idle_a", "Hang Out Street · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteLoop = true,
-   }},
-   ["jhos2"] = {"amb@world_human_hang_out_street@male_c@base", "base", "Hang Out Street 2 · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteLoop = true,
-   }},
-   ["jguardaim"] = {"guard_reactions", "1hand_aiming_cycle", "Guard Aim ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jgready"] = {"switch@franklin@getting_ready", "002334_02_fras_v2_11_getting_dressed_exit", "Getting Ready ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jlao"] = {"move_clown@p_m_two_idles@", "fidget_look_at_outfit", "Look At Outfits ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 6000,
-   }},
-   ["jtoilet"] = {"switch@trevor@on_toilet", "trev_on_toilet_loop", "Have A Shit ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jtoilet2"] = {"timetable@trevor@on_the_toilet", "trevonlav_struggleloop", "Have A Shit 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jcovermale2"] = {"amb@code_human_cower@male@base", "base", "Cover · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jvalet"] = {"anim@amb@world_human_valet@normal@base@", "base_a_m_y_vinewood_01", "Valet ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jvalet2"] = {"anim@amb@world_human_valet@formal_right@base@", "base_a_m_y_vinewood_01", "Valet 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = true,
-    EmoteLoop = true,
-   }},
-   ["jsunbathem"] = {"amb@world_human_sunbathe@male@back@idle_a", "idle_c", "Sunbathe · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteLoop = true,
-   }},
-   ["jsunbathem2"] = {"amb@world_human_sunbathe@male@front@base", "base", "Sunbathe 2 · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jleancar"] = {"anim@scripted@carmeet@tun_meet_ig2_race@", "base", "Lean Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["jcheckout"] = {"anim@amb@carmeet@checkout_car@male_a@idles", "idle_b", "Check Out · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jcheckout2"] = {"anim@amb@carmeet@checkout_car@male_c@idles", "idle_a", "Check Out 2 · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jcheckout"] = {"anim@amb@carmeet@checkout_car@female_d@base", "base", "Check Out 3 · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jreadmessages"] = {"anim@amb@carmeet@take_photos@male_a@base", "base", "Read Messages · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jreadmessages2"] = {"anim@amb@carmeet@take_photos@female_b@base", "base", "Read Messages 2 · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,  
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-   }},
-   ["jlistenmusic"] = {"anim@amb@carmeet@listen_music@male_a@trans", "a_trans_d", "Listen Music ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jogger"] = {"move_f@jogger", "idle", "Jogger · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteDuration = 2500,
-       EmoteMoving = true,
-   }},
-   ["jogger2"] = {"move_m@jogger", "idle", "Jogger · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteDuration = 2500,
-       EmoteMoving = true,
-   }},
-   ["jwtf"] = {"mini@triathlon", "wot_the_fuck", "Wot The Fuck ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jucdt"] = {"mini@triathlon", "u_cant_do_that", "U Cant Do That ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jwarmup"] = {"mini@triathlon", "ig_2_gen_warmup_01", "Warmup ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jwarmup2"] = {"mini@triathlon", "ig_2_gen_warmup_02", "Warmup 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jwarmup3"] = {"mini@triathlon", "jog_idle_f", "Warmup 3 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jwarmup4"] = {"mini@triathlon", "jog_idle_e", "Warmup 4 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jhmassage"] = {"missheistfbi3b_ig8_2", "cpr_loop_paramedic", "Heart Massage ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jpassout"] = {"missheistfbi3b_ig8_2", "cower_loop_victim", "Pass Out ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jddealer"] = {"amb@world_human_drug_dealer_hard@male@base", "base", "Drug Dealer · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jswatch"] = {"amb@world_human_strip_watch_stand@male_c@idle_a", "idle_b", "Watch Strip · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jcheckw"] = {"amb@world_human_bum_wash@male@high@base", "base", "Check Water ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jwaitt"] = {"oddjobs@taxi@", "idle_a", "Wait Taxi ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-   }},
-   ["jnoway"] = {"oddjobs@towingpleadingbase", "base", "No Way ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jtsomething"] = {"oddjobs@bailbond_hobohang_out_street_c", "idle_c", "Tell Something ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jlfh"] = {"oddjobs@assassinate@old_lady", "looking_for_help", "Looking For Help ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jmstretch"] = {"oddjobs@assassinate@multi@", "idle_a", "Muscle Stretch ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jdj"] = {"anim@mp_player_intcelebrationmale@dj", "dj", "DJ ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jdj2"] = {"anim@scripted@nightclub@dj@dj_moodm@", "moodm_cdj_left_a_12", "DJ 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jdj3"] = {"anim@amb@nightclub@djs@switch@dixn_djset_switchover@", "dix_end_bg_female1", "DJ 3 ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteLoop = true,
-   }},
-   ["jdj4"] = {"anim@amb@nightclub_island@dancers@crowddance_facedj_transitions@from_low_intensity", "trans_dance_facedj_li_to_mi_11_v1_male^3", "DJ 4 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jlmic"] = {"anim@veh@lowrider@std@ds@arm@music@hiphopidle_a", "idle", "Listen Music In Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = true,
-    EmoteDuration = 2500,
-   }},
-   ["jgotc"] = {"random@getawaydriver@thugs", "base_a", "Get Off The Car ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = false,
-   }},
-   ["jvsad"] = {"anim@amb@business@bgen@bgen_no_work@", "sit_phone_phoneputdown_sleeping-noworkfemale", "Very Sad ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jdgrave"] = {"anim@amb@drug_field_workers@rake@male_a@base", "base", "Digging Grave ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteLoop = true,
-       Prop = 'prop_tool_shovel006',
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.1, -0.6, 0.0, 0.0, 180.0},
-   }},
-   ["jbow3"] = {"missheistdockssetup1ig_10@base", "talk_pipe_base_worker1", "Bend Over Wait ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 2500,
-   }},
-   ["jweeding"] = {"anim@amb@drug_field_workers@weeding@male_a@base", "base", "Weeding · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jlookplan"] = {"missheist_agency2aig_4", "look_plan_c_worker2", "Look Plan ~y~XD ~c~1.0", AnimationOptions =
-   {
-    EmoteMoving = false,
-    EmoteDuration = 5000,
-   }},
-   ["jgangdrink"] = {"amb@world_human_drinking_fat@beer@male@base", "base", "Gang Drink ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = 'prop_cs_beer_bot_40oz_03',
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["jgangdrink"] = {"amb@world_human_drinking_fat@beer@male@idle_a", "idle_b", "Gang Drink 2 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = 'prop_cs_beer_bot_40oz_03',
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["jmleaning"] = {"amb@world_human_leaning@male@wall@back@mobile@base", "base", "Mobile Leaning · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteLoop = true,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-   }},
-   ["jthanks"] = {"random@arrests", "thanks_male_05", "Thanks ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jtextingmale"] = {"amb@world_human_stand_mobile_fat@male@text@base", "base", "Texting · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true,
-       Prop = "prop_npc_phone_02",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-   }},
-   ["jffb"] = {"timetable@trevor@skull_loving_bear", "skull_loving_bear", "F*ck From Behind ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jsitchair7"] = {"timetable@reunited@ig_10", "isthisthebest_jimmy", "Sit Chair 7 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jsitchair8"] = {"timetable@michael@on_sofabase", "sit_sofa_base", "Sit Chair 8 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jsitchair9"] = {"timetable@trevor@smoking_meth@base", "base", "Sit Chair 9 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jsitchair10"] = {"timetable@tracy@ig_7@base", "base", "Sit Chair 10 ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jstandingt"] = {"amb@world_human_bum_standing@twitchy@base", "base", "Standing Twitchy ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jstandingfit"] = {"amb@world_human_jog_standing@male@fitbase", "base", "Standing Fit ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jstandingm"] = {"anim@amb@casino@hangout@ped_male@stand@03b@base", "base", "Standing · Male ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["jstandingf"] = {"anim@amb@casino@hangout@ped_female@stand@02a@base", "base", "Standing · Female ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteLoop = true,
    }},
 }
 
@@ -2704,52 +2066,4 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["jclean3"] = {"switch@franklin@cleaning_car", "001946_01_gc_fras_v2_ig_5_base", "Clean 3 - ~y~XD ~c~1.0", AnimationOptions =
-   {
-    Prop = "prop_sponge_01",
-    PropBone = 28422,
-    PropPlacement = {0.0, 0.0, -0.01, 90.0, 0.0, 0.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["jmicro"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Hold a microphone - ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "p_ing_microphonel_01",
-       PropBone = 18905,
-       PropPlacement = {0.11, 0.03, 0.03, -100.0, 0.0, -10.0},
-       EmoteMoving = true,
-       EmoteLoop = true
-   }},
-   ["jmicro2"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Hold a microphone 2 - ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "prop_microphone_02",
-       PropBone = 18905,
-       PropPlacement = {0.11, 0.03, 0.03, -100.0, 0.0, -10.0},
-       EmoteMoving = true,
-       EmoteLoop = true
-   }},
-   ["jmicro3"] = {"missfra1", "mcs2_crew_idle_m_boom", "Hold a microphone 3 - ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "prop_v_bmike_01",
-       PropBone = 28422,
-       PropPlacement = {-0.08, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteMoving = true,
-       EmoteLoop = true
-   }},
-   ["jcamerabig"] = {"missfinale_c2mcs_1", "fin_c2_mcs_1_camman", "Hold A Camera - ~y~XD ~c~1.0", AnimationOptions =
-   {
-       Prop = "prop_v_cam_01",
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["jdgrave1"] = {"anim@amb@drug_field_workers@rake@male_a@base", "base", "Digging Grave ~y~XD ~c~1.0", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true,
-       Prop = 'prop_tool_shovel006',
-       PropBone = 28422,
-       PropPlacement = {0.0, 0.1, -0.6, 0.0, 0.0, 180.0},
-    }},
 }

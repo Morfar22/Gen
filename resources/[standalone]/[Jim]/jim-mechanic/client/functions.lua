@@ -162,7 +162,7 @@ end
 local updateDelay = {}
 
 function updateCar(vehicle)
-	updateDelay[vehicle] = 6
+	updateDelay[vehicle] = 2
 end
 
 function forceUpdateCar(vehicle)

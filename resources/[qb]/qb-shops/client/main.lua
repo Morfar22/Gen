@@ -158,6 +158,7 @@ local function createPeds()
         end
     end
 
+    local current = type(Config.SellCasinoChips.ped) == 'number' and Config.SellCasinoChips.ped or joaat(Config.SellCasinoChips.ped)
 
     RequestModel(current)
     while not HasModelLoaded(current) do
@@ -262,6 +263,17 @@ if not Config.UseTarget then
             else
                 exports["qb-core"]:HideText()
                 listen = false
+            end
+        end)
+
+        local sellChips = CircleZone:Create(vector3(Config.SellCasinoChips.coords["x"], Config.SellCasinoChips.coords["y"], Config.SellCasinoChips.coords["z"]), Config.SellCasinoChips.radius, {useZ = true})
+        sellChips:onPlayerInOut(function(isPointInside)
+            if isPointInside then
+                inChips = true
+                exports["qb-core"]:DrawText(Lang:t("info.sell_chips"))
+            else
+                inChips = false
+                exports["qb-core"]:HideText()
             end
         end)
     end)

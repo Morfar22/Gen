@@ -134,6 +134,7 @@ CreateThread(function()
 				if plate then
 					if GetPedInVehicleSeat(veh, -1) == ped then
 						if prevVeh ~= veh then -- Don't keep checking database for vehicle ownership if in the same car
+							ModifyVehicleTopSpeed(veh, -1.0)
 							owned = IsVehicleOwned(plate) -- only check if vehicle is owned when the player is in the driver seat
 							prevVeh = veh
 						end
@@ -156,7 +157,7 @@ CreateThread(function()
 									"Class: "..getClass(veh)..
 									"<br>"..Loc[Config.Lan]["check"].plate..trim(GetVehicleNumberPlateText(veh)).."]"..
 									"<br>Dist: "..tostring(dist)..
-									"<br>Fuel: "..nosBar(math.floor(exports['ps-fuel']:GetFuel(veh))).." "..math.floor(exports['ps-fuel']:GetFuel(veh)).."%"
+									"<br>Fuel: "..nosBar(math.floor(exports['LegacyFuel']:GetFuel(veh))).." "..math.floor(exports['LegacyFuel']:GetFuel(veh)).."%"
 									if VehicleNitrous[trim(GetVehicleNumberPlateText(veh))] then
 										dist = dist.."<br>NOS: "..nosBar((VehicleNitrous[trim(GetVehicleNumberPlateText(veh))].level)).." "..tostring((VehicleNitrous[trim(GetVehicleNumberPlateText(veh))].level)).."%"
 									end

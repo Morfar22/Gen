@@ -40,6 +40,34 @@ QBShared.Jobs = {
             },
         },
     },
+    ['vanilla'] = {
+        label = 'vanilla',
+		defaultDuty = true,
+        grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 75
+            },
+            ['1'] = {
+                name = 'Worker',
+                payment = 100
+            },
+            ['2'] = {
+                name = 'Shift Manager',
+                payment = 150
+            },
+            ['3'] = {
+                name = 'Manager',
+                isboss = true,
+                payment = 200
+            },
+            ['4'] = {
+                name = 'Owner',
+                isboss = true,
+                payment = 300
+            },
+        },
+    },
     ['postop'] = {
         label = 'Post OP',
 		defaultDuty = true,

@@ -265,8 +265,8 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                 info = {
                     crypto = math.random(1, 3)
                 }
-                ply.Functions.AddItem("weapon_sawnoffshotgun_blueprint", 1, false, info)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_sawnoffshotgun_blueprint'], "add")
+                ply.Functions.AddItem("cryptostick", 1, false, info)
+                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['cryptostick'], "add")
             end
         else
             local chance = math.random(1, 2)

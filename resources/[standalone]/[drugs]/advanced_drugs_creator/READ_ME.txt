@@ -1,8 +1,8 @@
-Installation: https://jaksam1074.github.io/fivem-scripts-documentations/drugs-creator-documentation/installation/
+Installation: https://jaksam1074.gitbook.io/jaksams-scripts-documentation/drugs-creator/installation
 
-Replace default notifications: https://jaksam1074.github.io/fivem-scripts-documentations/drugs-creator-documentation/client/notify/
+Replace default notifications: https://jaksam1074.gitbook.io/jaksams-scripts-documentation/drugs-creator/client/replace-default-notifications
 
-Replace default police alerts: https://jaksam1074.github.io/fivem-scripts-documentations/drugs-creator-documentation/client/alertedPolice/
+Replace default police alerts: https://jaksam1074.gitbook.io/jaksams-scripts-documentation/drugs-creator/client/replace-default-police-alert
 
 Replace default police jobs names: advanced_drugs_creator/integrations/sv_integrations.lua file
 

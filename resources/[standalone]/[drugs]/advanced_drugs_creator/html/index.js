@@ -1637,9 +1637,6 @@ $("#selling").submit(function(event) {
 			boat: $("#boat-show-radius-while-selling").prop("checked")
 		},
 
-		// NPC selling
-		blipTimeAfterNPCCallPolice: parseInt( $("#npc-police-alert-blip-time").val() ),
-
 		// Narcos selling
 		narcosModel: $("#narcos-model").val(),
 
@@ -2167,8 +2164,6 @@ function loadSettings(fullConfig) {
 	// NPC Selling
 	$("#enable-npc-selling").prop("checked", fullConfig.enableNPCSell);
 	$("#enable-npc-selling").change();
-
-	$("#npc-police-alert-blip-time").val(fullConfig.blipTimeAfterNPCCallPolice);
 
 	$("#npc-selling-min-quantity").val(fullConfig.minNPCSellQuantity);
 	$("#npc-selling-max-quantity").val(fullConfig.maxNPCSellQuantity);

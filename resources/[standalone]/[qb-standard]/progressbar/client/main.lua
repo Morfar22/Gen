@@ -1,17 +1,3 @@
-local Keys = {
-    ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57, 
-    ["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, 
-    ["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
-    ["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
-    ["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
-    ["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70, 
-    ["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
-    ["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
-    ["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
-}
-
-local QBCore = exports["qb-core"]:GetCoreObject()
-
 local Action = {
     name = "",
     duration = 0,
@@ -55,8 +41,7 @@ local prop_net = nil
 local propTwo_net = nil
 local runProgThread = false
 
-RegisterNetEvent('progressbar:client:ToggleBusyness')
-AddEventHandler('progressbar:client:ToggleBusyness', function(bool)
+RegisterNetEvent('progressbar:client:ToggleBusyness', function(bool)
     isDoingAction = bool
 end)
 
@@ -79,44 +64,34 @@ end
 function Process(action, start, tick, finish)
 	ActionStart()
     Action = action
-	if Action.icon then
-		if QBCore.Shared.Items[tostring(Action.icon)] then
-			local img = "nui://qb-inventory/html/" -- default qb-core inventory link
-			if not string.find(QBCore.Shared.Items[tostring(Action.icon)].image, "http") then -- 👀 Slipped in support for custom html links too
-				if not string.find(QBCore.Shared.Items[tostring(Action.icon)].image, "images/") then --search for if the icon images have /images in the listing
-					img = img.."images/"
-				end
-				Action.icon = img..QBCore.Shared.Items[tostring(Action.icon)].image
-			end
-		end
-	end
-    if not IsEntityDead(PlayerPedId()) or Action.useWhileDead then
+    local ped = PlayerPedId()
+    if not IsEntityDead(ped) or Action.useWhileDead then
         if not isDoingAction then
             isDoingAction = true
             wasCancelled = false
             isAnim = false
             isProp = false
-            TriggerEvent('progressbar:setstatus', true)
+
             SendNUIMessage({
                 action = "progress",
                 duration = Action.duration,
-                label = Action.label,
-                icon = Action.icon
+                label = Action.label
             })
-            Citizen.CreateThread(function ()
+
+            CreateThread(function ()
                 if start ~= nil then
                     start()
                 end
                 while isDoingAction do
-                    Citizen.Wait(1)
+                    Wait(1)
                     if tick ~= nil then
                         tick()
                     end
-                    if IsControlJustPressed(0, Keys["BACKSPACE"]) and Action.canCancel then
+                    if IsControlJustPressed(0, 200) and Action.canCancel then
                         TriggerEvent("progressbar:client:cancel")
                     end
 
-                    if IsEntityDead(PlayerPedId()) and not Action.useWhileDead then
+                    if IsEntityDead(ped) and not Action.useWhileDead then
                         TriggerEvent("progressbar:client:cancel")
                     end
                 end
@@ -135,8 +110,7 @@ end
 function ActionStart()
     runProgThread = true
     LocalPlayer.state:set("inv_busy", true, true) -- Busy
-
-    Citizen.CreateThread(function()
+    CreateThread(function()
         while runProgThread do
             if isDoingAction then
                 if not isAnim then
@@ -161,13 +135,14 @@ function ActionStart()
                     isAnim = true
                 end
                 if not isProp and Action.prop ~= nil and Action.prop.model ~= nil then
+                    local ped = PlayerPedId()
                     RequestModel(Action.prop.model)
 
                     while not HasModelLoaded(GetHashKey(Action.prop.model)) do
-                        Citizen.Wait(0)
+                        Wait(0)
                     end
 
-                    local pCoords = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0.0, 0.0)
+                    local pCoords = GetOffsetFromEntityInWorldCoords(ped, 0.0, 0.0, 0.0)
                     local modelSpawn = CreateObject(GetHashKey(Action.prop.model), pCoords.x, pCoords.y, pCoords.z, true, true, true)
 
                     local netid = ObjToNet(modelSpawn)
@@ -186,7 +161,7 @@ function ActionStart()
                         Action.prop.rotation = { x = 0.0, y = 0.0, z = 0.0 }
                     end
 
-                    AttachEntityToEntity(modelSpawn, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), Action.prop.bone), Action.prop.coords.x, Action.prop.coords.y, Action.prop.coords.z, Action.prop.rotation.x, Action.prop.rotation.y, Action.prop.rotation.z, 1, 1, 0, 1, 0, 1)
+                    AttachEntityToEntity(modelSpawn, ped, GetPedBoneIndex(ped, Action.prop.bone), Action.prop.coords.x, Action.prop.coords.y, Action.prop.coords.z, Action.prop.rotation.x, Action.prop.rotation.y, Action.prop.rotation.z, 1, 1, 0, 1, 0, 1)
                     prop_net = netid
 
                     isProp = true
@@ -195,10 +170,10 @@ function ActionStart()
                         RequestModel(Action.propTwo.model)
 
                         while not HasModelLoaded(GetHashKey(Action.propTwo.model)) do
-                            Citizen.Wait(0)
+                            Wait(0)
                         end
 
-                        local pCoords = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0.0, 0.0)
+                        local pCoords = GetOffsetFromEntityInWorldCoords(ped, 0.0, 0.0, 0.0)
                         local modelSpawn = CreateObject(GetHashKey(Action.propTwo.model), pCoords.x, pCoords.y, pCoords.z, true, true, true)
 
                         local netid = ObjToNet(modelSpawn)
@@ -217,25 +192,23 @@ function ActionStart()
                             Action.propTwo.rotation = { x = 0.0, y = 0.0, z = 0.0 }
                         end
 
-                        AttachEntityToEntity(modelSpawn, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), Action.propTwo.bone), Action.propTwo.coords.x, Action.propTwo.coords.y, Action.propTwo.coords.z, Action.propTwo.rotation.x, Action.propTwo.rotation.y, Action.propTwo.rotation.z, 1, 1, 0, 1, 0, 1)
+                        AttachEntityToEntity(modelSpawn, ped, GetPedBoneIndex(ped, Action.propTwo.bone), Action.propTwo.coords.x, Action.propTwo.coords.y, Action.propTwo.coords.z, Action.propTwo.rotation.x, Action.propTwo.rotation.y, Action.propTwo.rotation.z, 1, 1, 0, 1, 0, 1)
                         propTwo_net = netid
 
                         isPropTwo = true
                     end
                 end
 
-                DisableActions(PlayerPedId())
+                DisableActions(ped)
             end
-            Citizen.Wait(0)
+            Wait(0)
         end
     end)
 end
 
 function Cancel()
-    TriggerEvent('progressbar:setstatus', false)
     isDoingAction = false
     wasCancelled = true
-	
     LocalPlayer.state:set("inv_busy", false, true) -- Not Busy
     ActionCleanup()
 
@@ -245,7 +218,6 @@ function Cancel()
 end
 
 function Finish()
-    TriggerEvent('progressbar:setstatus', false)
     isDoingAction = false
     ActionCleanup()
     LocalPlayer.state:set("inv_busy", false, true) -- Not Busy
@@ -275,7 +247,7 @@ end
 function loadAnimDict(dict)
 	while (not HasAnimDictLoaded(dict)) do
 		RequestAnimDict(dict)
-		Citizen.Wait(5)
+		Wait(5)
 	end
 end
 
@@ -318,28 +290,23 @@ function DisableActions(ped)
     end
 end
 
-RegisterNetEvent("progressbar:client:progress")
-AddEventHandler("progressbar:client:progress", function(action, finish)
+RegisterNetEvent('progressbar:client:progress', function(action, finish)
 	Process(action, nil, nil, finish)
 end)
 
-RegisterNetEvent("progressbar:client:ProgressWithStartEvent")
-AddEventHandler("progressbar:client:ProgressWithStartEvent", function(action, start, finish)
+RegisterNetEvent('progressbar:client:ProgressWithStartEvent', function(action, start, finish)
 	Process(action, start, nil, finish)
 end)
 
-RegisterNetEvent("progressbar:client:ProgressWithTickEvent")
-AddEventHandler("progressbar:client:ProgressWithTickEvent", function(action, tick, finish)
+RegisterNetEvent('progressbar:client:ProgressWithTickEvent', function(action, tick, finish)
 	Process(action, nil, tick, finish)
 end)
 
-RegisterNetEvent("progressbar:client:ProgressWithStartAndTick")
-AddEventHandler("progressbar:client:ProgressWithStartAndTick", function(action, start, tick, finish)
+RegisterNetEvent('progressbar:client:ProgressWithStartAndTick', function(action, start, tick, finish)
 	Process(action, start, tick, finish)
 end)
 
-RegisterNetEvent("progressbar:client:cancel")
-AddEventHandler("progressbar:client:cancel", function()
+RegisterNetEvent('progressbar:client:cancel', function()
 	Cancel()
 end)
 

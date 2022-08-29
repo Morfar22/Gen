@@ -1,13 +1,31 @@
 local function hideText()
-    exports['momof-textui']:HideText()
+    SendNUIMessage({
+        action = 'HIDE_TEXT',
+    })
 end
 
-local function drawText(text, position, theme)
-    exports['momof-textui']:ShowText(text, position, theme)
+local function drawText(text, position)
+    if type(position) ~= "string" then position = "left" end
+
+    SendNUIMessage({
+        action = 'DRAW_TEXT',
+        data = {
+            text = text,
+            position = position
+        }
+    })
 end
 
-local function changeText(text, position, theme)
-    exports['momof-textui']:ShowText(text, position, theme)
+local function changeText(text, position)
+    if type(position) ~= "string" then position = "left" end
+
+    SendNUIMessage({
+        action = 'CHANGE_TEXT',
+        data = {
+            text = text,
+            position = position
+        }
+    })
 end
 
 local function keyPressed()

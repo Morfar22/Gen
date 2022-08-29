@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-version '1.6'
+version '1.7'
 author 'Luxu.gg'
 description 'CEX V2 - Advanced Edition'
 

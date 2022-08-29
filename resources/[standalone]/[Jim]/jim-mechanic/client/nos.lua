@@ -358,6 +358,7 @@ CreateThread(function()
 				if (IsControlJustReleased(0, Config.NosBindings[2]) or IsControlJustPressed(0, 18)) and GetPedInVehicleSeat(CurrentVehicle, -1) == PlayerPedId() then
 					TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(CurrentVehicle), false)
 					if NitrousActivated then
+						TriggerServerEvent('jim-mechanic:database:UpdateNitroLevel', Plate, VehicleNitrous[Plate].level)
 						StopSound(soundId)
 						SetVehicleBoostActive(CurrentVehicle, 0)
 						if Config.EnableFlame then TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false) end

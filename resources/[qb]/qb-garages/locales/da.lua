@@ -6,7 +6,6 @@ local Translations = {
         not_correct_type = "Du kan ikke parkere dette køretøj i denne garage",
         not_enough = "Ikke nok penge",
         no_garage = "Ingen",
-        vehicle_occupied = "Du kan ikke opbevare dette køretøj, da det ikke er tomt",
     },
     success = {
         vehicle_parked = "Køretøj Parkeret",

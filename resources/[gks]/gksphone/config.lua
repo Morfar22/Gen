@@ -44,7 +44,7 @@ Config.AutoWantedTime       = 7                -- How many days ago you want to 
 Config.MumbleExport     = "mumble-voip"       -- exports["mumble-voip"] -- Resource Name
 Config.PMAVoiceExport   = "pma-voice"         -- exports["pma-voice"]   -- Resource Name
 Config.UseMumbleVoIP    = false  -- Use Frazzle's Mumble-VoIP Resource (Recomended!) https://github.com/FrazzIe/mumble-voip
-Config.PMAVoice         = false
+Config.PMAVoice         = true
 Config.UseTokoVoIP      = false
 Config.SaltyChat        = false  -- SaltyChat (Only v2.6 and lower | Not tested in v2.6 higher versions)
 
@@ -65,7 +65,7 @@ Config.loafHouse        = false   -- Activate if you are using Loaf House (https
 Config.BankTransferCom  = 10     -- Bank transfer commission rate
 
 -- ### GARAGE APP ### ---
-Config.qbGarages        = false   -- Set to false if you are not using qb-garages
+Config.qbGarages        = true   -- Set to false if you are not using qb-garages
 Config.cdGarages        = false  -- Activate if you are using Codesign Garage (https://codesign.pro/package/4206352)
 Config.loafGarages      = false  -- Activate if you are using Loaf Garage (https://store.loaf-scripts.com/package/4310876)
 

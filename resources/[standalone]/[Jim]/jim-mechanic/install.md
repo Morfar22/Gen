@@ -461,6 +461,13 @@ end
 
 # Changelog:
 
+## Update v2.8.6:
+    - Added missing `updateCar` event to extras in externals
+    - Fix exploit where boost speed was staying applied for other players, which would then apply back to the driver
+    - Fix database not updating the NOS when driving around
+        - Now saves to database when you stop boosting
+    - Reduced car modification database saving timer to 20 seconds from 60.
+
 ## Update v2.8.5:
     - Added bossmenu (qb-managment) to clock in locations - locations.lua
     - Fix NOS boost sound for people who were in different cars - nos.lua

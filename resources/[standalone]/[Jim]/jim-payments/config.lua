@@ -38,13 +38,13 @@ Config = {
 						-- This doesn't affect Cash payments as they by default use confirmation now
 						-- This is helpful for phones that don't support invoices well
 
-	PhoneType = "qb", -- Change this setting to make invoices work with your phone script [still testing this currently]
+	PhoneType = "gks", -- Change this setting to make invoices work with your phone script [still testing this currently]
 						-- "qb" for qb-phone
 						-- "gks"" for GKSPhone
 
 	CashInLocation = vector4(252.23, 223.11, 106.29, 159.2), -- Default Third Window along in Pacific Bank
 
-	TicketSystem = true, -- Enable this if you want to use the ticket system false
+	TicketSystem = false, -- Enable this if you want to use the ticket system false
 	TicketSystemAll = true, -- Enable this to give tickets to all workers clocked in
 
 	Commission = true, -- Set this to true to enable Commissions and give the person charging a percentage of the total

@@ -1,6 +1,6 @@
 name "Jim-Mechanic"
 author "Jimathy"
-version "v2.8.5"
+version "v2.8.6"
 description "Mechanic Script By Jimathy"
 fx_version "cerulean"
 game "gta5"
@@ -56,5 +56,4 @@ escrow_ignore {
 files { "stream/carcols_gen9.meta", "stream/carmodcols_gen9.meta" }
 data_file "CARCOLS_GEN9_FILE" "stream/carcols_gen9.meta"
 data_file "CARMODCOLS_GEN9_FILE" "stream/carmodcols_gen9.meta"
-
 dependency '/assetpacks'

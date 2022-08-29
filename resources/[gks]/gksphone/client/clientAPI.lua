@@ -1,6 +1,6 @@
 function  GiveKeyCar (callback_vehicle, vehicle)
-    exports['ps-fuel']:SetFuel(callback_vehicle, vehicle.fuel)
-    TriggerEvent("vehiclekeys:client:SetOwner", Config.Core.Functions.GetPlate(callback_vehicle))  -- You may need to write your car key function
+  --exports['ps-fuel']:SetFuel(callback_vehicle, vehicle.fuel)
+  TriggerEvent("vehiclekeys:client:SetOwner", Config.Core.Functions.GetPlate(callback_vehicle))  -- You may need to write your car key function
 end
 
 function  OpenPhoneBlock () -- You can use this function if you want to prevent the phone from being turned on.

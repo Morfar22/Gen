@@ -8,15 +8,15 @@
         }
     ],
     "translations": {
-        "keyboard": "Tastatur",
+        "keyboard": "Keyboard",
         "controller": "Controller",
-        "keybind_key_up": "Op i en menu",
-        "keybind_key_down": "Ned i en menu",
-        "keybind_key_left": "Venstre i en menu",
-        "keybind_key_right": "Lige i en menu",
-        "keybind_key_enter": "Bekræft element i menu",
-        "keybind_key_close": "Lukker en menu",
-        "keybind_key_close_all": "Luk alle menuer (inklusive forældre)",
-        "open_menu": "Åbn menu '%s' med denne tast"
+        "keybind_key_up": "Up in a menu",
+        "keybind_key_down": "Down in a menu",
+        "keybind_key_left": "Left in a menu",
+        "keybind_key_right": "Right in a menu",
+        "keybind_key_enter": "Confirm item in menu",
+        "keybind_key_close": "Closing a menu",
+        "keybind_key_close_all": "Close all menus (including parents)",
+        "open_menu": "Open menu '%s' with this key"
     }
 }

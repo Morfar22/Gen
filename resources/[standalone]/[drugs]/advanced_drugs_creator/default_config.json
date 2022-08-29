@@ -365,7 +365,6 @@
             "plane": true,
             "boat": true
         },
-        "blipTimeAfterNPCCallPolice": 120,
         "sellShowRadius": {
             "plane": false,
             "boat": false

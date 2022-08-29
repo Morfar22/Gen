@@ -1,7 +1,63 @@
 
 ================================================================
-======== txAdmin Starting - 25.8.2022 21.05.13                  
+======== txAdmin Starting - 26.8.2022 22.50.08                  
 ================================================================
-[21:06:28] [emilf] created admins file
-[21:08:54] [emilf] Changing global/fxserver settings via setup stepper.
-[21:09:26] [emilf] Changing fxRunner settings.
+
+================================================================
+======== Log Rotated - 26.8.2022 22.50.09                       
+================================================================
+[22:51:28] [MONITOR] Restarting server (server failed to start within time limit - 90s max per resource, or 60s total).
+[22:56:24] [emilf] logged in from 127.0.0.1 via citizenfx
+[22:56:41] [emilf] RESTART SERVER
+[22:57:56] [emilf] RESTART SERVER
+[23:02:47] [emilf] RESTART SERVER
+[23:04:40] [emilf] logged in via in-game ui
+[23:07:41] [emilf] RESTART SERVER
+[23:08:36] [emilf] restart qb-core
+[23:09:54] [emilf] RESTART SERVER
+[23:10:17] [emilf] restart qb-core
+[23:10:19] [emilf] RESTART SERVER
+[23:14:15] [emilf] logged in via in-game ui
+[23:15:45] [emilf] logged in via in-game ui
+[23:22:57] [emilf] RESTART SERVER
+[23:24:23] [emilf] logged in via in-game ui
+[23:38:29] [emilf] RESTART SERVER
+[23:43:37] [emilf] logged in via in-game ui
+[23:54:56] [emilf] RESTART SERVER
+[23:56:54] [emilf] logged in via in-game ui
+[00:01:02] [emilf] refresh
+[00:01:03] [emilf] start HL-serverdrift
+[00:01:20] [emilf] clear
+[00:03:34] [emilf] logged in via in-game ui
+[00:04:20] [emilf] start HL-serverdrift
+[00:04:28] [emilf] restart HL-serverdrift
+[00:06:36] [emilf] logged in via in-game ui
+[00:13:44] [emilf] Sending announcement: Alle bedes pakke deres tlf væk
+[00:28:11] [emilf] logged in via in-game ui
+[00:38:19] [emilf] logged in via in-game ui
+[00:57:08] [emilf] RESTART SERVER
+[00:58:49] [emilf] logged in via in-game ui
+[01:03:33] [emilf] refresh
+[01:03:39] [emilf] restart qb-garages
+[01:12:12] [emilf] RESTART SERVER
+[01:13:49] [emilf] logged in via in-game ui
+[01:26:55] [emilf] RESTART SERVER
+[01:28:41] [emilf] logged in via in-game ui
+[01:49:14] [emilf] RESTART SERVER
+[01:49:52] [emilf] RESTART SERVER
+[01:51:47] [emilf] logged in via in-game ui
+[01:54:09] [emilf] refresh
+[01:54:11] [emilf] start zdiscord
+[10:55:35] [emilf] refresh
+[10:55:42] [emilf] start qb-stashes
+[11:30:59] [emilf] RESTART SERVER
+[11:32:05] [MONITOR] Restarting server (server failed to start within time limit - 90s max per resource, or 60s total).
+[11:55:17] [emilf] refresh
+[11:55:27] [emilf] start qb-traphouse
+[11:56:51] [emilf] refresh
+[11:56:56] [emilf] start qb-traphouse
+[12:16:46] [emilf] ensure "advanced_drugs_creator"
+[23:01:18] [emilf] logged in from 127.0.0.1 via citizenfx
+[01:30:12] [emilf] logged in via in-game ui
+[02:11:14] [emilf] logged in via in-game ui
+[02:11:22] [emilf] STOP SERVER
