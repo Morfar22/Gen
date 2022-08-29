@@ -650,9 +650,9 @@ Config.Crafting = {
 			levelNeeded = 2,
 			xpPerCraft = 80,
 			recipe = { -- Recipe to craft it
-				{'cleaningkit', 10, true}, -- item/amount/if the item should be removed when crafting
-				{'rubber', 20, true},
-				{'metalscrap', 300, true},
+				{'cleaningkit', 5, true}, -- item/amount/if the item should be removed when crafting
+				{'rubber', 10, true},
+				{'metalscrap', 60, true},
 			},
 			job = { -- What jobs can craft this item in this workbench
 				''
@@ -683,8 +683,8 @@ Config.Crafting = {
 			levelNeeded = 2,
 			xpPerCraft = 80,
 			recipe = { -- Recipe to craft it
-				{'rubber', 20, true},
-				{'metalscrap', 30, true},
+				{'rubber', 2, true},
+				{'metalscrap', 3, true},
 			},
 			job = { -- What jobs can craft this item in this workbench
 				''
@@ -699,9 +699,9 @@ Config.Crafting = {
 			levelNeeded = 2,
 			xpPerCraft = 80,
 			recipe = { -- Recipe to craft it
-				{'rubber', 30, true},
-				{'metalscrap', 30, true},
-				{'spring', 20, true},
+				{'rubber', 3, true},
+				{'metalscrap', 3, true},
+				{'spring', 2, true},
 			},
 			job = { -- What jobs can craft this item in this workbench
 				''
@@ -716,8 +716,8 @@ Config.Crafting = {
 			levelNeeded = 2,
 			xpPerCraft = 80,
 			recipe = { -- Recipe to craft it
-				{'cleaningkit', 10, true}, -- item/amount/if the item should be removed when crafting
-				{'rubber', 20, true},
+				{'cleaningkit', 2, true}, -- item/amount/if the item should be removed when crafting
+				{'rubber', 1, true},
 			},
 			job = { -- What jobs can craft this item in this workbench
 				''

@@ -39,6 +39,33 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
     end
 end
 
+local function getshitdone(veh)
+    -- you need this to apply mods
+    SetVehicleModKit(veh,0)
+    SetVehicleMod(veh,11,GetVehicleMod(veh,11),false)
+    SetVehicleMod(veh,12,GetVehicleMod(veh,12),false)
+    SetVehicleMod(veh,13,GetVehicleMod(veh,13),false)
+    SetVehicleMod(veh,15,GetVehicleMod(veh,15),false)
+    SetVehicleMod(veh,16,GetVehicleMod(veh,16),false)
+end
+
+RegisterCommand('maxupg', function (source)
+    if IsPedInAnyVehicle(PlayerPedId(), false) then
+        local veh = GetVehiclePedIsIn(PlayerPedId(), false)
+        getshitdone(veh)        
+        SetVehicleMod(veh, 11, 3)
+        SetVehicleMod(veh, 12, 2)
+        SetVehicleMod(veh, 13, 2)
+        SetVehicleMod(veh, 15, 3)
+        SetVehicleMod(veh, 16, 4)
+        ToggleVehicleMod(veh, 18, true) -- Turbo
+        ToggleVehicleMod(veh, 22, true) -- Xenon Headlights
+        TriggerEvent("QBCore:Notify", "upgraded")
+    else
+        TriggerEvent("QBCore:Notify", "You need to be in a vehicle")
+    end
+end, false)
+
 -- Events
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     local player = QBCore.Functions.GetPlayerData()

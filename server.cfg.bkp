@@ -1,0 +1,111 @@
+#   ____  ____   _____               
+#  / __ \|  _ \ / ____|              
+# | |  | | |_) | |     ___  _ __ ___ 
+# | |  | |  _ <| |    / _ \| '__/ _ \
+# | |__| | |_) | |___| (_) | | |  __/
+#  \___\_\____/ \_____\___/|_|  \___|
+
+## You CAN edit the following:
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+sv_maxclients 60
+set steam_webApiKey "none"
+sets tags "default, deployer, qbcore, qb-core"
+
+## You MAY edit the following:
+sv_licenseKey "cfxk_1RgFsw9w16C7ZMINGQbtV_1xMGlZ"
+sv_hostname "[DK] High-Life | Allowlistet 16+ | Discord: https://discord.gg/high-life"
+sets sv_projectName "High-Life A new roleplay server based on qb-core"
+sets sv_projectDesc "High-Life Is open. get updates on our discord at: https://discord.gg/high-life"
+sets locale "en-US" 
+load_server_icon myLogo.png
+set sv_enforceGameBuild 2699
+set mysql_connection_string "mysql://root@localhost/highlife?charset=utf8mb4"
+set mysql_slow_query_warning 150
+set mysql_debug false
+# Voice config
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+setr voice_defaultCycle "GRAVE"
+setr voice_defaultVolume 0.3
+setr voice_enableRadioAnim 1
+setr voice_syncData 1
+
+# QBCore locale config
+setr qb_locale "en"
+setr tebit_lib "qb"
+# QBCore UseTarget
+setr UseTarget true
+
+# These resources will start by default.
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure basic-gamemode
+ensure hardcap
+ensure baseevents
+
+# QBCore & Extra stuff
+ensure qb-core
+ensure qb-hud
+ensure [qb]
+ensure [gks]
+ensure ti_utils
+ensure [standalone]
+ensure [voice]
+ensure cfx-gabz-mapdata
+ensure [defaultmaps]
+ensure [cars]
+
+restart qb-hud #how this works idk
+
+## Permissions ##
+add_ace group.admin command allow # allow all commandsupdate.sign
+add_principal identifier.license:f2670343da20aad113cd1dbc1d5183615cd73e88 qbcore.god #vekstar
+add_principal identifier.license:6d7c637c585da1b31d306a248661dc67bf5712cb qbcore.god #tulle
+add_principal identifier.license:5d26c7faf9840b2f963936eb254cdfde6c237700 qbcore.god #TicXu
+add_principal identifier.license:846941ec834bb40ac4fd37ce813e2a6597febaec qbcore.god #nessi
+add_principal identifier.license:c3f44baebf56f15995e2c0a54519e39b1b04ad1e qbcore.god #snipzi
+add_principal identifier.license:0d8a1f40184232325e1a92c7e76a7a6ccf86cd8a qbcore.god #morfar
+add_principal identifier.license:ebf9b70180de0cdc30ca9d6b34fd0648a0c46683 qbcore.god #hanzo
+add_principal identifier.license:d70488a9ebbab9903f4055602986c9eac8a0113a qbcore.god #FullmoonSadness
+add_principal identifier.license:6846eb2d533fae48bd56f746d779907cb07cadf4 qbcore.god #cypher
+add_principal identifier.license:ec3debab66b079c9e2318bc905986e4a58db20b7 qbcore.god #lloyd
+
+#dc 
+add_ace resource.dc-adminmenu command allow # Allow dc-adminmenu to execute commands
+add_ace AdminmenuGod adminmenu.god allow #Allow the group "AdminmenuGod" to use the ace "adminmenu.god"
+add_ace AdminmenuAdmin adminmenu.admin allow #Allow the group "AdminmenuAdmin" to use the ace "adminmenu.admin"
+add_principal AdminmenuAdmin qbcore.admin #Allow the group "AdminmenuGod" to use everything "qbcore.admin" can use
+add_principal AdminmenuGod AdminmenuAdmin #Allow the group "AdminmenuGod" to use everything "AdminmenuAdmin" can use
+add_principal AdminmenuGod qbcore.god #Allow the group "AdminmenuGod" to use everything "qbcore.god" can use
+
+add_principal identifier.license:f2670343da20aad113cd1dbc1d5183615cd73e88 AdminmenuGod #vekstar
+add_principal identifier.license:6d7c637c585da1b31d306a248661dc67bf5712cb AdminmenuGod #tulle
+add_principal identifier.license:5d26c7faf9840b2f963936eb254cdfde6c237700 AdminmenuGod #TicXu
+add_principal identifier.license:846941ec834bb40ac4fd37ce813e2a6597febaec AdminmenuGod #nessi
+add_principal identifier.license:c3f44baebf56f15995e2c0a54519e39b1b04ad1e AdminmenuGod #snipzi
+add_principal identifier.license:0d8a1f40184232325e1a92c7e76a7a6ccf86cd8a AdminmenuGod #morfar
+add_principal identifier.license:d70488a9ebbab9903f4055602986c9eac8a0113a AdminmenuGod #FullmoonSadness
+add_principal identifier.license:6846eb2d533fae48bd56f746d779907cb07cadf4 AdminmenuGod #cypher
+add_principal identifier.license:ec3debab66b079c9e2318bc905986e4a58db20b7 AdminmenuGod #lloyd
+
+# Resources
+add_ace resource.qb-core command allow # Allow qb-core to execute commands
+add_ace qbcore.god command.muteply allow
+add_ace qbcore.god vacadmin allow
+add_ace qbcore.god vacbypass allow
+# Gods
+add_ace qbcore.god command allow # Allow all commands
+add_ace qbcore.god update.sign allow # Allow all commands
+add_ace group.admin advanced_drugs_creator allow # Add permission to group
+add_ace qbcore.god advanced_drugs_creator allow # Add permission to group
+
+# Inheritance
+add_principal qbcore.god group.admin # Allow gods access to the main admin group used to get all default permissions
+add_principal qbcore.god group.admin # Signs
+add_principal qbcore.god update.sign # Allow gods access to admin commands
+add_principal qbcore.admin qbcore.mod # Allow admins access to mod commands
+add_principal qbcore.admin vacadmin 
+add_principal qbcore.admin vacbypass

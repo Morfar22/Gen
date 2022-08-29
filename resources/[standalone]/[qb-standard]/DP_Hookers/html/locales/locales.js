@@ -1,0 +1,15 @@
+Locales = {
+    "choose": "CHOOSE",
+    "blowjob_title": "BLOWJOB (With condom)",
+    "blowjob_desc": "Hard day and a bit poor ?",
+    "blowjob_sub_desc": "Finish included, Condom requiered.",
+    "blowjob_price": "$200",
+    "blowjob+_title": "BLOWJOB (Without condom)",
+    "blowjob+_desc": "Hard day and you want to feel everything ?",
+    "blowjob+_sub_desc": "Finish included. Condom isn't requiered.",
+    "blowjob+_price": "$600",
+    "sex_title": "SEX",
+    "sex_desc": "You're not joking, are you ?",
+    "sex_sub_desc": "All inclusive. Cum wherever you want",
+    "sex_price": "$1200",
+}

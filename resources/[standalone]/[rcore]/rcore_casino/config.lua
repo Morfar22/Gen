@@ -33,7 +33,7 @@ Config = {
     ROULETTE_JUNIOR_ENABLED = true, -- set if you want to have Roulette Junior (blue) table for newbies (low stakes)
     ROULETTE_JUNIOR_COORDS = {1004.790, 57.295, 68.432},
     CASHIER_DAILY_BONUS = 1000, -- daily visitor bonus that players can request at the Cashier, set to 0 if you don't want any daily bonuses. def: 1000
-    CASHIER_VIP_PRICE = 500000, -- price of the VIP casino membership, def: 50000
+    CASHIER_VIP_PRICE = 50000, -- price of the VIP casino membership, def: 50000
     CASHIER_VIP_PASS_ITEM = false, -- an inventory item you have to have to be able to purchase the VIP membership. It gets removed after you purchase the VIP. Set to false if no inventory item is needed, and everyone can buy it.
     LUCKY_WHEEL_FREE_DRINKS_FOR = (60 * 60 * 24), -- when someone spins "Free Drinks" at the Lucky Wheel, how long they get free drinks for. def: 24 hours (60 * 60 * 24)
     LUCKY_WHEEL_COOLDOWN = (60 * 60 * 24), -- how long players have to wait for their next spin. def: 24 hours (60 * 60 * 24)
@@ -83,7 +83,7 @@ Config = {
     PlateUseSpace = true,
 
     -- Drinking
-    DrunkSystem = 1,
+    DrunkSystem = 4,
     -- 1 = built-in, resets drunk level after leaving casino
     -- 2 = esx_status
     -- 3 = evidence:client:SetStatus

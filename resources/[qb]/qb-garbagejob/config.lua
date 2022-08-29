@@ -6,7 +6,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.TruckPrice = 250
 
 -- Want to give out a cryptostick per stop?
-Config.GiveCryptoStick = false
+Config.GiveCryptoStick = true
 
 -- Has to roll this number or higher to receive a cryptostick
 Config.CryptoStickChance = 75
@@ -154,6 +154,4 @@ Config.Locations = {
     }
 }
 
-Config.Vehicles = {
-    ["trash2"] = "Garbage Truck",
-}
+Config.Vehicle = 'trash2' -- vehicle name used to spawn

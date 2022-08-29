@@ -1,62 +1,27 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(10)
-  end
-end)
-
-local crouched = false
-local currentmvclipset = nil
-
-RegisterCommand('walk', function(source, args, raw) WalkCommandStart(args[1]) end)
--- RegisterCommand('walks', function(source, args, raw) WalksOnCommand() end)
-
-function WalkMenuStart(name)
-  RequestWalking(name)
-  SetPedMovementClipset(PlayerPedId(), name, 0.2)
-  RemoveAnimSet(name)
-end
-
-function RequestWalking(set)
-  RequestAnimSet(set)
-  while not HasAnimSetLoaded(set) do
-    Citizen.Wait(1)
-  end 
-end
-
--- function WalksOnCommand(source, args, raw)
---   local WalksCommand = ""
---   for a in pairsByKeys(DP.Walks) do
---     WalksCommand = WalksCommand .. ""..string.lower(a)..", "
---   end
---   EmoteChatMessage(WalksCommand)
---   EmoteChatMessage("To reset do /walk reset")
--- end
-
-function WalkCommandStart(walktype)
-  local name = firstToUpper(walktype)
-
-  if name == "Reset" then
-      -- ResetPedMovementClipset(PlayerPedId()) return
-      WalkMenuStart("move_m@shocked@a") currentmvclipset = nil return
-  end
-
-  local name2 = table.unpack(DP.Walks[name])
-  if name2 ~= nil then
-    WalkMenuStart(name2)
-    currentmvclipset = name2
-  else
-    EmoteChatMessage("'"..name.."' is not a valid walk")
-  end
-end
-
 TriggerServerEvent("dp:CheckVersion")
 
 rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
+PlayerData = QBCore.Functions.GetPlayerData()
+isLoggedIn = false
+
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+    PlayerData = QBCore.Functions.GetPlayerData()
+    isLoggedIn = true
+end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload')
+AddEventHandler('QBCore:Client:OnPlayerUnload', function()
+    PlayerData = {}
+    isLoggedIn = false
+end)
+
+RegisterNetEvent('QBCore:Player:SetPlayerData')
+AddEventHandler('QBCore:Player:SetPlayerData', function(val)
+    PlayerData = val
+end)
 
 if Config.MenuPosition then
   if Config.MenuPosition == "left" then
@@ -78,14 +43,13 @@ else
 end
 
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("Animasyonlar", "", menuPosition["x"], menuPosition["y"], Menuthing, Menuthing)
+mainMenu = NativeUI.CreateMenu("dp Emotes", "", menuPosition["x"], menuPosition["y"], Menuthing, Menuthing)
 _menuPool:Add(mainMenu)
 
 function ShowNotification(text)
-    -- SetNotificationTextEntry("STRING")
-    -- AddTextComponentString(text)
-    -- DrawNotification(false, false)
-    TriggerEvent('mythic_notify:client:SendAlert', { type = 'inform', text = text, length = 5000})
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString(text)
+    DrawNotification(false, false)
 end
 
 local EmoteTable = {}
@@ -98,21 +62,21 @@ local FaceTable = {}
 local ShareTable = {}
 local FavoriteEmote = ""
 
--- Citizen.CreateThread(function()
---   while true do
---     if Config.FavKeybindEnabled then
---       if IsControlPressed(0, Config.FavKeybind) then
---         if not IsPedSittingInAnyVehicle(PlayerPedId()) then
---           if FavoriteEmote ~= "" then
---             EmoteCommandStart(nil,{FavoriteEmote, 0})
---             Wait(3000)
---           end
---         end
---       end
---     end
---     Citizen.Wait(1)
---   end
--- end)
+Citizen.CreateThread(function()
+  while true do
+    if Config.FavKeybindEnabled and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
+      if IsControlPressed(0, Config.FavKeybind) then
+        if not IsPedSittingInAnyVehicle(PlayerPedId()) then
+          if FavoriteEmote ~= "" then
+            EmoteCommandStart(nil,{FavoriteEmote, 0})
+            Wait(3000)
+          end
+        end
+      end
+    end
+    Citizen.Wait(1)
+  end
+end)
 
 lang = Config.MenuLanguage
 
@@ -201,7 +165,7 @@ function AddEmoteMenu(menu)
         return end 
         if Config.FavKeybindEnabled then
           FavoriteEmote = FavEmoteTable[index]
-          ShowNotification("\""..firstToUpper(FavoriteEmote)..Config.Languages[lang]['newsetemote']) 
+          ShowNotification("~o~"..firstToUpper(FavoriteEmote)..Config.Languages[lang]['newsetemote']) 
         end
       end
     end
@@ -210,31 +174,28 @@ function AddEmoteMenu(menu)
       EmoteMenuStart(DanceTable[index], "dances")
     end
 
-      
-        sharemenu.OnItemSelect = function(sender, item, index)
-          if ShareTable[index] ~= 'none' then
-            target, distance = GetClosestPlayer()
-            if(distance ~= -1 and distance < 3) then
-              _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
-              TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
-              TriggerEvent('mythic_notify:client:SendAlert', { type = 'inform', text = 'Kişiye istek yolladın.'})
+    if Config.SharedEmotesEnabled then
+      sharemenu.OnItemSelect = function(sender, item, index)
+        if ShareTable[index] ~= 'none' then
+          target, distance = GetClosestPlayer()
+          if(distance ~= -1 and distance < 3) then
+            _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
+            TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
+            SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target))
           else
-           -- SimpleNotify(Config.Languages[lang]['nobodyclose'])
-          TriggerEvent('mythic_notify:client:SendAlert', { type = 'error', text = 'Yakında kimse yok!'})
-            end
+            SimpleNotify(Config.Languages[lang]['nobodyclose'])
           end
+        end
+      end
 
-        
       shareddancemenu.OnItemSelect = function(sender, item, index)
         target, distance = GetClosestPlayer()
         if(distance ~= -1 and distance < 3) then
           _,_,rename = table.unpack(DP.Dances[DanceTable[index]])
           TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), DanceTable[index], 'Dances')
-          --SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
-          TriggerEvent('mythic_notify:client:SendAlert', { type = 'inform', text = 'Kişiye istek yolladın.'})
+          SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
         else
-          --SimpleNotify(Config.Languages[lang]['nobodyclose'])
-          TriggerEvent('mythic_notify:client:SendAlert', { type = 'error', text = 'Yakında kimse yok!'})
+          SimpleNotify(Config.Languages[lang]['nobodyclose'])
         end
       end
     end
@@ -257,7 +218,6 @@ function AddCancelEmote(menu)
         if item == newitem then
           EmoteCancel()
           DestroyAllProps()
-          TriggerEvent('fishing:break')
         end
     end
 end
@@ -283,10 +243,8 @@ function AddWalkMenu(menu)
     submenu.OnItemSelect = function(sender, item, index)
       if item ~= walkreset then
         WalkMenuStart(WalkTable[index])
-        currentmvclipset = WalkTable[index]
       else
         ResetPedMovementClipset(PlayerPedId())
-        currentmvclipset = nil
       end
     end
 end
@@ -314,6 +272,26 @@ function AddFaceMenu(menu)
     end
 end
 
+function AddInfoMenu(menu)
+    if not UpdateAvailable then
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.3)", "", Menuthing, Menuthing)
+    else
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
+    end
+    contact = NativeUI.CreateItem(Config.Languages[lang]['suggestions'], Config.Languages[lang]['suggestionsinfo'])
+    u170 = NativeUI.CreateItem("1.7.0", "Added /emotebind [key] [emote]!")
+    u165 = NativeUI.CreateItem("1.6.5", "Updated camera/phone/pee/beg, added makeitrain/dance(glowstick/horse).")
+    u160 = NativeUI.CreateItem("1.6.0", "Added shared emotes /nearby, or in menu, also fixed some emotes!")
+    u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
+    u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
+    infomenu:AddItem(contact)
+    infomenu:AddItem(u170)
+    infomenu:AddItem(u165)
+    infomenu:AddItem(u160)
+    infomenu:AddItem(u151)
+    infomenu:AddItem(u150)
+end
+
 function OpenEmoteMenu()
     mainMenu:Visible(not mainMenu:Visible())
 end
@@ -334,87 +312,30 @@ end
 _menuPool:RefreshIndex()
 
 Citizen.CreateThread(function()
-	while true do 
-    Citizen.Wait(0)
-    _menuPool:ProcessMenus()
-    DisableControlAction(0, 36, true)
-    local player = PlayerPedId()
-    if crouched then
-			if IsPlayerFreeAiming(PlayerId()) then
-        ResetPedMovementClipset(player, 0)
-        ResetPedStrafeClipset(player)
-        if currentmvclipset ~= nil then
-          WalkMenuStart(currentmvclipset)
-        else
-          WalkMenuStart("move_m@shocked@a")
-        end
-        crouched = false 
-			end
-		end
-    if not IsPauseMenuActive() then 
-      if IsDisabledControlJustPressed(0, 36) then
-        if crouched then
-					ResetPedMovementClipset(player, 0)
-          ResetPedStrafeClipset(player)
-          if currentmvclipset ~= nil then
-            WalkMenuStart(currentmvclipset)
-          else
-            WalkMenuStart("move_m@shocked@a")
-					end
-					crouched = false 
-        else
-          crouched = true
-          RequestAnimSet("move_ped_crouched")
-          repeat
-            Citizen.Wait(0)
-          until (HasAnimSetLoaded("move_ped_crouched"))
-					SetPedMovementClipset(player, "move_ped_crouched", 0.55)
-          SetPedStrafeClipset(player, "move_ped_crouched_strafing")
-				end 
-      end
-		else
-			crouched = false
+    while true do
+        Citizen.Wait(0)
+        _menuPool:ProcessMenus()
     end
-    
- --[[   if IsControlJustPressed(0, 73) then --x
-      if DoesEntityExist(player) then -- and not IsEntityDead(player) 
-        if IsEntityPlayingAnim(player, "random@mugging3", "handsup_standing_base", 3) then
-          SetCurrentPedWeapon(player, GetHashKey('WEAPON_UNARMED'), true)
-          ClearPedSecondaryTask(player)
-          IsInAnimation = false
-        else
-          SetCurrentPedWeapon(player, GetHashKey('WEAPON_UNARMED'), true)
-          LoadAnim("random@mugging3")
-          TaskPlayAnim(player, "random@mugging3", "handsup_standing_base", 2.0, 2.5, -1, 49, 0, 0, 0, 0 )
-          RemoveAnimDict("random@mugging3")
-          IsInAnimation = false
-        end
-      end
-    end]]
-
-    if not crouched then
-      local ped = PlayerPedId()
-      if GetEntityHealth(ped) <= 129 then
-        WalkMenuStart("move_m@injured")
-      elseif GetEntityHealth(ped) > 130 then
-        if currentmvclipset ~= nil then
-          WalkMenuStart(currentmvclipset)
-        else
-          WalkMenuStart("move_m@shocked@a")
-        end
-      end
-    end
-  end
 end)
 
 RegisterNetEvent("dp:Update")
 AddEventHandler("dp:Update", function(state)
     UpdateAvailable = state
-    -- AddInfoMenu(mainMenu)
+    AddInfoMenu(mainMenu)
     _menuPool:RefreshIndex()
 end)
 
 RegisterNetEvent("dp:RecieveMenu") -- For opening the emote menu from another resource.
 AddEventHandler("dp:RecieveMenu", function()
     OpenEmoteMenu() 
+end)
+
+-- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
+-- This won't set the player data too early as this only triggers when the server side is started and not the client side
+AddEventHandler('onResourceStart', function(resource)
+  if resource == GetCurrentResourceName() then
+      Wait(200)
+      PlayerData = QBCore.Functions.GetPlayerData()
+      isLoggedIn = true
+  end
 end)

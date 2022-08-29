@@ -10,31 +10,19 @@ Config.RemoveWeaponDrops = true
 Config.RemoveWeaponDropsTimer = 25
 Config.DefaultPrice = 20 -- Default price for the carwash
 Config.DirtLevel = 0.1 -- Threshold for the dirt level to be counted as dirty
-Config.DisableAmbience = false -- Disabled distance sirens, distance car alarms, etc
+Config.DisableAmbience = true -- Disabled distance sirens, distance car alarms, etc
 
 ConsumablesEat = {
     ["sandwich"] = math.random(35, 54),
     ["tosti"] = math.random(40, 50),
     ["twerks_candy"] = math.random(35, 54),
     ["snikkel_candy"] = math.random(40, 50),
-    -- Casino Bar Snacks
-    ["casino_burger"] = math.random(25, 40),
-    ["casino_psqs"] = math.random(25, 40),
-    ["casino_ego_chaser"] = math.random(25, 40),
-    ["casino_sandwitch"] = math.random(25, 40),
-    ["casino_donut"] = math.random(25, 40),
 }
 
 ConsumablesDrink = {
     ["water_bottle"] = math.random(35, 54),
     ["kurkakola"] = math.random(35, 54),
     ["coffee"] = math.random(40, 50),
-    -- Casino Bar Drinks
-    ["casino_beer"] = math.random(25, 40),
-    ["casino_coke"] = math.random(25, 40),
-    ["casino_sprite"] = math.random(25, 40),
-    ["casino_luckypotion"] = math.random(25, 40),
-    ["casino_coffee"] = math.random(25, 40),
 }
 
 ConsumablesAlcohol = {
@@ -128,12 +116,12 @@ Config.Teleports = {
     --Elevator @ labs
     [1] = {
         [1] = {
-            coords = vector4(3540.74, 3675.59, 20.99, 167.5),
+            coords = vector4(247.09, -1371.96, 24.54, 138.28),
             ["AllowVehicle"] = false,
             drawText = '[E] Take Elevator Up'
         },
         [2] = {
-            coords = vector4(3540.74, 3675.59, 28.11, 172.5),
+            coords = vector4(344.59, -1398.2, 32.51, 238.6),
             ["AllowVehicle"] = false,
             drawText = '[E] Take Elevator Down'
         },

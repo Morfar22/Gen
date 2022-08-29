@@ -4,9 +4,9 @@ Config.TimeInstall = 4000 -- time in ms for progressbar
 Config.FlameSize = 1.4
 
 Config.stageBoost = {
-    [1] = 8.0,  --[[Stage 1 Boost]]
-    [2] = 16.0, --[[Stage 2 Boost]]
-    [3] = 250.0  --[[Stage 3 Boost]]
+    [1] = 6.0,  --[[Stage 1 Boost]]
+    [2] = 10.0, --[[Stage 2 Boost]]
+    [3] = 20.0  --[[Stage 3 Boost]]
 }
 
 Locales = {

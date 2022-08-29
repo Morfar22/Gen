@@ -70,26 +70,7 @@ Config.CircleZones = {
 }
 
 Config.BoxZones = {
-	["court-gavel"] = {
-        name = "court-gavel",
-        coords = vector3(-576.19, -209.92, 38.77),
-        length = 1.55,
-        width = 0.3,
-        heading = 210,
-        debugPoly = false,
-        minZ = 38.52,
-        maxZ = 38.72,
-        options = {
-            {
-                type = "client",
-                event = "police:client:judgeGavel",
-                icon = "fa-solid fa-gavel",
-				label = "Use Gavel",
-				job = "lawyer"
-            },
-        },
-        distance = 2.0
-    },
+
 }
 
 Config.PolyZones = {
@@ -121,34 +102,7 @@ Config.GlobalPlayerOptions = {
 }
 
 Config.Peds = {
-    ["GruppeSechsPed"] = {
-        model = 's_m_m_armoured_02', 
-        coords = vector4(-4.04, -659.41, 33.48, 186.04),
-        minusOne = true, 
-        freeze = true, 
-        invincible = true, 
-        blockevents = true,
-        target = { 
-        options = {
-        {
-            type = "client",
-            event = "gruppesechs:getTruck",
-            icon = "fas fa-sign-in-alt",
-            label = "Get Gruppe Sechs Truck",
-            job = "gruppesechs",
-        },
-        {
-            type = "server",
-            event = "gruppesechs:server:PayShift",
-            icon = "fas fa-sign-in-alt",
-            label = "Collect Pay Check",
-            job = "gruppesechs",
-				}
-			},
-		 distance = 3,
-	 	}
-	},
-	
+
 }
 
 -------------------------------------------------------------------------------

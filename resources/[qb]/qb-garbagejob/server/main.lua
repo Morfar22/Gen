@@ -55,8 +55,8 @@ QBCore.Functions.CreateCallback("garbagejob:server:NextStop", function(source, c
     local newBagAmount = 0
 
     if(math.random(100) >= Config.CryptoStickChance) and Config.GiveCryptoStick then
-        Player.Functions.AddItem("goldchain", 1, false)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["goldchain"], 'add')
+        Player.Functions.AddItem("cryptostick", 1, false)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], 'add')
         TriggerClientEvent('QBCore:Notify', source, Lang:t("info.found_crypto"))
 
     end
@@ -103,7 +103,7 @@ RegisterNetEvent('garbagejob:server:PayShift', function()
             -- local totalComplete = math.floor((Routes[CitizenId].stopsCompleted/Routes[CitizenId].totalNumberOfStops) * 100)
             -- depositPay = math.ceil((totalComplete/Routes[CitizenId].depositPay) * 100)
             depositPay = 0
-            TriggerClientEvent('QBCore:Notify', src, Lang:t("error.early_finish", {Completed = Routes[CitizenId].stopsCompleted, total = Routes[CitizenId].totalNumberOfStops}), "error")
+            TriggerClientEvent('QBCore:Notify', src, Lang:t("error.early_finish", {completed = Routes[CitizenId].stopsCompleted, total = Routes[CitizenId].totalNumberOfStops}), "error")
         end
 
         local totalToPay = depositPay + Routes[CitizenId].actualPay

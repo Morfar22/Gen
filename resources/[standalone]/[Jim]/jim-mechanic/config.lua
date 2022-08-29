@@ -1,11 +1,11 @@
-print("^2Jim^7-^2Mechanic v^42^7.^48^7.^45 ^7- ^2Mechanic Script by ^1Jimathy^7")
+print("^2Jim^7-^2Mechanic v^42^7.^48^7.^46 ^7- ^2Mechanic Script by ^1Jimathy^7")
 
 Config = {
 	Lan = "en", -- Pick your language here
 	Debug = false, -- Set to true to show green debug boxes to help track
 	img = "qb-inventory/html/images/", -- Set this to the directory for your inventory image files
 	JimShops = false, -- If using my free script jim-shops, enable this to use it with the mechanic stores.
-	JimMenu = true, -- If using my free edit of qb-menu enable this.
+	JimMenu = false, -- If using my free edit of qb-menu enable this.
 	distkph = false, -- Set to false to read distance travelled in Miles.
 
 -- Main variables
@@ -15,8 +15,8 @@ Config = {
 	LocationBlips = true, -- Enable to grab the blip locations from locations.lua
 	CosmeticsJob = false, -- Do vehicle cosmetics require a mechanic job role?
 	FreeRepair = false,  -- Are repairs free? True means yes
-	StashRepair = true, -- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
-	Stores = false, -- Set true to turn on shop storage features
+	StashRepair = false, -- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
+	Stores = true, -- Set true to turn on shop storage features
 	Crafting = true, -- Set true to turn on crafting features
 	StashCraft = false,  -- Set true to grab materials from mechaincs stash for crafting
 	PreviewPhone = true, -- Enable this is preview menu generates an email, False if you want to give an item
@@ -94,8 +94,8 @@ Config = {
 -- Discord preview receipts
 	-- You will need to set custom info in each job location in locations.lua
 	-- But for the ones you don't add info to, it will default to these numbers
-	DiscordPreview = false, -- Set to true if you want to use discord receipts
-	DiscordDefault = "", -- Set this to the default channel API link if one isn't set for a location
+	DiscordPreview = true, -- Set to true if you want to use discord receipts
+	DiscordDefault = "https://discord.com/api/webhooks/1013252113968664686/yZwDeptWzqNAk3OH1gBS08CQUpXD3TnqJpb-aeA-drGUZzNLErK_98rsyW8GcsmouBUT", -- Set this to the default channel API link if one isn't set for a location
 	DiscordColour = 16753920, -- This is the default "decimal" number colour
 
 --Extra Vehicle Repair Costs
@@ -131,7 +131,7 @@ Config = {
 
 	RemoveDuctTape = true, --If Enabled it will remove 1 duct after use. If false it will be constantly reusable
 
-	JobRoles = { "mechanic", "tuner", }, -- These are the job roles who can use items if RequiresJob is enabled.
+	JobRoles = { "mechanic", }, -- These are the job roles who can use items if RequiresJob is enabled.
 								-- Add your extra job roles here or just leave as "mechanic"
 	--Example--
 	--JobRoles = { "mechanic", "tuner" }

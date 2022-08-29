@@ -8,7 +8,7 @@ local requestedemote = ''
 -- Commands / Events --------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 if Config.SharedEmotesEnabled then
-    RegisterCommand('nearby', function(source, args, raw)
+    RegisterNetEvent('animations:client:Nearby', function(args)
         if #args > 0 then
             local emotename = string.lower(args[1])
             target, distance = GetClosestPlayer()
@@ -26,7 +26,7 @@ if Config.SharedEmotesEnabled then
         else
           MearbysOnCommand()
         end
-    end, false)
+    end)
 end
 
 RegisterNetEvent("SyncPlayEmote")
@@ -76,7 +76,7 @@ AddEventHandler("ClientEmoteRequestReceive", function(emotename, etype)
     end
 
     PlaySound(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 0, 0, 1)
-    TriggerEvent('mythic_notify:client:SendAlert', { type = 'inform', text = 'Y ile kabul et, N ile reddet. Animasyon:'..remote})
+    SimpleNotify(Config.Languages[lang]['doyouwanna']..remote.."~w~)")
 end)
 
 Citizen.CreateThread(function()
@@ -152,7 +152,7 @@ function GetClosestPlayer()
         local target = GetPlayerPed(value)
         if(target ~= ply) then
             local targetCoords = GetEntityCoords(GetPlayerPed(value), 0)
-            local distance = GetDistanceBetweenCoords(targetCoords["x"], targetCoords["y"], targetCoords["z"], plyCoords["x"], plyCoords["y"], plyCoords["z"], true)
+            local distance = #(targetCoords - plyCoords)
             if(closestDistance == -1 or closestDistance > distance) then
                 closestPlayer = value
                 closestDistance = distance

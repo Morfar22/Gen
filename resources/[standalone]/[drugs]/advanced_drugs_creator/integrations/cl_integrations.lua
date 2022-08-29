@@ -25,3 +25,6 @@ end
 
 -- Set to true if you want players to be able to sell to gangster ped models
 CAN_SELL_TO_GANGSTERS = false
+
+-- How many seconds the blip for police alerts will remain in the map
+BLIP_TIME_AFTER_POLICE_ALERT = 120

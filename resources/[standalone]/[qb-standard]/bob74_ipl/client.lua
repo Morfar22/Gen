@@ -24,9 +24,6 @@ Citizen.CreateThread(function()
     -- Bahama Mamas: -1388.0013, -618.41967, 30.819599
     BahamaMamas.Enable(true)
 
-    -- Pillbox hospital: 307.1680, -590.807, 43.280
-    PillboxHospital.Enable(false)
-
     -- Zancudo Gates (GTAO like): -1600.30100000, 2806.73100000, 18.79683000
     ZancudoGates.LoadDefault()
 
@@ -165,5 +162,14 @@ Citizen.CreateThread(function()
         MpSecurityOffice2.LoadDefault() -- 383.4156, -59.878227, 108.4595
         MpSecurityOffice3.LoadDefault() -- -1004.23035, -761.2084, 66.99069
         MpSecurityOffice4.LoadDefault() -- -587.87213, -716.84937, 118.10156
+    end
+
+    -- ====================================================================
+    -- =------------------- [DLC: The Criminal Enterprise] ---------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 2699 then
+        CriminalEnterpriseSmeonFix.LoadDefault() -- -50.2248, -1098.8325, 26.049742
+        CriminalEnterpriseVehicleWarehouse.LoadDefault() -- 800.13696, -3001.4297, -65.14074
+        CriminalEnterpriseWarehouse.LoadDefault() -- 849.1047, -3000.209, -45.974354
     end
 end)

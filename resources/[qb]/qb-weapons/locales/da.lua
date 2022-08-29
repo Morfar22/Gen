@@ -18,7 +18,7 @@ local Translations = {
         repairshop_not_usable = 'Denne shop for reparationer er ~r~IKKE~w~ en mulighed.',
         weapon_will_repair = 'Dit våben vil blive repareret.',
         take_weapon_back = '[E] - Tag våben tilbage',
-        repair_weapon_price = '[E] Reparer for ~g~%{value} $~w~',
+        repair_weapon_price = '[E] Reparer for ~g~%{value} DKK~w~',
         removed_attachment = 'Du fjernede %{value} fra dit våben!',
         hp_of_weapon = 'HP på dit våben'
     },

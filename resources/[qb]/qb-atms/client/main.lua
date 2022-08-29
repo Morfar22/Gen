@@ -75,12 +75,12 @@ RegisterNetEvent('qb-atms:client:loadATM', function(cards)
                         cards = cards,
                     })
                 end, function()
-                    QBCore.Functions.Notify("Fejlede!", "error")
+                    QBCore.Functions.Notify("Failed!", "error")
                 end)
             end
         end
     else
-        QBCore.Functions.Notify("Besøg venligst en filial for at bestille et kort", "error")
+        QBCore.Functions.Notify("Please visit a branch to order a card", "error")
     end
 end)
 
@@ -132,9 +132,9 @@ RegisterNUICallback("removeCard", function(data)
             SendNUIMessage({
                 status = "closeATM"
             })
-            QBCore.Functions.Notify('Dit kort er fjernet.', 'success')
+            QBCore.Functions.Notify('Card has been deleted.', 'success')
         else
-            QBCore.Functions.Notify('Kunne ikke slette dit kort kontakt en medarbejder.', 'error')
+            QBCore.Functions.Notify('Failed to delete card.', 'error')
         end
     end, data)
 end)

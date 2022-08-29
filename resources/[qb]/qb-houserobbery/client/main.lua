@@ -97,19 +97,16 @@ local function lockpickFinish(success)
         QBCore.Functions.Notify(Lang:t("success.worked"), "success", 2500)
     else
         if usingAdvanced then
-            local itemInfo = QBCore.Shared.Items["advancedlockpick"]
             if math.random(1, 100) < 20 then
-                TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1)
-                TriggerEvent('inventory:client:ItemBox', itemInfo, "remove")
+                TriggerServerEvent("qb-houserobbery:server:removeAdvancedLockpick")
+                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
             end
         else
-            local itemInfo = QBCore.Shared.Items["advancedlockpick"]
             if math.random(1, 100) < 40 then
-                TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1)
-                TriggerEvent('inventory:client:ItemBox', itemInfo, "remove")
+                TriggerServerEvent("qb-houserobbery:server:removeLockpick")
+                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
             end
         end
-
 
         QBCore.Functions.Notify(Lang:t("error.didnt_work"), "error", 2500)
     end
@@ -251,7 +248,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                 end
             end
         else
-            QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
+            QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(result)
                 if closestHouse ~= nil then
                     if result then
                         if CurrentCops >= Config.MinimumHouseRobberyPolice then
@@ -386,4 +383,4 @@ RegisterCommand('gethroffset', function()
         print('Y: '..ydist)
         print('Z: '..zdist)
     end
-end)
+end, false)

@@ -513,16 +513,6 @@ Config.JobInteractions = {
             }
         }
     },
-    ["gruppesechs"] = {
-        {
-            id = 'returnTruck',
-            title = 'Return Truck',
-            icon = 'torii-gate',
-            type = 'client',
-            event = 'gruppesechs:returnTruck',
-            shouldClose = true
-        }
-    },
     ["taxi"] = {
         {
             id = 'togglemeter',

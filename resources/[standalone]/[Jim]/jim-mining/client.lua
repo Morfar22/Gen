@@ -131,7 +131,7 @@ RegisterNetEvent('jim-mining:openShop', function() TriggerServerEvent("inventory
 function loadAnimDict(dict) while not HasAnimDictLoaded(dict) do RequestAnimDict(dict) Wait(5) end end 
 
 RegisterNetEvent('jim-mining:MineOre', function ()
-	local p = promise.new()	QBCore.Functions.TriggerCallback("QBCore:HasItem", function(cb) p:resolve(cb) end, "drill")
+	local p = promise.new()	QBCore.Functions.TriggerCallback("QBCore.Functions.HasItem", function(cb) p:resolve(cb) end, "drill")
 	if Citizen.Await(p) then 
 		RequestAmbientAudioBank("DLC_HEIST_FLEECA_SOUNDSET", 0)
 		RequestAmbientAudioBank("DLC_MPHEIST\\HEIST_FLEECA_DRILL", 0)
@@ -173,7 +173,7 @@ end)
 -- Cracking Command / Animations
 -- Command Starts here where it calls to being the stone inv checking
 RegisterNetEvent('jim-mining:CrackStart', function ()
-	local p = promise.new()	QBCore.Functions.TriggerCallback("QBCore:HasItem", function(cb) p:resolve(cb) end, "stone")
+	local p = promise.new()	QBCore.Functions.TriggerCallback("QBCore.Functions.HasItem", function(cb) p:resolve(cb) end, "stone")
 	if Citizen.Await(p) then 
 		local pos = GetEntityCoords(PlayerPedId())
 		loadAnimDict('amb@prop_human_parking_meter@male@idle_a')

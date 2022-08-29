@@ -36,28 +36,19 @@ local function skyCam(bool)
 end
 
 local function openCharMenu(bool)
-        QBCore.Functions.TriggerCallback("qb-multicharacter:server:GetNumberOfCharacters", function(result)
-            QBCore.Functions.TriggerCallback("qb-multi:server:GetCurrentPlayers", function(Players)
-            SetNuiFocus(bool, bool)
-            SendNUIMessage({
-                action = "ui",
-                toggle = bool,
-                nChar = result,
-                enableDeleteButton = Config.EnableDeleteButton,
-                players = Players,
-            })
-            skyCam(bool)
-        end)
+    QBCore.Functions.TriggerCallback("qb-multicharacter:server:GetNumberOfCharacters", function(result)
+        SetNuiFocus(bool, bool)
+        SendNUIMessage({
+            action = "ui",
+            toggle = bool,
+            nChar = result,
+            enableDeleteButton = Config.EnableDeleteButton,
+        })
+        skyCam(bool)
     end)
 end
 
----- Events
-
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-    SendNUIMessage({
-        action = "stopMusic"
-    })
-end)
+-- Events
 
 RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
     DeleteEntity(charPed)
@@ -129,13 +120,13 @@ RegisterNUICallback('cDataPed', function(nData, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(skinData)
-            if skinData then
-                local model = skinData.model
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(model, data)
+            model = model ~= nil and tonumber(model) or false
+            if model ~= nil then
                 CreateThread(function()
-                    RequestModel(GetHashKey(model))
-                    while not HasModelLoaded(GetHashKey(model)) do
-                        Wait(10)
+                    RequestModel(model)
+                    while not HasModelLoaded(model) do
+                        Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -143,7 +134,8 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-                    exports['fivem-appearance']:setPedAppearance(charPed, skinData)
+                    data = json.decode(data)
+                    TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
                 end)
             else
                 CreateThread(function()
@@ -151,10 +143,10 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         "mp_m_freemode_01",
                         "mp_f_freemode_01",
                     }
-                    local model = GetHashKey(randommodels[math.random(1, #randommodels)])
+                    model = joaat(randommodels[math.random(1, #randommodels)])
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Wait(10)
+                        Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -172,7 +164,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
             }
-            local model = GetHashKey(randommodels[math.random(1, #randommodels)])
+            local model = joaat(randommodels[math.random(1, #randommodels)])
             RequestModel(model)
             while not HasModelLoaded(model) do
                 Wait(0)
@@ -188,7 +180,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
     end
 end)
 
-RegisterNUICallback('setupCharacters', function(data, cb)
+RegisterNUICallback('setupCharacters', function(_, cb)
     QBCore.Functions.TriggerCallback("qb-multicharacter:server:setupCharacters", function(result)
         SendNUIMessage({
             action = "setupCharacters",
@@ -198,7 +190,7 @@ RegisterNUICallback('setupCharacters', function(data, cb)
     end)
 end)
 
-RegisterNUICallback('removeBlur', function(data, cb)
+RegisterNUICallback('removeBlur', function(_, cb)
     SetTimecycleModifier('default')
     cb("ok")
 end)
@@ -218,6 +210,7 @@ end)
 
 RegisterNUICallback('removeCharacter', function(data, cb)
     TriggerServerEvent('qb-multicharacter:server:deleteCharacter', data.citizenid)
+    DeletePed(charPed)
     TriggerEvent('qb-multicharacter:client:chooseChar')
     cb("ok")
 end)

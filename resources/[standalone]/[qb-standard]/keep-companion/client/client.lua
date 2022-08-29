@@ -269,7 +269,7 @@ AddEventHandler('keep-companion:client:callCompanion', function(modelName, hosti
 end)
 
 function request_healing_process(ped, item, process_type)
-    QBCore.Functions.TriggerCallback("QBCore:HasItem", function(hasitem)
+    QBCore.Functions.TriggerCallback("QBCore.Functions.HasItem", function(hasitem)
         if not hasitem then QBCore.Functions.Notify(Lang:t('error.not_enough_first_aid'), 'error', 5000) return end
 
         local plyID = PlayerPedId()

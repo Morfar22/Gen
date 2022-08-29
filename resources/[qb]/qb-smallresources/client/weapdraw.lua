@@ -70,24 +70,6 @@ local weapons = {
 	'WEAPON_COMPACTLAUNCHER',
 	'WEAPON_PIPEBOMB',
 	'WEAPON_DOUBLEACTION',
-	--Custom Weapon
-	'WEAPON_AK47',
-	'WEAPON_M9',
-	'WEAPON_FNX45',
-	'WEAPON_DE',
-	'WEAPON_GLOCK17',
-	'WEAPON_M4',
-	'WEAPON_MK14',
-	'WEAPON_HUNTINGRIFLE',
-	'WEAPON_AR15',
-	'WEAPON_M70',
-	'WEAPON_M1911',
-	'WEAPON_MAC10',
-	'WEAPON_UZI',
-	'WEAPON_MOSSBERG',
-	'WEAPON_REMINGTON',
-	'WEAPON_SCARH',
-	'WEAPON_SHIV',
 }
 
 -- Wheapons that require the Police holster animation
@@ -101,13 +83,7 @@ local holsterableWeapons = {
 	'WEAPON_REVOLVER',
 	'WEAPON_SNSPISTOL',
 	'WEAPON_HEAVYPISTOL',
-	'WEAPON_VINTAGEPISTOL',
-	--Custom Weapon
-	'WEAPON_DE',
-	'WEAPON_GLOCK17',
-	'WEAPON_M9',
-	'WEAPON_M1911',
-	'WEAPON_FNX45'
+	'WEAPON_VINTAGEPISTOL'
 }
 
 local holstered = true
@@ -171,8 +147,8 @@ CreateThread(function()
 				loadAnimDict("rcmjosh4")
 				loadAnimDict("weapons@pistol@")
 
-				local HolsterVariant = GetPedDrawableVariation(ped, 7)
-				if HolsterVariant == 1 or HolsterVariant == 2 or HolsterVariant == 3 or HolsterVariant == 6 or HolsterVariant == 8 then
+				local HolsterVariant = GetPedDrawableVariation(ped, 8)
+				if HolsterVariant == 130 or HolsterVariant == 122 or HolsterVariant == 3 or HolsterVariant == 6 or HolsterVariant == 8 then
 					WearingHolster = true
 				else
 					WearingHolster = false

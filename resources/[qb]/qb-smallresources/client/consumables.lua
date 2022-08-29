@@ -174,6 +174,31 @@ RegisterNetEvent('consumables:client:Drink', function(itemName)
     end)
 end)
 
+RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
+    TriggerEvent('animations:client:EmoteCommandStart', {"drink"})
+    QBCore.Functions.Progressbar("snort_coke", "Drinking liquor..", math.random(3000, 6000), false, true, {
+        disableMovement = false,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, function() -- Done
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
+        TriggerServerEvent("consumables:server:drinkAlcohol", itemName)
+        TriggerServerEvent("consumables:server:addThirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + ConsumablesAlcohol[itemName])
+        alcoholCount += 1
+        if alcoholCount > 1 and alcoholCount < 4 then
+            TriggerEvent("evidence:client:SetStatus", "alcohol", 200)
+        elseif alcoholCount >= 4 then
+            TriggerEvent("evidence:client:SetStatus", "heavyalcohol", 200)
+        end
+
+    end, function() -- Cancel
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        QBCore.Functions.Notify("Cancelled..", "error")
+    end)
+end)
+
 RegisterNetEvent('consumables:client:Cokebaggy', function()
     local ped = PlayerPedId()
     QBCore.Functions.Progressbar("snort_coke", "Quick sniff..", math.random(5000, 8000), false, true, {

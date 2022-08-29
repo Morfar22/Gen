@@ -1,6 +1,6 @@
 author 'jaksam1074'
 
-version '4.14.2' -- SCRIPT VERSION
+version '4.15' -- SCRIPT VERSION
 
 client_scripts {
     -- Callbacks
@@ -16,6 +16,9 @@ client_scripts {
     -- Framework
     'utils/framework/sh_framework.lua',
     'utils/framework/cl_framework.lua',
+
+    -- Police
+    'utils/police/cl_police.lua',    
 
     -- Interaction points
     "client/interaction_points.lua",
@@ -58,6 +61,9 @@ server_scripts{
     'utils/framework/sh_framework.lua',
     'utils/framework/sv_framework.lua',    
 
+    -- Police
+    'utils/police/sv_police.lua',    
+    
     -- Dependency
     '@mysql-async/lib/MySQL.lua',
 
@@ -74,7 +80,6 @@ server_scripts{
     -- Script
     'server/main.lua',
     'server/drugs_effects.lua',
-    'server/police.lua',
     'server/harvestable_items.lua',
     'server/crafting_recipes.lua',
     'server/laboratories.lua',

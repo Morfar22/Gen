@@ -211,7 +211,7 @@ RegisterNetEvent('hospital:client:CheckStatus', function()
 end)
 
 RegisterNetEvent('hospital:client:RevivePlayer', function()
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(hasItem)
+    QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(hasItem)
         if hasItem then
             local player, distance = GetClosestPlayer()
             if player ~= -1 and distance < 5.0 then
@@ -243,7 +243,7 @@ RegisterNetEvent('hospital:client:RevivePlayer', function()
 end)
 
 RegisterNetEvent('hospital:client:TreatWounds', function()
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(hasItem)
+    QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(hasItem)
         if hasItem then
             local player, distance = GetClosestPlayer()
             if player ~= -1 and distance < 5.0 then

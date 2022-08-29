@@ -1,54 +1,17 @@
-DROP TABLE IF EXISTS `protections`;
-DROP TABLE IF EXISTS `rivalries`;
-DROP TABLE IF EXISTS `gang_zones`;
-DROP TABLE IF EXISTS `gangs`;
+CREATE TABLE `luxuCEXtransactions` (
+    `lcex_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `lcex_type` VARCHAR(255) NOT NULL,
+    `lcex_coin` VARCHAR(255) NOT NULL,
+    `lcex_amount` DECIMAL(20,7) NOT NULL,
+    `lcex_price` DECIMAL(20,7) NULL,
+    `lcex_date` DATETIME NOT NULL DEFAULT current_timestamp,
+    `lcex_sender` VARCHAR(255),
+    `lcex_receiver` VARCHAR(255),
+    `lcex_identifier` VARCHAR(255),
+    PRIMARY KEY (`lcex_id`)
+) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS gangs (
-    id                        INT          NOT NULL AUTO_INCREMENT,
-    identifier                VARCHAR(255) NOT NULL,
-    tag                       VARCHAR(10)  NOT NULL,
-    name                      VARCHAR(32)  NOT NULL,
-    color                     VARCHAR(16)  NOT NULL,
-    presence_capture_disabled TINYINT      NOT NULL DEFAULT 0,
-    checkpoints               TEXT                  DEFAULT NULL,
-    vehicles                  TEXT                  DEFAULT NULL,
-    created_at                TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT gangs_pk_id   PRIMARY KEY (id),
-    CONSTRAINT gangs_ui_tag  UNIQUE KEY (tag),
-    CONSTRAINT gangs_ui_name UNIQUE KEY (name)
-) COLLATE utf8mb4_general_ci;
-
-CREATE TABLE IF NOT EXISTS gang_zones (
-    id      INT         NOT NULL AUTO_INCREMENT,
-    name    VARCHAR(16) NOT NULL,
-    gang_id INT         NOT NULL,
-    loyalty INT         NOT NULL DEFAULT 0,
-
-    CONSTRAINT gang_zones_pk_id PRIMARY KEY (id),
-    CONSTRAINT gang_zones_fk_id FOREIGN KEY (gang_id) REFERENCES gangs (id) ON DELETE CASCADE
-) COLLATE utf8mb4_general_ci;
-
-CREATE TABLE IF NOT EXISTS rivalries (
-    id                INT         NOT NULL AUTO_INCREMENT,
-    zone              VARCHAR(32) NOT NULL,
-    attacking_gang_id INT         NOT NULL,
-    defending_gang_id INT         NOT NULL,
-    funds             INT         NOT NULL,
-    attacker_sold     INT         NOT NULL,
-    defender_sold     INT         NOT NULL,
-    created_at        TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ends_at           DATETIME    NOT NULL,
-
-    CONSTRAINT rivalries_pk_id                PRIMARY KEY (id),
-    CONSTRAINT rivalries_fk_attacking_gang_id FOREIGN KEY (attacking_gang_id) REFERENCES gangs (id) ON DELETE CASCADE,
-    CONSTRAINT rivalries_fk_defending_gang_id FOREIGN KEY (defending_gang_id) REFERENCES gangs (id) ON DELETE CASCADE,
-
-    INDEX rivalries_i_attacking_gang_id (attacking_gang_id),
-    INDEX rivalries_i_defending_gang_id (defending_gang_id)
-) COLLATE utf8mb4_general_ci;
-
-CREATE TABLE IF NOT EXISTS protections (
-    shop_id VARCHAR(64) NOT NULL,
-    amount  INT         NOT NULL
-) COLLATE utf8mb4_general_ci;
+ALTER TABLE `players` ADD COLUMN `luxucryptoaddress` LONGTEXT NULL;
+ALTER TABLE `players` ADD COLUMN `luxucexassets` LONGTEXT NOT NULL DEFAULT '{"BTC": 0,"ETH": 0,"GMT": 0,"BNB": 0,"LUNA": 0,"APE": 0,"XRP": 0,"SOL": 0,"AVAX": 0,"NEAR": 0,"TRX": 0,"MATIC": 0,"SAND": 0,"SHIB": 0,"DOT": 0,"JASMY": 0,"DOGE": 0,"ADA": 0,"ZIL": 0,"FTM": 0,"LINK": 0,"LTC": 0,"PAXG": 0,"GALA": 0,"FIL": 0,"XMR": 0,"ATOM": 0,"EOS": 0,"MANA": 0,"RUNE": 0,"KNC": 0,"WAVES": 0,"ETC": 0,"VET": 0,"FTT": 0,"AAVE": 0,"AXS": 0,"THETA": 0,"BCH": 0,"LRC": 0,"SUSHI": 0,"ZRX": 0,"ZEC": 0,"DYDX": 0,"GRT": 0,"ICP": 0,"KAVA": 0,"XLM": 0,"EGLD": 0,"XTZ": 0}';
+ALTER TABLE `players` ADD COLUMN `luxucwbalance` INT(11) NOT NULL DEFAULT '0';

@@ -10,6 +10,7 @@ local Translations = {
         willchangeto = 'Vejret vil ændre sig til: %{value}.',
         accessdenied = 'Adgangen til /weather er nægtet.',
     },
+
     dynamic_weather = {
         disabled = 'Dynamisk vejr er slået fra.',
         enabled = 'Dynamisk vejr er nu slået til.',

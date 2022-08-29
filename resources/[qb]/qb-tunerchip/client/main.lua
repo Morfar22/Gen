@@ -29,7 +29,7 @@ RegisterNUICallback('save', function(data, cb)
             local ped = PlayerPedId()
             local veh = GetVehiclePedIsUsing(ped)
             setVehData(veh, data)
-            QBCore.Functions.Notify('TunerChip v1.05: Bilen er nu chipped!', 'error')
+            QBCore.Functions.Notify('TunerChip v1.05: Vehicle Tuned!', 'error')
 
             TriggerServerEvent('qb-tunerchip:server:TuneStatus', QBCore.Functions.GetPlate(veh), true)
         end
@@ -45,19 +45,19 @@ RegisterNetEvent('qb-tunerchip:client:TuneStatus', function()
     if vehModel ~= 0 then
         QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
             if status then
-                QBCore.Functions.Notify('Denne bil er chippet', 'success')
+                QBCore.Functions.Notify('This Vehicle Has Been Tuned', 'success')
             else
-                QBCore.Functions.Notify('Denne bil er ikke chippet', 'error')
+                QBCore.Functions.Notify('This Vehicle Has Not Been Tuned', 'error')
             end
         end, plate)
     else
-        QBCore.Functions.Notify('Ingen biler i nærheden', 'error')
+        QBCore.Functions.Notify('No Vehicle Nearby', 'error')
     end
 end)
 
 RegisterNUICallback('checkItem', function(data, cb)
     local retval = false
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
+    QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(result)
         if result then
             retval = true
         end
@@ -69,7 +69,7 @@ RegisterNUICallback('reset', function(_, cb)
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsUsing(ped)
     resetVeh(veh)
-    QBCore.Functions.Notify('TunerChip v1.05: Bilen er gendannet!', 'error')
+    QBCore.Functions.Notify('TunerChip v1.05: Vehicle has been reset!', 'error')
     cb("ok")
 end)
 
@@ -78,7 +78,7 @@ RegisterNetEvent('qb-tunerchip:client:openChip', function()
     local inVehicle = IsPedInAnyVehicle(ped)
 
     if inVehicle then
-        QBCore.Functions.Progressbar("connect_laptop", "Tunerchip v1.05: Bilen er gendannet!", 2000, false, true, {
+        QBCore.Functions.Progressbar("connect_laptop", "Tunerchip v1.05: Vehicle Has Been Reset!", 2000, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
