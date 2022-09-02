@@ -139,6 +139,7 @@ data_file 'AUDIO_GAMEDATA' 'audioconfig/sunrise_game.dat'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/jdoraclev12_game.dat'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/nspeedo_game.dat'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/ta103ninjah2r_game.dat'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/argento_game.dat'
 
 -- Audio Sound Data
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/12vcummins_sounds.dat'
@@ -259,6 +260,7 @@ data_file 'AUDIO_SOUNDDATA' 'audioconfig/surise_sounds.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/jdoraclev12_sounds.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/nspeedo_sounds.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/ta103ninjah2r_sounds.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/argento_sounds.dat'
 
 -- Audio Synthersizer Data
 data_file 'AUDIO_SYNTHDATA' 'audioconfig/c30a_amp.dat'
@@ -405,4 +407,5 @@ data_file 'AUDIO_WAVEPACK' 'sfx/dlc_sunrise'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_jdoraclev12'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_nspeedo'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_ta103ninjah2r'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_argento'
 data_file 'AUDIO_WAVEPACK' 'sfx/resident'
